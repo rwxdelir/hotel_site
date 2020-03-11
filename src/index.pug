@@ -1,0 +1,12 @@
+include ./components/button/button.pug
+include ./components/nav/nav.pug
+
+doctype html
+head
+  script(src= './index.js')
+body
+  header
+    + nav
+    + button({ isBordered: 1, title: "Registration", size: "big"})
+    script
+      include ./components/nav/nav.js

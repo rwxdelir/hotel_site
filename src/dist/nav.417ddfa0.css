@@ -1,0 +1,30 @@
+.nav {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+.nav__link {
+  display: block;
+  padding: 8px;
+  text-decoration: none;
+  color: inherit;
+}
+.nav__item {
+  float: left;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+.nav__expanded {
+  cursor: pointer;
+}
+.nav__expanded_content {
+  padding: 0 18px;
+  display: block;
+  overflow: hidden;
+  background-color: #f1f1f1;
+}
+
+/*# sourceMappingURL=/nav.417ddfa0.css.map */

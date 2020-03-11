@@ -1,0 +1,95 @@
+@import "../../abstracts/_variables.scss";
+@import "../../abstracts/_mixins.scss";
+
+$purple-50: rgba($purple, 0.5);
+$blue-50: rgba($blue, 0.5);
+$gradient: linear-gradient(180deg, $purple 0%, $blue 100%);
+$gradient-50: linear-gradient(180deg, $purple-50 0%, $blue-50 100%);
+$height-medium: 44px;
+$height-small: ($height-medium - 10px);
+$height-text: 15px;
+
+.button {
+  text-decoration: none;
+  border-radius: 22px;
+  padding: 0px;
+  outline: none;
+  border: 2px;
+  border: none;
+  cursor: pointer;
+  background-color: $white;
+  height: $height-medium;
+  //text
+  @include text($font, 12px, 700, $white);
+  margin: 0px;
+  text-transform: uppercase;
+  line-height: 15px;
+
+  &_size {
+    &-xSmall {
+      width: 87px;
+    }
+    &-small {
+      width: 99px;
+    }
+    &-medium {
+      width: 196px;
+    }
+    &-big {
+      width: 320px;
+    }
+  }
+
+  &_type {
+    &_colored {
+      border: 1px;
+      background: $gradient;
+      &:hover {
+        background: $gradient-50;
+      }
+    }
+    &_bordered {
+      border: solid 2px transparent;
+      background: $gradient;
+      background-origin: border-box;
+      box-shadow: 2px 1000px 1px #fff inset;
+      color: $purple;
+      &:hover {
+        background: $gradient-50;
+        background-origin: border-box;
+      }
+    }
+    &_text {
+      height: $height-text;
+      color: $purple;
+      &:hover {
+        color: $dark-50;
+      }
+    }
+    &_arrow {
+      width: 320px;
+      position: relative;
+      letter-spacing: 0px;
+      text-indent: 0px;
+      &::after {
+        content: "";
+        position: absolute;
+        top: 16px;
+        right: 18px;
+        &_big {
+          width: 320px;
+        }
+        &_medium {
+          width: 266px;
+        }
+        &_small {
+          width: 150px;
+        }
+
+        width: 24px;
+        height: 24px;
+        pointer-events: none;
+      }
+    }
+  }
+}

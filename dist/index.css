@@ -1,0 +1,134 @@
+/* @function color-shade($color, $n) {
+  @return rgba($color, $n);
+} */
+h1 {
+  margin: 0;
+  font-family: Quicksand, Arial, sans-serif;
+  font-size: 24px;
+  font-weight: 700;
+  color: #1f2041;
+  /* line-height: 30px; */
+  line-height: 30px;
+  letter-spacing: 1.2px;
+}
+
+h2 {
+  font-family: Quicksand, Arial, sans-serif;
+  font-size: 19px;
+  font-weight: 700;
+  color: #1f2041;
+  /* line-height: 24px; */
+  margin: 0;
+}
+
+h3 {
+  font-family: Montserrat, Arial, sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  color: #1f2041;
+  /* line-height: 15px; */
+  margin: 0;
+  text-transform: uppercase;
+}
+
+span.body-text {
+  font-family: Montserrat, Arial, sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  color: rgba(31, 32, 65, 0.75);
+  /* line-height: 24px; */
+}
+
+/* @import "normalize.css"; */
+/* @font-face {
+  font-family: MyriadPro-Regular;
+  src: url(../assets/fonts/MyriadPro-Regular.svg) format("svg"),
+    url(../assets/fonts/MyriadPro-Regular.ttf) format("ttf"),
+    url(../assets/fonts/MyriadPro-Regular.woff) format("woff");
+  font-weight: normal;
+  font-style: normal;
+} */
+@font-face {
+  font-family: Montserrat;
+  src: url(/Montserrat-Regular.e7c97de5.svg) format("svg"), url(/Montserrat-Regular.8fe9dd7a.ttf) format("ttf"), url(/Montserrat-Regular.6b3bd861.woff) format("woff");
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: Montserrat;
+  src: url(/Montserrat-Bold.75568a25.svg) format("svg"), url(/Montserrat-Bold.a1c6c522.ttf) format("ttf"), url(/Montserrat-Bold.91aa0c63.woff) format("woff");
+  font-weight: 700;
+  font-style: normal;
+}
+@font-face {
+  font-family: Quicksand;
+  src: url(/Quicksand-Regular.c55b836b.svg) format("svg"), url(/Quicksand-Regular.8c24bba2.ttf) format("ttf"), url(/Quicksand-Regular.bf72bb92.woff) format("woff");
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: Quicksand;
+  src: url(/Quicksand-Bold.9714d35c.svg) format("svg"), url(/Quicksand-Bold.0f0e1565.ttf) format("ttf"), url(/Quicksand-Bold.1fb12fb5.woff) format("woff");
+  font-weight: 700;
+  font-style: normal;
+}
+.title {
+  display: block;
+  color: #c50f0f;
+  padding: 50px;
+  font-family: "MyriadPro-Regular", "Arial", sans-serif;
+  font-size: 50px;
+}
+
+@font-face {
+  font-family: Montserrat-bold;
+  src: url(/Montserrat-Bold.75568a25.svg) format("svg"), url(/Montserrat-Bold.a1c6c522.ttf) format("ttf"), url(/Montserrat-Bold.91aa0c63.woff) format("woff");
+  font-style: normal;
+}
+@font-face {
+  font-family: Quicksand-bold;
+  src: url(/Quicksand-Bold.9714d35c.svg) format("svg"), url(/Quicksand-Bold.0f0e1565.ttf) format("ttf"), url(/Quicksand-Bold.1fb12fb5.woff) format("woff");
+  font-style: normal;
+}
+html {
+  font-size: 12px;
+  /* @media (max-width: 1959.98px) {
+    font-size: 8px;
+  }
+
+  @media (max-width: 1439.98px) {
+    font-size: 7px;
+  }
+
+  @media (max-width: 1199.98px) {
+    font-size: 12px;
+  }
+  @media (max-width: 1023.98px) {
+    font-size: 10px;
+  }
+
+  @media (max-width: 767.98px) {
+    font-size: 6.5px;
+  }
+
+  @media (max-width: 424.98px) {
+    font-size: 5px;
+  }
+
+  @media (max-width: 374.98px) {
+    font-size: 4px;
+  }
+
+  @media (max-width: 319.98px) {
+    font-size: 3px;
+  } */
+}
+
+/* body {
+  margin: 0;
+} */
+/* * {
+  outline: 1px solid gold;
+} */
+
+/*# sourceMappingURL=/index.css.map */

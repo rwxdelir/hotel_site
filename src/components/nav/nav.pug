@@ -1,0 +1,32 @@
+- 
+  const DEFAULT_ITEMS = [
+    {title: "Home", href: "#", isSelected: true},
+    {title: "About Us", href: "#"},
+    {title: "Services", href: "#", isExpanded: true, exp_list: 
+    [
+          {title: "Service 1"},
+          {title: "Service 2"},
+          {title: "service 3"}
+    ]},
+    {title: "Careers", href: "#"},
+    {title: "News", href: "#"},
+    {title: "Documentation", href: "#"}]
+
+mixin nav
+  ul(class= "nav")
+    each item in DEFAULT_ITEMS
+      if !item.isSelected & !item.isExpanded
+        li(class= "nav__item")
+          a(class= "nav__link" title= item.title href=item.href)= item.title
+
+      else if item.isExpanded
+        li(class= "nav__item nav__expanded")
+          a(class= "nav__link")=item.title
+          ul(class= "nav__item nav__expanded_content")
+            each exp_item in item.exp_list 
+              li(class= "nav__expanded_element")
+                a(class= "nav__link nav__expanded_element" href="#")= exp_item.title
+
+      else
+        li(class= "nav__item nav__item_selected")
+          a(class= "nav__link" href= "#")= item.title

@@ -1,0 +1,25 @@
+mixin button({isColored,isBordered,isTextButton,isArrowButton,isHeaderButton,size,isTextColored,title,className})
+
+    -
+        const buttonClassName = [
+            "button",
+            isColored ? "button_type_colored" : null,
+            isBordered ? "button_type_bordered": null,
+            isTextButton ? "button_type_text": null,
+            isArrowButton ? "button_type_arrow": null,
+            size ? `button_size-${size}`: null,
+            className ? `${className}`: null,
+        ].filter(className => className !== null).join(" ");
+
+        const buttonTextClassName =[
+            "button__text",
+            isTextColored ? "button__text_colored": null,
+            !size ? "button__text_header":null,
+        ].filter(className => className !== null).join(" ");
+
+
+    if !isArrowButton
+        button(class=`${buttonClassName}` class!=attributes.class type="button")  #{title}
+    else
+        button(class=`${buttonClassName}` class!=attributes.class type="button") #{title}
+            +arrow({isShaded:true})

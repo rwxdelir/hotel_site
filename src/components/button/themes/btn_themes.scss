@@ -1,0 +1,9 @@
+@mixin blue_theme {
+  background: $blue-theme;
+  &:active {
+    opacity: 0.5;
+  }
+  .btn__text_area {
+    color: white;  
+  }
+}
