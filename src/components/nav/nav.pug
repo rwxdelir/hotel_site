@@ -1,8 +1,9 @@
+include ./arrow.pug
 - 
   const DEFAULT_ITEMS = [
     {title: "Home", href: "#", isSelected: true},
     {title: "About Us", href: "#"},
-    {title: "Services", href: "#", isExpanded: true, exp_list: 
+    {title: "Services", href: "#", isExpanded: 
     [
           {title: "Service 1"},
           {title: "Service 2"},
@@ -21,9 +22,10 @@ mixin nav
 
       else if item.isExpanded
         li(class= "nav__item nav__expanded")
+          +arrow(class= "arrow")
           a(class= "nav__link")=item.title
           ul(class= "nav__item nav__expanded_content")
-            each exp_item in item.exp_list 
+            each exp_item in item.isExpanded 
               li(class= "nav__expanded_element")
                 a(class= "nav__link nav__expanded_element" href="#")= exp_item.title
 

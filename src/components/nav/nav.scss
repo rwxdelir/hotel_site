@@ -89,6 +89,14 @@
       float: none;
     }
   }
+  &__arrow {
+    position: absolute;
+    right: -14px;
+    bottom: 3.8px;
+    &-active {
+      transform: rotate(180deg); 
+    }
+  }
 }
 
 header {
@@ -99,4 +107,3 @@ header {
 }
 
 
-  
