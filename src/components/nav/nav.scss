@@ -3,6 +3,7 @@
 
 .nav {
   // Stop highlighting of nav elemenets
+  // Move this rule later in separate scss file
   -webkit-user-select: none;     
   -moz-user-select: none; 
   -ms-user-select: none; 
