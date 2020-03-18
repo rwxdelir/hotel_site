@@ -2,6 +2,11 @@
 @import "../../abstracts/_mixins.scss";
 
 .nav {
+  // Stop highlighting of nav elemenets
+  -webkit-user-select: none;     
+  -moz-user-select: none; 
+  -ms-user-select: none; 
+
   width: 530px;
   @include body-text();
   display: flex;
@@ -52,7 +57,7 @@
     &:last-child {
       margin-right: 0px; 
     }
-    &-arrow {
+    &_arrow {
       position: absolute;
       right: -14px;
       bottom: 3.8px;

@@ -37,6 +37,9 @@ span.body-text {
 }
 
 .nav {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
   width: 530px;
   font-family: Montserrat, Arial, sans-serif;
   font-size: 14px;
@@ -94,12 +97,12 @@ span.body-text {
 .nav__item:last-child {
   margin-right: 0px;
 }
-.nav__item-arrow {
+.nav__item_arrow {
   position: absolute;
   right: -14px;
   bottom: 3.8px;
 }
-.nav__item-arrow-active {
+.nav__item_arrow-active {
   transform: rotate(180deg);
 }
 .nav__item_selected {
