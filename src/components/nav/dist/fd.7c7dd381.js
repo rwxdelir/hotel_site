@@ -189,32 +189,10 @@ var reloadCSS = require('_css_loader');
 
 module.hot.dispose(reloadCSS);
 module.hot.accept(reloadCSS);
-},{"_css_loader":"../../../../../usr/lib/node_modules/parcel-bundler/src/builtins/css-loader.js"}],"nav.js":[function(require,module,exports) {
+},{"_css_loader":"../../../../../usr/lib/node_modules/parcel-bundler/src/builtins/css-loader.js"}],"fd.js":[function(require,module,exports) {
 "use strict";
 
 require("./nav.scss");
-
-function myFunction() {
-  document.querySelector(".nav__expanded_content").classList.toggle("nav__expanded_content-show");
-  alert("Dropdown");
-}
-
-window.onclick = function (e) {
-  if (!e.target.matches(".nav__expanded")) {
-    var myDropdown = document.querySelector(".nav__expanded_content");
-
-    if (myDropdown.classList.contains("nav__expanded_content-show")) {
-      myDropdown.classList.remove("nav__expanded_content-show");
-      alert("Deleted");
-    }
-  }
-};
-
-var x = document.querySelector(".nav__expanded");
-
-x.onclick = function () {
-  myFunction();
-};
 },{"./nav.scss":"nav.scss"}],"../../../../../../../usr/lib/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
@@ -243,7 +221,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "46807" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "35129" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
@@ -419,5 +397,5 @@ function hmrAcceptRun(bundle, id) {
     return true;
   }
 }
-},{}]},{},["../../../../../../../usr/lib/node_modules/parcel-bundler/src/builtins/hmr-runtime.js","nav.js"], null)
-//# sourceMappingURL=/nav.ce572f91.js.map
+},{}]},{},["../../../../../../../usr/lib/node_modules/parcel-bundler/src/builtins/hmr-runtime.js","fd.js"], null)
+//# sourceMappingURL=/fd.7c7dd381.js.map

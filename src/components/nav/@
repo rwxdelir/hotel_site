@@ -1,0 +1,17 @@
+import "./nav.scss";
+var x = document.querySelectorAll(".nav__expanded");
+for (let i = 0; i < x.length; i++){
+  x[i].onclick = function() {myEvent()};
+}
+
+window.onclick = function(event) {
+  var dropdowns = document.querySelectorAll("nav__expanded_content");
+  var i;
+  for (i = 0; i < dropdowns.length; i++) {
+    var openDropdowns = dropdowns[i];
+    if (openDropdowns.classList.contains("nav__expanded_content-show")) {
+      openDropdowns.classList.remove("nav__expanded_content-show");
+    }
+  }
+}
+

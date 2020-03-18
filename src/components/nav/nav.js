@@ -1,8 +1,20 @@
-import "./nav.scss";
 var x = document.querySelector(".nav__expanded");
-x.onclick = function() {myEvent()};
+x.onclick = function () {myFunction()};
 
-function myEvent() {
+function myFunction() {
   document.querySelector(".nav__expanded_content").classList.toggle("nav__expanded_content-show");
-  document.querySelector(".nav__arrow").classList.toggle("nav__arrow-active");
+  dropdownClose();
 }
+
+function dropdownClose() {
+  window.onclick = function(e) {
+    if (!e.target.matches(".nav__expanded")) {
+    var myDropdown = document.querySelector(".nav__expanded_content");
+      if (myDropdown.classList.contains("nav__expanded_content-show")) {
+        myDropdown.classList.remove("nav__expanded_content-show");
+      }
+    }
+  }
+  event.stopPropagation();
+}
+

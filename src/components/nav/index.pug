@@ -2,7 +2,9 @@ include ./arrow.pug
 include ./nav.pug
 doctype html
 head
+  script(src="fd.js")
 body
   +nav
-  script(src="./nav.js")
+  script
+    include ./nav.js
 
