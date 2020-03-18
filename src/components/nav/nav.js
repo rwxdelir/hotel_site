@@ -1,3 +1,5 @@
+import "./nav.scss";
+
 var expandedItem = document.querySelector(".nav__expanded");
 expandedItem.onclick = function () {myFunction()};
 
