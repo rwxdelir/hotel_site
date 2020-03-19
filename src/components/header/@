@@ -1,0 +1,6 @@
+include ../nav/nav.pug
+include ../button/button.pug
+mixin header
+  header(class="header")
+    +nav(class="header_item")
+    +button({isBordered: 1,isHeaderButton: 1,size: "xSmall",isTextColored: 1, title: "Registre", className: "header_button"}) 

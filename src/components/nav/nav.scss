@@ -9,7 +9,6 @@
   -moz-user-select: none; 
   -ms-user-select: none; 
 
-  width: 530px;
   @include body-text();
   display: flex;
   align-items: center;
@@ -39,12 +38,14 @@
     &:hover {
       font-weight: 700;
     }
+    &::before {
+      font-weight: normal;
+    }
   }
 
   &__item {
     text-align: center;
     margin-right: 27px;
-    //
     font-family: $font;
     font-style: normal;
     font-size: 14px;
@@ -81,7 +82,10 @@
     cursor: pointer;
     position: relative;
     margin-right: 41px;
-
+    &:hover {
+      font-weight: normal !important;
+      border: 4px;
+    }
     &_content {
       display: none;
       position: absolute;
@@ -92,7 +96,6 @@
       padding: 10px 10px 10px 10px;
       white-space: nowrap;
       overflow: hidden;
- //     right: -15px;
       width: 100%;
       right: 0;
       left: 0;
@@ -106,15 +109,6 @@
       float: none;
     }
   }
-}
-
-// Don`t forget to delete this style!!!
-
-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 30px 10%;
 }
 
 

@@ -12,8 +12,8 @@
     {title: "News", href: "#"},
     {title: "Documentation"}]
 
-mixin nav
-  ul(class= "nav")
+mixin nav(className)
+  ul(class= "nav " + className)
     each item in DEFAULT_ITEMS
       if !item.isSelected & !item.isExpanded
         li(class= "nav__item")
