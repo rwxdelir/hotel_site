@@ -2,6 +2,6 @@ include ../nav/nav.pug
 include ../button/button.pug
 mixin header
   header(class="header")
-    div(clas="menu")
-      +nav("header_nav")
-      +button({isBordered: 1,isHeaderButton: 1,size: "xSmall",isTextColored: 1, title: "Login", className: "header_button"}) 
+    div(class="menu")
+      +nav("header_nav menu__item")
+      +button({isBordered: 1, isTextColored: 1, title: "Login", className: "header_button menu__item"})

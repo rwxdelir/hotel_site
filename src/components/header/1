@@ -10,7 +10,7 @@
 */
 
 .button {
-  position: fixed;
+  position: relative;
   height: 34px;
   width: 79px;
 
@@ -23,8 +23,6 @@
 
 .header_nav { 
   top: 15px;
-
-  position: relative;
 }
 
 .menu {
@@ -39,7 +37,4 @@
 
 }
 
-.header {
-  bottom: 10px;
-}
-
+.menu__item {}
