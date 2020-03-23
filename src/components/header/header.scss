@@ -18,12 +18,22 @@
 }
 
 .button {
-  position: absolute;
-  width: 79px;
-  height: 34px;
-  left: 1100px;
-  top: 10px;
+  height: 34px !important;
+  &_login {
+    position: absolute;
+    left: 1100px;
+    top: 16px;
+    margin-left: 20px;
+    width: 79px !important;
+  } 
+  &_register {
+    position: absolute;
+    left: 1199px;
+    top: 15px;
+    width: 101px !important;
+  } 
 }
+
 
 .menu {
   display: flex; 
