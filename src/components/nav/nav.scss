@@ -17,7 +17,6 @@
   text-transform: capitalize;
   justify-content: center;
   flex-shrink: 0;
-    
   &__link {
     transition: all 0.3s; 
     display: block;
@@ -83,7 +82,7 @@
     position: relative;
     margin-right: 41px;
     &:hover {
-      font-weight: normal !important;
+      font-weight: normal;
       border: 4px;
     }
     &_content {
