@@ -1,1 +1,0 @@
-{"version":3,"sources":["logo.scss"],"names":[],"mappings":"AAAA;EACE;;;AAGF;EACE;;;AAGF;EACE","file":"logo.76780598.css","sourceRoot":"..","sourcesContent":[".logo_right-vector:hover {\n  fill: rgba(0,21,21,0.5);\n}\n\n.logo_left-vector:hover {\n  fill: rgba(0,21,21,0.5);\n}\n\n.logo_circle-vector:hover {\n  fill: rgba(0,21,21,0.5);\n}\n\n\n"]}
