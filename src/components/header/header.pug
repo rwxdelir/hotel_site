@@ -1,8 +1,11 @@
 include ../nav/nav.pug
 include ../button/button.pug
+include ../logo/logo.pug
 mixin header
   header(class="header")
     div(class="menu")
       +nav
+      +logo("header_logo")
       +button({title:"register", size:"xSmall", isColored:true, className:"button_register"})
       +button({title:"login", size:"xSmall", isBordered:1, className:"button_login"})
+      

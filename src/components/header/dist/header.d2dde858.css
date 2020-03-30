@@ -33,8 +33,10 @@
   width: 101px !important;
 }
 
-.menu {
-  display: flex;
+.header_logo {
+  position: absolute;
+  top: 15px;
+  left: 100px;
 }
 h1 {
   margin: 0;
@@ -300,6 +302,17 @@ span.body-text {
 }
 .button_type_arrow::after_small {
   width: 150px;
+}
+.logo_right-vector:hover {
+  fill: rgba(0, 21, 21, 0.5);
+}
+
+.logo_left-vector:hover {
+  fill: rgba(0, 21, 21, 0.5);
+}
+
+.logo_circle-vector:hover {
+  fill: rgba(0, 21, 21, 0.5);
 }
 
 /*# sourceMappingURL=/header.d2dde858.css.map */
