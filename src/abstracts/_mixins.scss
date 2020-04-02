@@ -25,7 +25,6 @@
   /* line-height: 24px; */
 }
 
-//миксин для выделения элементов формы
 @mixin block-hoverFocus {
   border: 1px solid $dark-50;
   outline: none;
