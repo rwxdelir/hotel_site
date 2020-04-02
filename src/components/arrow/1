@@ -1,7 +1,0 @@
-include ./arrow.pug
-doctype html
-head
-
-body
-  div
-    +arrow  
