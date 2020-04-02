@@ -1,13 +1,20 @@
 .logo_right-vector:hover {
-  fill: rgba(0,21,21,0.5);
+  fill: url(#paint0_linear);
+  transform: scale(1,1.5);
+  transform-origin: 50% 50%;
+
+}
+
+.div:hover svg .logo_left-vector {
+  fill: url(#paint1_linear);
 }
 
 .logo_left-vector:hover {
-  fill: rgba(0,21,21,0.5);
+  fill: url(#paint1_linear);
+  transform: scale(1,1.3);
+  transform-origin: 50% 50%;
 }
 
 .logo_circle-vector:hover {
   fill: rgba(0,21,21,0.5);
 }
-
-
