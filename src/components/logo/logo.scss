@@ -1,20 +1,12 @@
-.logo_right-vector:hover {
-  fill: url(#paint0_linear);
-  transform: scale(1,1.5);
-  transform-origin: 50% 50%;
-
+.logo {
+  overflow: visible;
+  &_right-vector:hover, &_left-vector:hover, &_circle-vector {
+    stroke: url(#paint0_linear);
+    stroke-linejoin: round;
+  }
+  &_right-vector:hover { stroke-width: 3px;}
+  &_left-vector:hover { stroke-width: 3.5px;}
+  &_circle-vector:hover { stroke-width: 3px;}
 }
 
-.div:hover svg .logo_left-vector {
-  fill: url(#paint1_linear);
-}
-
-.logo_left-vector:hover {
-  fill: url(#paint1_linear);
-  transform: scale(1,1.3);
-  transform-origin: 50% 50%;
-}
-
-.logo_circle-vector:hover {
-  fill: rgba(0,21,21,0.5);
-}
+// 0 -2 113 45
