@@ -18,19 +18,19 @@
 }
 
 .button {
-  height: 34px !important;
+  height: 34px;
   &_login {
     position: absolute;
     left: 1100px;
     top: 16px;
     margin-left: 20px;
-    width: 79px !important;
+    width: 79px;
   } 
   &_register {
     position: absolute;
     left: 1199px;
     top: 15px;
-    width: 101px !important;
+    width: 101px;
   } 
 }
 
