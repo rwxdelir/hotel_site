@@ -18,7 +18,7 @@ $height-text: 15px;
   border: none;
   cursor: pointer;
   background-color: $white;
-  height: $height-medium;
+  // height: $height-medium;
   //text
   @include text($font, 12px, 700, $white);
   margin: 0px;
