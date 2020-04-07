@@ -4,8 +4,8 @@ include ../logo/logo.pug
 mixin header
   header(class="header")
     div(class="menu")
-      +nav
+      +nav("header_nav")
       +logo("header_logo")
-      +button({title:"register", isColored:true, className:"button_register"})
-      +button({title:"login", isBordered:1, className:"button_login"})
+      +button({title:"register", isColored:true, className:"header_button header_button-register"})
+      +button({title:"login", isBordered:1, className:"header_button header_button-login"})
       
