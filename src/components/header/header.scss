@@ -1,4 +1,8 @@
 .header {
+  -webkit-user-select: none;     
+  -moz-user-select: none; 
+  -ms-user-select: none;
+
   position: absolute;
   width: 1440px;
   height: 70px;

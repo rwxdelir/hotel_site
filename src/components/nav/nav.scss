@@ -2,10 +2,6 @@
 @import "../../abstracts/_mixins.scss";
 
 .nav {
-  -webkit-user-select: none;     
-  -moz-user-select: none; 
-  -ms-user-select: none; 
-
   @include body-text();
   display: flex;
   align-items: center;
