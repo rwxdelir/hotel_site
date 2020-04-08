@@ -8,7 +8,6 @@
   line-height: 17px;
   color: $dark-50;
   text-transform: capitalize;
-  // justify-content: center;
   flex-shrink: 0;
   &__link {
     transition: all 0.3s; 
@@ -53,7 +52,7 @@
     }
     &_arrow {
       position: absolute;
-      right: -14px;
+      right: -16px;
       bottom: 3.8px;
       &-active {
         transform: rotate(180deg); 
