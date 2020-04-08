@@ -1,3 +1,5 @@
+@import "../../fonts.scss";
+
 .header {
   -webkit-user-select: none;     
   -moz-user-select: none; 
@@ -18,14 +20,13 @@
     height: 34px;
     &-login {
       position: absolute;
-      left: 1100px;
+      left: 1135px;
       top: 16px;
-      margin-left: 20px;
       width: 79px;
     } 
     &-register {
       position: absolute;
-      left: 1199px;
+      left: 1229px;
       top: 15px;
       width: 101px;
     } 
