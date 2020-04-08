@@ -80,24 +80,26 @@
     &_content {
       display: none;
       position: absolute;
-      border: 4px;
       border-radius: 4px;
-      background-color: rgba(222,32,24,0.9);
-      box-shadow: 0px 18px 18px rgba(0,0,0,0.2);
-      padding: 10px 10px 10px 10px;
+      padding: 5px;
       white-space: nowrap;
       overflow: hidden;
-      width: 100%;
-      right: 0;
-      left: 0;
+      width: 80px;
+      background: #FFFFFF;
+      border: 1px solid rgba(31, 32, 65, 0.5);
+      box-sizing: border-box;
       &-show {
         display: block;  
-        align-items: center;
       }
     }
     &_element {
-      color: white;
-      float: none;
+      font-family: Montserrat;
+      font-style: normal;
+      font-weight: bold;
+      font-size: 12px;
+      line-height: 15px;
+      text-transform: uppercase;
+      color: #1F2041;
     }
   }
 }

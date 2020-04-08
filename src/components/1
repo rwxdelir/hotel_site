@@ -4,7 +4,7 @@
   -ms-user-select: none;
 
   position: absolute;
-  width: 100%;
+  width: 14400px;
   height: 70px;
   left: 0px;
   top: 150px;
@@ -30,6 +30,7 @@
       width: 101px;
     } 
   }
+
   &_nav {
     position: absolute;
     width: 527px;
