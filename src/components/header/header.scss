@@ -83,6 +83,9 @@
 @media screen and (max-width: 500px) {
   .nav__item {
     text-align: left !important;
+    &_arrow {
+      left: 63px;
+    }
   }
   .header {
     &_nav {
