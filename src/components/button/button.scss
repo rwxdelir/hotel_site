@@ -21,7 +21,7 @@ $height-text: 15px;
   // height: $height-medium;
   //text
   @include text($font, 12px, 700, $white);
-  margin: 0px;
+  //margin: 0px;
   text-transform: uppercase;
   line-height: 15px;
 

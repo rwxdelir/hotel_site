@@ -1,4 +1,7 @@
 @import "../../abstracts/fonts.scss";
+* {
+  box-sizing: border-box;
+}
 
 .header {
   -webkit-user-select: none;     
@@ -6,7 +9,7 @@
   -ms-user-select: none;
 
   position: absolute;
-  width: 100%;
+  width: 10000px;
   height: 70px;
   left: 0px;
   top: 150px;
@@ -18,17 +21,22 @@
   }
   &_button {
     height: 34px;
+
+    left: 1143px;
     &-login {
       position: absolute;
-      left: 1143px;
+      //left: 1143px;
       top: 16px;
       width: 79px;
+
     } 
     &-register {
       position: absolute;
-      left: 1229px;
+      //left: 1229px;
       top: 15px;
       width: 101px;
+      
+      margin-left: 100px;
     } 
   }
   &_nav {
@@ -40,7 +48,42 @@
   }
 }
 
+@media (max-width: 1980px){
+  .header {
+    &_button {
+      left: 1480px;
+    }
+    &_nav {
+      left: 860px;
+      width: 1000px !important;
+    }
+  }
+}
 
+@media (max-width: 1440px){
+  .header {
+    &_button {
+      left: 1143px;
+    }
+    &_nav {
+      left: 543px;
+    }
+  }
+}
+
+@media (max-width: 952px){
+  .header {
+    &_logo {
+      left: 50px;
+    }
+    &_button {
+      left: 790px;
+    }
+    &_nav {
+      left: 170px;
+    }
+  }
+}
 
 
 
