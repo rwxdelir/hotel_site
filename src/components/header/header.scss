@@ -9,7 +9,7 @@
   -ms-user-select: none;
 
   position: absolute;
-  width: 10000px;
+  width: 100%;
   height: 70px;
   left: 0px;
   top: 150px;
@@ -21,21 +21,16 @@
   }
   &_button {
     height: 34px;
-
     left: 1143px;
     &-login {
       position: absolute;
-      //left: 1143px;
       top: 16px;
       width: 79px;
-
     } 
     &-register {
       position: absolute;
-      //left: 1229px;
       top: 15px;
       width: 101px;
-      
       margin-left: 100px;
     } 
   }
@@ -85,6 +80,31 @@
   }
 }
 
+@media screen and (max-width: 500px) {
+  .nav__item {
+    text-align: left !important;
+  }
+  .header {
+    &_nav {
+      left: 10px !important;
+      float: none !important;
+      display: block !important;
+      overflow: visible !important;
+      visibility: visible !important;
+    }
+    &_logo {
+      top: -35px;
+    }
+    &_button {
+      left: 170px;
+      width: 70px;
+      font-size: 10px !important;
+      &-login {
+        margin-left: 20px;
+      }
+    } 
 
+  }
+}
 
 
