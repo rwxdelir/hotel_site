@@ -101,6 +101,21 @@
       color: #1F2041;
     }
   }
+  &__show-list:before {content: none;}
 }
+
+@media screen and (max-width: 600px) {
+    .nav {
+      display: none;
+      &__link {display: block;}
+      &__item_arrow {display: none;}
+      &__show-list:before {content: "\f0c9"; font-size: 25px;}
+      &__item {
+        text-align: left;
+     }
+  }
+}
+
+
 
 

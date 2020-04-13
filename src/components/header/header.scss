@@ -68,6 +68,7 @@
 
 @media (max-width: 952px){
   .header {
+    width: 100%;
     &_logo {
       left: 50px;
     }
@@ -80,20 +81,10 @@
   }
 }
 
-@media screen and (max-width: 500px) {
-  .nav__item {
-    text-align: left !important;
-    &_arrow {
-      left: 63px;
-    }
-  }
+@media screen and (max-width: 600px) {
   .header {
     &_nav {
-      left: 10px !important;
-      float: none !important;
-      display: block !important;
-      overflow: visible !important;
-      visibility: visible !important;
+      left: 10px;
     }
     &_logo {
       top: -35px;
@@ -106,8 +97,8 @@
         margin-left: 20px;
       }
     } 
-
   }
 }
+
 
 

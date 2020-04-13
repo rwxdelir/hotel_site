@@ -25,3 +25,14 @@ function dropdownClose(i) {
   event.stopPropagation();
 }
 
+/* Toggle between showing and hiding the navigation menu links when the user clicks on the hamburger menu / bar icon */
+function showMenu() {
+    var x = document.querySelectorAll(".nav");
+    for (var i = 0; i < x.length; i++){
+      if (x[i].style.display === "block") {
+        x[i].style.display = "none";
+      } else {
+        x[i].style.display = "block";
+      }
+    }
+}
