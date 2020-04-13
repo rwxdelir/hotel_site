@@ -88,7 +88,7 @@
       border: 1px solid rgba(31, 32, 65, 0.5);
       box-sizing: border-box;
       &-show {
-        display: block;  
+        display: block; 
       }
     }
     &_element {
@@ -102,17 +102,43 @@
     }
   }
   &__show-list:before {content: none;}
+  &__show-home {
+    display: none;
+    font-size: 20px; 
+  }
 }
 
 @media screen and (max-width: 600px) {
-    .nav {
-      display: none;
-      &__link {display: block;}
-      &__item_arrow {display: none;}
-      &__show-list:before {content: "\f0c9"; font-size: 25px;}
-      &__item {
-        text-align: left;
-     }
+  .nav {
+    display: none;
+    left: 0px;
+    padding-left: 0px;
+    margin-left: 0px;
+    &__link {display: block;}
+    &__item {
+      background: hotpink;
+      text-align: left;
+      line-height: 30px;
+      &_arrow {
+        left: 60px; 
+        margin-left: 3.5px;
+        position: relative;
+        top: 19.5px;
+      }
+      &_selected {
+        display: block;
+      }
+    }
+    &__show-list:before {
+      content: "\f0c9"; 
+      font-size: 25px;
+    }
+    &__expanded {
+      line-height: 30px;
+      &_content-show {
+        position: relative;
+      }
+    }
   }
 }
 

@@ -23,6 +23,10 @@ mixin nav(className)
   // show menu list icon for mobiles 
   a(href="javascript:void(0);" class="icon" onclick="showMenu()")
     i(class="fa fa-bars nav__show-list")
+  
+  // show home link for mobiles 
+  li(class="nav__show-home nav__item_selected")
+    a(class="nav__link" href="#")= "Home"
 
   ul(class= "nav " + className)
     each item in DEFAULT_ITEMS
