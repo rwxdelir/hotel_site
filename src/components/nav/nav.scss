@@ -112,13 +112,19 @@
   .nav {
     display: none;
     left: 0px;
-    padding-left: 0px;
-    margin-left: 0px;
+//    padding-left: 0px;
+//   margin-left: 0px;
+    padding: 50px;
+    padding-bottom: 100%;
+    z-index: 0;
+    background: hotpink;
     &__link {display: block;}
     &__item {
       background: hotpink;
       text-align: left;
+      margin-left: -15px;
       line-height: 30px;
+//      margin-top: 10px;
       &_arrow {
         left: 60px; 
         margin-left: 3.5px;
@@ -129,18 +135,31 @@
         display: block;
       }
     }
-    &__show-list:before {
-      content: "\f0c9"; 
-      font-size: 25px;
+    &__show {
+      &-list:before {
+        content: "\f0c9"; 
+        font-size: 25px;
+        position: absolute;
+        top: 40px;
+        z-index: 1;
+      }
+      &-home {
+        font-size: 22px;
+        position: absolute;
+        padding-left: 30px;
+        bottom: 4.5px; 
+      }
     }
     &__expanded {
       line-height: 30px;
       &_content-show {
         position: relative;
+        left: 15px;
       }
     }
   }
 }
+
 
 
 
