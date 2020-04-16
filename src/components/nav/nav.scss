@@ -9,6 +9,7 @@
   color: $dark-50;
   text-transform: capitalize;
   flex-shrink: 0;
+  white-space: nowrap;
   &__link {
     transition: all 0.3s; 
     display: block;
@@ -96,7 +97,7 @@
       font-style: normal;
       font-weight: bold;
       font-size: 12px;
-      line-height: 15px;
+//      line-height: 15px; 
       text-transform: uppercase;
       color: #1F2041;
     }
@@ -112,24 +113,28 @@
   .nav {
     display: none;
     left: 0px;
-//    padding-left: 0px;
-//   margin-left: 0px;
-    padding: 50px;
-    padding-bottom: 100%;
+    padding-top: 15px;
+    padding-left: 43px;
+    padding-bottom: 380px;
     z-index: 0;
     background: hotpink;
-    &__link {display: block;}
+    &__link {
+      display: block; 
+      width: 0px; 
+      height: 30px;
+      line-height: 30px;
+    }
     &__item {
+      width: 0px;
       background: hotpink;
       text-align: left;
-      margin-left: -15px;
-      line-height: 30px;
-//      margin-top: 10px;
+      line-height: 0px;
       &_arrow {
+        height: 8px;
+        bottom: 0px;
         left: 60px; 
-        margin-left: 3.5px;
-        position: relative;
-        top: 19.5px;
+        margin-left: 2.5px;
+        top: 12px;
       }
       &_selected {
         display: block;
@@ -151,10 +156,16 @@
       }
     }
     &__expanded {
-      line-height: 30px;
+      width: 0px;
+      &_content {
+        width: 80px;
+        position: absolute;
+      }
+      &_element {
+        height: 23px;
+      }
       &_content-show {
         position: relative;
-        left: 15px;
       }
     }
   }
