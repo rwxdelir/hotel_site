@@ -29,13 +29,16 @@ function dropdownClose(i) {
 function showMenu() {
     var x = document.querySelectorAll(".nav");
     var homeIcon = document.querySelector(".nav__show-home");
+    var logoIcon = document.querySelector(".logo");
     for (var i = 0; i < x.length; i++){
       if (x[i].style.display === "block") {
         x[i].style.display = "none";
         homeIcon.style.display = "block";
+        logoIcon.style.display = "none";
       } else {
           x[i].style.display = "block";
           homeIcon.style.display = "none";
+          logoIcon.style.display = "block";
       }
     }
     selected.style.display = "block";

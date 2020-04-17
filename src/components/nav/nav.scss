@@ -119,6 +119,8 @@
     padding-bottom: 380px;
     z-index: 0;
     background: hotpink;
+
+    top: 56px;
     &__link {
       display: block; 
       width: 0px; 
@@ -170,6 +172,7 @@
       }
     }
   }
+  .logo {display: none;}
 }
 
 
