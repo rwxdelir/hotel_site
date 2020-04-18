@@ -27,19 +27,16 @@ function dropdownClose(i) {
 
 /* Toggle between showing and hiding the navigation menu links when the user clicks on the hamburger menu / bar icon */
 function showMenu() {
-    var x = document.querySelectorAll(".nav");
-    var homeIcon = document.querySelector(".nav__show-home");
+    var nav = document.querySelector(".nav");
+    var homeIconShow = document.querySelector(".nav__show-home");
+    var homeIconHide = document.querySelector(".nav__home-hide");
+
     var logoIcon = document.querySelector(".logo");
-    for (var i = 0; i < x.length; i++){
-      if (x[i].style.display === "block") {
-        x[i].style.display = "none";
-        homeIcon.style.display = "block";
-        logoIcon.style.display = "none";
-      } else {
-          x[i].style.display = "block";
-          homeIcon.style.display = "none";
-          logoIcon.style.display = "block";
-      }
+    if (nav.className === "nav header_nav") {
+      nav.className += " responsive";
+      homeIconShow.className = "nav__home-hide";
+    } else {
+      nav.className = "nav header_nav";
+      homeIconHide.className = "nav__show-home nav__item_selected";
     }
-    selected.style.display = "block";
 }
