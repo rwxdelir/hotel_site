@@ -28,7 +28,7 @@ function dropdownClose(i) {
 /* Toggle between showing and hiding the navigation menu links when the user clicks on the hamburger menu / bar icon */
 function showMenu() {
     var nav = document.querySelector(".nav");
-    var homeIconShow = document.querySelector(".nav__show-home");
+    var homeIconShow = document.querySelector(".nav__home-show");
     var homeIconHide = document.querySelector(".nav__home-hide");
 
     var logoIcon = document.querySelector(".logo");
@@ -37,6 +37,6 @@ function showMenu() {
       homeIconShow.className = "nav__home-hide";
     } else {
       nav.className = "nav header_nav";
-      homeIconHide.className = "nav__show-home nav__item_selected";
+      homeIconHide.className = "nav__home-show nav__item_selected";
     }
 }

@@ -103,9 +103,8 @@
     }
   }
   &__show-list:before {content: none;}
-  &__show-home {
-    display: none;
-  }
+  &__home-show {display: none;}
+  &__home-hide {display: none;}
 }
 
 @media screen and (max-width: 600px) {
