@@ -46,6 +46,7 @@
 
 @media (max-width: 1980px){
   .header {
+    width: 1980px;
     &_button {
       left: 1480px;
     }
@@ -58,6 +59,7 @@
 
 @media (max-width: 1440px){
   .header {
+    width: 1544px;
     &_button {
       left: 1143px;
     }
@@ -69,7 +71,8 @@
 
 @media (max-width: 952px){
   .header {
-    width: 100%;
+    position: absolute;
+    width: 1170px;
     &_logo {
       left: 50px;
     }
