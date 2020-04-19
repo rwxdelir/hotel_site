@@ -43,6 +43,7 @@
   }
 }
 
+
 @media (max-width: 1980px){
   .header {
     &_button {
@@ -83,24 +84,17 @@
 
 @media screen and (max-width: 600px) {
   .header {
-    &_nav {
-      left: 10px;
-    }
+    width: 600px;
+    position: absolute;
     &_logo {
       left: 39px;
       top: 23px;
     }
     &_button {
-      left: 420px;
+      left: 350px;
       top: 29px;
-      width: 70px;
-      font-size: 10px !important;
-      &-login {
-        margin-left: 20px;
-      }
+      width: 80px;
     } 
   }
 }
-
-
 

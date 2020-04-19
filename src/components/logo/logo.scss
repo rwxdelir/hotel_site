@@ -30,6 +30,10 @@ $font-eng:Quicksand, Arial, sans-serif;
   &_right-vector:hover { stroke-width: 1.5px;}
   &_left-vector:hover { stroke-width: 1.5px;}
   &_circle-vector:hover { stroke-width: 1.5px;}
+  
+  /* Rules for mobile version of header */
+  &-hide {display: none;}
+  &-show {display: block;}
 }
 
 svg[id="logo_text"]:hover{ 

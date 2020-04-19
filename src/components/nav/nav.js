@@ -27,16 +27,18 @@ function dropdownClose(i) {
 
 /* Toggle between showing and hiding the navigation menu links when the user clicks on the hamburger menu / bar icon */
 function showMenu() {
-    var nav = document.querySelector(".nav");
-    var homeIconShow = document.querySelector(".nav__home-show");
-    var homeIconHide = document.querySelector(".nav__home-hide");
-
-    var logoIcon = document.querySelector(".logo");
-    if (nav.className === "nav header_nav") {
+  var nav = document.querySelector(".nav");
+  var homeIconShow = document.querySelector(".nav__home-show");
+  var homeIconHide = document.querySelector(".nav__home-hide");
+  var logo = document.querySelector(".header_logo");  
+  if (nav.className === "nav header_nav") {
       nav.className += " responsive";
       homeIconShow.className = "nav__home-hide";
+      logo.style.display = "block";
     } else {
       nav.className = "nav header_nav";
       homeIconHide.className = "nav__home-show nav__item_selected";
+      logo.style.display = "";
     }
 }
+
