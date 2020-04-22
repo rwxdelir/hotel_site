@@ -1,0 +1,10 @@
+include ../nav/nav.pug
+include ../logo/logo.pug
+
+mixin header_logged
+  header(class = "header header__logged")
+    div(class = "menu")
+      +nav("header_nav")
+      +logo("header_logo")
+      div(class = "user") Cosmin Negoti 
+

@@ -1,0 +1,11 @@
+include ./header_logged.pug
+doctype html
+html
+head
+  script(src="./header_logged.js")
+  meta(name="viewport" content="width=device-width, initial-scale=1.0")
+body
+  +header_logged
+  script  
+    include ../nav/nav.js
+
