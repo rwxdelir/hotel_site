@@ -2,15 +2,13 @@ include ../nav/nav.pug
 include ../button/button.pug
 include ../logo/logo.pug
 
-mixin header(option) 
-    header(class = "header")
-      div(class="menu")
-        +nav("header_nav")
-        +logo("header_logo")
-
-      if option == "login"
-      else 
-        +button({title:"register", isColored:true, className:"header_button header_button-register"})
+mixin header 
+  header(class = "header")
+    div(class="menu")
+      +nav("header_nav")
+      +logo("header_logo")
+      +button({title:"register", isColored:true, className:"header_button header_button-register"})
+      a(href="../header_logged/index.pug")
         +button({title:"login", isBordered:1, className:"header_button header_button-login"})
         
         
