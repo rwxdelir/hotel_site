@@ -1,0 +1,6 @@
+include ./../textfield/textfield.pug
+mixin container(name)
+  div(class= "container " + name)
+    +textfield("email", "Войти", "Email")
+    +textfield("password", "", "Пароль")
+ 

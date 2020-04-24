@@ -1,11 +1,12 @@
 include ./textfield.pug
+include ./../container/container.pug
 doctype html
 html
 head
   script(src="./textfield.js")
   meta(name="viewport" content="width=device-width, initial-scale=1.0")
 body
-  div(class="container")
-    +textfield("email", "Войти", "Email")
-    +textfield("password", "", "Пароль")
+ +container("container-login")
+ // +textfield("email", "Войти", "Email")
+ // +textfield("password", "", "Пароль")
 
