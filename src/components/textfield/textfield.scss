@@ -4,8 +4,8 @@
   position: absolute;
   width: 380px;
   height: 358px;
-  left: 560px;
-  top: 701px;
+  left: 5px;
+  top: 5px;
   
   background: #FFFFFF;
   border: 1px solid rgba(0, 0, 0, 0.12);
@@ -14,16 +14,15 @@
   border-radius: 4px;
 }
 
-.textfield {
-  margin-bottom: 15px;
+.textfield_input {
+  &[type] {
+    padding: 15px 20px;
+    box-sizing: border-box;
+  }
   width: 320px;
   height: 44px;
   left: 590px;
   top: 791px;
-}
-
-.textfield {
-  margin-left: 20px;
   font-family: Montserrat;
   font-style: normal;
   font-weight: normal;
@@ -32,11 +31,21 @@
 }
 
 .textfield_title {
-  margin-left: 20px;
-  font-family: Montserrat;
+  position: absolute;
+  left: 0px;
+  top: -29px;
+  font-family: Montserrat-bold;
   font-style: normal;
   font-weight: bold;
   font-size: 24px;
   line-height: 30px;
   color: #1F2041;
 }
+
+.textfield {
+  position: relative;
+  left: 30px;
+  top: 100px 
+}
+
+
