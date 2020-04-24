@@ -1,0 +1,11 @@
+include ./../textfield/textfield.pug
+include ./../button/button.pug
+mixin card(name)
+  div(class= "card " + name)
+    +textfield("email", "Войти", "Email")
+    +textfield("password", "", "Пароль")
+    +button({title:"Войти", isColored:true, className:"card-login_button-login"})
+    +button({title:"Создать", isBordered:1, className:"card-login_button-register"})
+
+    span(class="card-login_text") Нет аккаунта на Toxin?
+ 
