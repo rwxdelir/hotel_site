@@ -1,6 +1,7 @@
 include ../nav/nav.pug
 include ../button/button.pug
 include ../logo/logo.pug
+include ../card/card.pug
 
 mixin header 
   header(class = "header")
@@ -8,7 +9,6 @@ mixin header
       +nav("header_nav")
       +logo("header_logo")
       +button({title:"register", isColored:true, className:"header_button header_button-register"})
-      a(href="../header_logged/index.pug")
-        +button({title:"login", isBordered:1, className:"header_button header_button-login"})
-        
+      +button({title:"login", isBordered:1, className:"header_button header_button-login"})
+      +card("header_card-login card-login")  
         

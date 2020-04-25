@@ -9,7 +9,7 @@
   -ms-user-select: none;
 
   position: absolute;
-  width: 100%;
+  width: 1440px;
   height: 70px;
   left: 0px;
   top: 150px;
@@ -41,7 +41,18 @@
     left: 543px;
     top: 10px;
   }
+  &_card {
+    &-login {
+      display: none;
+      left: 530px;
+      top: 233px;
+      &-show {
+        display: block;
+      }
+    }
+  }
 }
+
 
 
 @media (max-width: 1980px){
