@@ -1,11 +1,22 @@
 include ./../textfield/textfield.pug
 include ./../button/button.pug
-mixin card(name)
+mixin card(name) 
   div(class= "card " + name)
-    +textfield("email", "Войти", "Email")
-    +textfield("password", "", "Пароль")
-    +button({title:"Войти", isColored:true, className:"card-login_button-login"})
-    +button({title:"Создать", isBordered:1, className:"card-login_button-register"})
+    if name == "card-login"
+      +textfield("email", "Войти", "Email")
+      +textfield("password", "", "Пароль")
+      +button({title:"Войти", isColored:true, className:"card-login_button-login"})
+      +button({title:"Создать", isBordered:1, className:"card-login_button-register"})
+      span(class="card-text card-login_text") Нет аккаунта на Toxin?
+    else if name == "card-register" 
+      +textfield("text", "Регистрация аккаунта", "Имя")
+      +textfield("text", "", "Фамилия")
+      +textfield("date", "", "")
+      +textfield("email", "", "Email")
+      +textfield("password", "", "Пароль")
+      +button({title:"Создать", isColored:true, className:"card-register_button card-register_button-register"})
+      +button({title:"Войти", isBordered:1, className:"card-register_button card-register_button-login"})
+      span(class="card-text card-register_text") Нет аккаунта на Toxin?
+    
 
-    span(class="card-login_text") Нет аккаунта на Toxin?
  
