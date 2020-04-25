@@ -2,13 +2,12 @@
 
 .textfield_input {
   &[type] {
-    padding: 15px 20px;
+    padding: 15px 12px;
+    margin: 5px 0;
     box-sizing: border-box;
   }
   width: 320px;
   height: 44px;
-  left: 590px;
-  top: 791px;
   font-family: Montserrat;
   font-style: normal;
   font-weight: normal;
@@ -18,8 +17,6 @@
 
 .textfield_title {
   position: absolute;
-  left: 0px;
-  top: -29px;
   font-family: Montserrat-bold;
   font-style: normal;
   font-weight: bold;
@@ -30,8 +27,7 @@
 
 .textfield {
   position: relative;
-  left: 30px;
-  top: 100px 
+  width: 0;
 }
 
 
