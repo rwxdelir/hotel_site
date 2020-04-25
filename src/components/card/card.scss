@@ -55,6 +55,12 @@
   &-register {
     width: 380px;
     height: 646px;
+    label[for=email] {
+      top: 300px;
+    }
+    label[for=password] {
+      top: 200px;
+    }
     &_button {
       position: absolute;
       &-register {
