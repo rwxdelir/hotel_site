@@ -12,7 +12,7 @@ mixin card(name)
       p(class = "card_text card_text-title") Регистрация аккаунта
       +textfield("text", "", "Имя")
       +textfield("text", "", "Фамилия")
-      +textfield("date", "дата рождения", "")
+      +textfield("text", "дата рождения", "ДД.ММ.ГГГГ")
       +textfield("email", "данные для входа в сервис", "Email")
       +textfield("password", "", "Пароль")
       +button({title:"Создать", isColored:true, className:"card-register_button card-register_button-register"})

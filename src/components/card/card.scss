@@ -72,7 +72,8 @@
       line-height: 15px;
       text-transform: uppercase;
       &[for=email] {top: 326px;}
-      &[for=date] {top: 242px;}
+      &[for=text] {top: 242px;}
+
     } 
     width: 380px;
     height: 646px;
@@ -88,23 +89,21 @@
       }
       &-login {
         width: 99px;
+        left: 251px;
         height: 44px;
         top: 572px;
-        left: 251px;
       }
     }
     .textfield_input {
       position: absolute;
       left: 30px;
-      &[type=text]{
-        position: relative;
-        top: 90px;
-      }
+      &[placeholder="Имя"]{top: 90px;}
+      &[placeholder="Фамилия"]{top: 144px;}
+      &[placeholder="ДД.ММ.ГГГГ"]{top: 262px;}
       &[type=date] {top: 262px;}
       &[type=email]{ top: 346px;}
       &[type=password] {top: 400px;}
     }
   }
 }
-
 
