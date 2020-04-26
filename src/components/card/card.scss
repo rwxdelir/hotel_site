@@ -5,9 +5,10 @@
   box-sizing: border-box;
   box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.2);
   border-radius: 4px;
-  &-text {
+  &_text {
+    left: 30px;
     position: absolute;
-    width: 164px;
+    width: 186px;
     height: 18px;
     font-family: Montserrat;
     font-style: normal;
@@ -17,7 +18,17 @@
     display: flex;
     align-items: center;
     color: #000000;
+    &-question { top: 584px;}
+    &-title {
+      font-weight: bold;
+      font-size: 24px;
+      line-height: 30px;
+      width: 320px;
+      margin-top: 20px;
+      top: 40px;
+    }
   }
+  /* Login card */
   &-login {
     width: 380px;
     height: 358px;
@@ -34,7 +45,7 @@
         width: 99px;
         height: 44px;
         left: 251px;
-        top: 282px;
+        top: 572px;
         border-radius: 22px;
       }
     }
@@ -42,25 +53,30 @@
       top: 294px;
       left: 30px;
     }
-    .textfield_title {
-      left: 30px;
-      top: 40px;
-    }
     .textfield_input {
       position: relative;
       left: 30px;
       top: 70px;
     }
   }
+  /* Register card */
   &-register {
+    label {
+      position: absolute;
+      left: 30px;
+      margin-top: 5px;
+      font-family: Montserrat;
+      font-style: normal;
+      font-weight: bold;
+      font-size: 12px;
+      line-height: 15px;
+      text-transform: uppercase;
+      &[for=email] {top: 326px;}
+      &[for=date] {top: 242px;}
+    } 
     width: 380px;
     height: 646px;
-    label[for=email] {
-      top: 300px;
-    }
-    label[for=password] {
-      top: 200px;
-    }
+
     &_button {
       position: absolute;
       &-register {
@@ -87,15 +103,6 @@
       &[type=date] {top: 262px;}
       &[type=email]{ top: 346px;}
       &[type=password] {top: 400px;}
-    }
-    .textfield_title {
-      position: absolute;
-      top: 40px;
-      left: 30px;
-    }
-    &_text {
-      left: 30px;
-      top: 584px;
     }
   }
 }
