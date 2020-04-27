@@ -1,0 +1,29 @@
+input[type=radio] {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border-radius: 10px;
+  width: 20px;
+  height: 20px;
+  background: #FFFFFF;
+  border: 1px solid rgba(31, 32, 65, 0.25);
+  box-sizing: border-box;
+  border-radius: 10px;
+  transition: 0.2s all linear;
+  margin-right: 5px;
+  background: #FFFFFF;
+  &:checked {
+    background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+    width: 20px;
+    height: 20px;
+    border: 3px solid #FFFFFF;
+    box-sizing: border-box;
+    box-shadow: 0 0 0 2px #BC9CFF;
+    &:hover {
+      box-shadow: 0 0 0 2.5px #BC9CFF;
+      border: 2px solid #FFFFFF;  
+    }  
+  }
+}
+
+
