@@ -27,16 +27,28 @@ $height-text: 15px;
 
   &_size {
     &-xSmall {
-      width: 87px;
+      width: 40px;
+      height: 40px;
+      .arrow {
+        left: 10px; 
+        top: 12px;
+      }
     }
     &-small {
       width: 99px;
+      height: 44px;
     }
     &-medium {
       width: 196px;
+      height: 44px;
     }
     &-big {
       width: 320px;
+      height: 44px;
+      .arrow {
+        left: 284px;
+        top: 14px;
+      }
     }
   }
 

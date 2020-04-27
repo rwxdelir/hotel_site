@@ -83,15 +83,11 @@
       position: absolute;
       &-register {
         left: 30px;  
-        width: 320px;
-        height: 44px;
         top: 498px;
         border: 1px solid rgba(0, 0, 0, 0.12);
       }
       &-login {
-        width: 99px;
         left: 251px;
-        height: 44px;
         top: 572px;
       }
     }
@@ -108,4 +104,4 @@
   }
 }
 
-.arrow {position: absolute; left: 290px;}
+//.arrow {position: absolute; left: 290px;}
