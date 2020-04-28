@@ -62,7 +62,7 @@
   }
   /* Register card */
   &-register {
-    label {
+    label[id=textfield_label] {
       position: absolute;
       left: 30px;
       margin-top: 5px;
@@ -74,11 +74,9 @@
       text-transform: uppercase;
       &[for=email] {top: 326px;}
       &[for=text] {top: 242px;}
-
     } 
     width: 380px;
     height: 646px;
-
     &_button {
       position: absolute;
       &-register {
@@ -101,7 +99,7 @@
       &[type=email]{ top: 346px;}
       &[type=password] {top: 400px;}
     }
+    .radio_container {margin-left: 25px; top: 200px;}
   }
 }
 
-//.arrow {position: absolute; left: 290px;}

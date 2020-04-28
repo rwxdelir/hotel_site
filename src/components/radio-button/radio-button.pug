@@ -1,7 +1,6 @@
-mixin radio-button(first_title, second_title, input_name)
-  label(class="radio_container radio_container-right") #{first_title}
-    input(type="radio" name=input_name class="radio")
-  label(class="radio_container radio_container-left") #{second_title}
+mixin radio-button(input_name, left_title, right_title)
+  label(class="radio_container radio_container-right " + `${toggle}`) #{left_title}
+    input(type="radio" name=input_name class="radio" checked)
+  label(class="radio_container radio_container-left") #{right_title}
     input(type="radio" name=input_name class="radio" )
-
 

@@ -15,9 +15,10 @@ mixin card(name)
       +textfield("text", "", "Фамилия")
       +textfield("text", "дата рождения", "ДД.ММ.ГГГГ")
       +textfield("email", "данные для входа в сервис", "Email")
+      +radio-button("button-1", "Мужчина", "Женщина")
       +textfield("password", "", "Пароль")
       +button({isArrowButton:true, title:"Перейти к оплате", isColored:true, className:"card-register_button card-register_button-register", size: "big"})
       +button({title:"Войти", isBordered:1, className:"card-register_button card-register_button-login", size: "small"})
       span(class="card_text card_text-question") Нет аккаунта на Toxin?
-
+      
  
