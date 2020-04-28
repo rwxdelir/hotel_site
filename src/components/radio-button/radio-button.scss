@@ -1,6 +1,10 @@
 input[type=radio] {
+  animation : none;
+  -webkit-transform: none;
+  -webkit-user-select: none;
   -webkit-appearance: none;
   -moz-appearance: none;
+  cursor: pointer;
   appearance: none;
   border-radius: 10px;
   width: 20px;
@@ -12,6 +16,7 @@ input[type=radio] {
   transition: 0.2s all linear;
   margin-right: 5px;
   background: #FFFFFF;
+  outline: none;
   &:checked {
     background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
     width: 20px;
@@ -22,7 +27,7 @@ input[type=radio] {
     &:hover {
       box-shadow: 0 0 0 2.5px #BC9CFF;
       border: 2px solid #FFFFFF;  
-    }  
+    }
   }
 }
 
