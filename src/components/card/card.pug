@@ -1,6 +1,7 @@
 include ./../textfield/textfield.pug
 include ./../button/button.pug
 include ./../radio-button/radio-button.pug
+include ./../toggle-button/toggle-button.pug
 mixin card(name) 
   div(class= "card " + name)
     if name == "card-login"
@@ -17,6 +18,7 @@ mixin card(name)
       +textfield("email", "данные для входа в сервис", "Email")
       +radio-button("button-1", "Мужчина", "Женщина")
       +textfield("password", "", "Пароль")
+      +toggle-button("toggle-offer", "Получать спецпредложения") 
       +button({isArrowButton:true, title:"Перейти к оплате", isColored:true, className:"card-register_button card-register_button-register", size: "big"})
       +button({title:"Войти", isBordered:1, className:"card-register_button card-register_button-login", size: "small"})
       span(class="card_text card_text-question") Нет аккаунта на Toxin?

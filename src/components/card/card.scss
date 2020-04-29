@@ -89,6 +89,14 @@
         top: 572px;
       }
     }
+    .toggle {
+      left: 30px; 
+      top: 456px;
+      &-text {
+        top: 454px; 
+        left: 30px;
+      }
+    }
     .textfield_input {
       position: absolute;
       left: 30px;

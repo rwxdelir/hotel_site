@@ -1,4 +1,4 @@
-mixin toggle-button 
-  input(id="toggle-4" class="toggle toggle-round" type="checkbox")
-  label(for="toggle-4" class= "toggle toggle-label")
-
+mixin toggle-button(input_id, title) 
+  input(id=input_id class="toggle toggle-round" type="checkbox")
+  label(for=input_id class= "toggle toggle-label")
+  span(class = "toggle-text") #{title}
