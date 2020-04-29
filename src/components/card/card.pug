@@ -5,11 +5,13 @@ include ./../toggle-button/toggle-button.pug
 mixin card(name) 
   div(class= "card " + name)
     if name == "card-login"
-      +textfield("email", "Войти", "Email")
+      p(class = "card_text card_text-title") Войти 
+      +textfield("email", "", "Email")
       +textfield("password", "", "Пароль")
-      +button({title:"Войти", isColored:true, className:"card-login_button-login"})
-      +button({title:"Создать", isBordered:1, className:"card-login_button-register"})
-      span(class="card-text card-login_text") Нет аккаунта на Toxin?
+      +button({title:"Войти",  isArrowButton:true, size: "big", isColored:true, className:"card-login_button-login"})
+      +button({title:"Создать", isBordered:1, size: "small", className: "card-login_button-register"})
+      span(class="card_text card_text-question") Нет аккаунта на Toxin?
+
     else if name == "card-register" 
       p(class = "card_text card_text-title") Регистрация аккаунта
       +textfield("text", "", "Имя")
