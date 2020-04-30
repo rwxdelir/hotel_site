@@ -1,17 +1,23 @@
 include ./../arrow/arrow.pug
 include ./../count-button/count-button.pug
-mixin dropdown(title, name)
-  div(class="dropdown " + name)
+include ./../button/button.pug
+
+// title it's array where first element title for dropdown_title 
+// values for option: "option_one", "option_two" 
+mixin dropdown(title, option)
+  div(class="dropdown " + className)
     button(class="dropdown_button")
-    span(class="dropdown_title") #{title}
+    span(class="dropdown_title") #{title[0]}
     +arrow("arrow_expand")
     div(class="dropdown_content")
-      a(class="dropdown_link") Спальни
-        +count-button
-      a(class="dropdown_link") Кровати
-        +count-button
-      a(class="dropdown_link") Ванные комнаты
-         +count-button
-
+      - for (var i = 1; i < title.length; i++)
+          a(class="dropdown_link") #{title[i]}
+            +count-button
+      if option != undefiend
+        +button({isTextButton: true, size: "small", title: "применить", className: "dropdown_option dropdown_option-first"})
+      if option == "option_two"
+        +button({isTextButton: true, size: "small", title: "очистить", className: "dropdown_option dropdown_option-second"})
+ 
+      
         
    

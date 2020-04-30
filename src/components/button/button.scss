@@ -74,6 +74,7 @@ $height-text: 15px;
     &_text {
       height: $height-text;
       color: $purple;
+      background: none;
       &:hover {
         color: $dark-50;
       }

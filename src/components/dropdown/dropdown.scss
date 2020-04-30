@@ -21,7 +21,7 @@
     line-height: 24px;
     color: rgba(31, 32, 65, 0.75);
   }
-  /* Dropdown button */
+  /* Dropdown button (isn`t counter or option btn) */
   &_button {
     position: absolute;
     width: 266px;
@@ -30,6 +30,10 @@
     border: 1px solid rgba(31, 32, 65, 0.25);
     box-sizing: border-box;
     border-radius: 2px;
+  }
+  &_option {
+    position: absolute;
+    &-first {left: 170px;}
   }
   &_content {
     display: none;
@@ -41,6 +45,9 @@
     border: 1px solid rgba(31, 32, 65, 0.5);
     box-sizing: border-box;
     white-space: nowrap;
+    &-expanded {
+      width: 320px;
+    }
   }
   &_link {
     position: relative;
