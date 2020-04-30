@@ -5,18 +5,20 @@ include ./../button/button.pug
 // title it's array where first element title for dropdown_title 
 // values for option: "option_one", "option_two" 
 mixin dropdown(title, option)
+  - var expanded = (option != undefiend) ? "dropdown_content-expand" : ""
   div(class="dropdown " + className)
-    button(class="dropdown_button")
+    button(class="dropdown_expand dropdown_expand-option")
     span(class="dropdown_title") #{title[0]}
     +arrow("arrow_expand")
-    div(class="dropdown_content")
+    div(class="dropdown_content " + expanded)
       - for (var i = 1; i < title.length; i++)
           a(class="dropdown_link") #{title[i]}
-            +count-button
+            div(class="dropdown_button-expand")
+              +count-button
       if option != undefiend
-        +button({isTextButton: true, size: "small", title: "применить", className: "dropdown_option dropdown_option-first"})
+        +button({isTextButton: true, size: "small", title: "применить", className: "dropdown_button-expand dropdown_button-apply"})
       if option == "option_two"
-        +button({isTextButton: true, size: "small", title: "очистить", className: "dropdown_option dropdown_option-second"})
+        +button({isTextButton: true, size: "small", title: "очистить", className: "dropdown_button-expand dropdown_option-second"})
  
       
         

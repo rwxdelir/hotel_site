@@ -22,7 +22,7 @@
     color: rgba(31, 32, 65, 0.75);
   }
   /* Dropdown button (isn`t counter or option btn) */
-  &_button {
+  &_expand {
     position: absolute;
     width: 266px;
     height: 44px;
@@ -30,10 +30,10 @@
     border: 1px solid rgba(31, 32, 65, 0.25);
     box-sizing: border-box;
     border-radius: 2px;
-  }
-  &_option {
-    position: absolute;
-    &-first {left: 170px;}
+    &-option {
+      height: 44px;
+      width: 320px;
+    }
   }
   &_content {
     display: none;
@@ -45,8 +45,19 @@
     border: 1px solid rgba(31, 32, 65, 0.5);
     box-sizing: border-box;
     white-space: nowrap;
-    &-expanded {
+    &-expand {
       width: 320px;
+      height: 159px;
+    }
+  }
+  &_button {
+    &-expand {
+      position: absolute;
+      margin-left: 53px;
+      margin-top: 40px;
+    }
+    &-apply {
+      left: 165px; top: 88px;
     }
   }
   &_link {
