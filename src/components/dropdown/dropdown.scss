@@ -4,11 +4,11 @@
   position: relative;
   display: inline-block;
   left: 100px;
-  .arrow {
+  &_arrow {
+    position:absolute;
     top: 18px;
     left: 244px;
   }
-  
   &_title {
     position: absolute;
     width: 160px;
@@ -22,7 +22,6 @@
     line-height: 24px;
     color: rgba(31, 32, 65, 0.75);
   }
-  /* Dropdown button (isn`t counter or option btn) */
   &_expand {
     position: absolute;
     width: 266px;
@@ -31,10 +30,30 @@
     border: 1px solid rgba(31, 32, 65, 0.25);
     box-sizing: border-box;
     border-radius: 2px;
-    &-option {
-      height: 44px;
-      width: 320px;
+    &-option {width: 320px;}
+  }
+
+  &_button {
+    &-counter {
+      position: absolute;
+      top: 38px;
     }
+
+    /* classes below enabled if dropdown has argument option */
+    &-apply {
+      left: 165px; 
+      margin-top: 19px;
+    }
+    &-erase {
+      right: 220px; 
+      margin-top: 19px;
+      color: rgba(31, 32, 65, 0.5) !important;
+    }
+    &-optional {
+      position: absolute;
+      margin-left: 50px;
+    }
+    /* End */
   }
   &_content {
     display: none;
@@ -46,19 +65,10 @@
     border: 1px solid rgba(31, 32, 65, 0.5);
     box-sizing: border-box;
     white-space: nowrap;
-    &-expand {
+    /* enabled if dropdown has argument option */
+    &-option {
       width: 320px;
       height: 159px;
-    }
-  }
-  &_button {
-    &-expand {
-      position: absolute;
-      margin-left: 53px;
-      margin-top: 40px;
-    }
-    &-apply {
-      left: 165px; top: 88px;
     }
   }
   &_link {
@@ -82,11 +92,5 @@
       display: block;
     }
   }
+}
 
-}
-.dropdown_optional {
-   .dropdown_expand {
-    width: 1440px !important;
-    height: 0px;
-  } 
-}

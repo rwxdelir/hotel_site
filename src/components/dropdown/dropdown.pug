@@ -5,20 +5,26 @@ include ./../button/button.pug
 // title it's array where first element title for dropdown_title 
 // values for option: "option_one", "option_two" 
 mixin dropdown(title, option)
-  - var expanded = (option != undefiend) ? " dropdown_optional" : ""
-  div(class="dropdown " + className + optional)
-    button(class="dropdown_expand dropdown_expand-option")
+  - 
+    var classOption = (option == undefiend) ? "" : {
+      button: "dropdown_button-optional",
+      expand: "dropdown_expand-option",
+      content: "dropdown_content-option"
+    }; 
+  div(class="dropdown")
+    div(class="dropdown_expand " + classOption.expand)
     span(class="dropdown_title") #{title[0]}
-    +arrow("arrow_expand")
-    div(class="dropdown_content")
+    div(class="dropdown_arrow " + classOption.button)
+      +arrow("arrow_expand")
+    div(class="dropdown_content " + classOption.content)
       - for (var i = 1; i < title.length; i++)
           a(class="dropdown_link") #{title[i]}
-            div(class="dropdown_button-expand")
+            div(class="dropdown_button-counter " + classOption.button)
               +count-button
       if option != undefiend
-        +button({isTextButton: true, size: "small", title: "применить", className: "dropdown_button-expand dropdown_button-apply"})
+        +button({isTextButton: true, size: "small", title: "применить", className: "dropdown_button-apply " + classOption.button})
       if option == "option_two"
-        +button({isTextButton: true, size: "small", title: "очистить", className: "dropdown_button-expand dropdown_option-second"})
+        +button({isTextButton: true, size: "small", title: "очистить", className: "dropdown_button-erase " + classOption.button})
  
       
         
