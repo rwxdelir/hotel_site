@@ -5,12 +5,12 @@ include ./../button/button.pug
 // title it's array where first element title for dropdown_title 
 // values for option: "option_one", "option_two" 
 mixin dropdown(title, option)
-  - var expanded = (option != undefiend) ? "dropdown_content-expand" : ""
-  div(class="dropdown " + className)
+  - var expanded = (option != undefiend) ? " dropdown_optional" : ""
+  div(class="dropdown " + className + optional)
     button(class="dropdown_expand dropdown_expand-option")
     span(class="dropdown_title") #{title[0]}
     +arrow("arrow_expand")
-    div(class="dropdown_content " + expanded)
+    div(class="dropdown_content")
       - for (var i = 1; i < title.length; i++)
           a(class="dropdown_link") #{title[i]}
             div(class="dropdown_button-expand")

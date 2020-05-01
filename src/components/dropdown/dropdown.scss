@@ -8,6 +8,7 @@
     top: 18px;
     left: 244px;
   }
+  
   &_title {
     position: absolute;
     width: 160px;
@@ -81,4 +82,11 @@
       display: block;
     }
   }
+
+}
+.dropdown_optional {
+   .dropdown_expand {
+    width: 1440px !important;
+    height: 0px;
+  } 
 }
