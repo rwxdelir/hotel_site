@@ -2,7 +2,7 @@
   position: absolute;
   bottom: 8px;
   margin-left: 153px;
-  user-select: none; 
+  user-select: none;
 }
 .count-button {
   cursor: pointer;
@@ -22,4 +22,14 @@
   border-radius: 30px;
   background: white;
   border: 1px solid rgba(31, 32, 65, 0.5);
+  opacity: 0.5;
+  &_counter {
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 12px;
+    line-height: 15px;
+    text-align: center;
+    text-transform: uppercase;
+  }
 }

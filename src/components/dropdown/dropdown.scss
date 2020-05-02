@@ -1,9 +1,9 @@
 @import "../../abstracts/fonts.scss";
 
 .dropdown {
-  position: relative;
+  position: absolute;
   display: inline-block;
-  left: 100px;
+  left: 10px;
   &_arrow {
     position:absolute;
     top: 18px;
