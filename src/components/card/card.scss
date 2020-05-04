@@ -114,12 +114,65 @@
   }
   /* Search card */
   &-search {
+
     position: absolute;
     width: 380px;
     height: 374px;
     left: 560px;
     top: 400px;
+    .card_text-title {
+      left: 30px;
+      top: 35px;
+    }
+    .card-search_button {
+      position: absolute;
+      left: 30px;
+      top: 300px;
+      z-index: 1;
+    }
+    .dropdown {
+      left: 30px;
+      top: 225px;
+      z-index: 3;
+      &_text {
+        position: absolute;
+        top: 205px;
+        left: 30px;
+        width: 43px;
+        height: 15px;
+        font-family: Montserrat;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 12px;
+        line-height: 15px;
+        text-transform: uppercase;
+        color: #1F2041;
+      }
+    }
     .date-dropdown {
+      &_left {
+        position: absolute;
+        .arrow { top: 183px; left: 32px;}
+      }
+      &_right {
+        position: absolute;
+        .arrow {top: 183px; left: 204px;}
+      }
+      top: 140px;
+      /* dropdown-date input */
+      &[id="date-right"] {left: 200px;}
+      &[id="date-left"] {left: 30px;}
+      /* date-dropdown_title label */
+      &_title {
+        left: 30px;
+        &[for="date-right"] {
+          top: 120px;
+          left: 200px;
+        } 
+        &[for="date-left"] {
+          top: 120px;
+        }
+      }
     }
   }
 }

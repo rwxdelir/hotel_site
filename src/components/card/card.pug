@@ -29,6 +29,17 @@ mixin card(name)
       span(class="card_text card_text-question") Нет аккаунта на Toxin?
     else if name == "card-search"
       p(class = "card_text card_text-title") Найдем номер под ваши желания
-      +date-dropdown("", "прибытие", "arrow")      
-      +date-dropdown("", "выезд", "arrow")
+      div(class="date-dropdown_left")
+        +date-dropdown("", "прибытие", "arrow", undefiend, "date-left")     
+      div(class="date-dropdown_right") 
+        +date-dropdown("", "выезд", "arrow", undefiend, "date-right")
+      - 
+        var dropdown_title = [
+          "Сколько гостей", "Взрослые", "Дети", "Младенцы"];
+      span(class="dropdown_text") Гости
+      +dropdown(dropdown_title, "option_one")
+      +button({isArrowButton:true, title:"Подобрать номер", isColored:true, className:"card-search_button", size: "big"})
+
+
+      script(src="./../count-button/count-button.js")
        
