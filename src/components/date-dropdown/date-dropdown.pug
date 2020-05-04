@@ -1,0 +1,12 @@
+include ./../arrow/arrow.pug
+
+mixin date-dropdown(option, input_title, arrow, input_text)
+  - var filter = (option == "filter") ? "date-dropdown_filter" : "";
+  - var text = (input_text != undefiend) ? input_text : "ДД.ММ.ГГГГ";
+  - var title = (input_title != undefiend) ? input_title : "";
+  div(class="date-dropdown_container")
+    p(class="date-dropdown_title") #{title}
+    input(placeholder = text class="date-dropdown " + filter)    
+    div(class="date-dropdown_arrow")
+      if arrow != undefiend
+        +arrow("arrow_expand")

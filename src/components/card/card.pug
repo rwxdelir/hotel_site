@@ -2,6 +2,9 @@ include ./../textfield/textfield.pug
 include ./../button/button.pug
 include ./../radio-button/radio-button.pug
 include ./../toggle-button/toggle-button.pug
+include ./../date-dropdown/date-dropdown.pug
+include ./../dropdown/dropdown.pug
+
 mixin card(name) 
   div(class= "card " + name)
     if name == "card-login"
@@ -16,7 +19,7 @@ mixin card(name)
       p(class = "card_text card_text-title") Регистрация аккаунта
       +textfield("text", "", "Имя")
       +textfield("text", "", "Фамилия")
-      +textfield("text", "дата рождения", "ДД.ММ.ГГГГ")
+      +date-dropdown("", "дата рождения")
       +textfield("email", "данные для входа в сервис", "Email")
       +radio-button("button-1", "Мужчина", "Женщина")
       +textfield("password", "", "Пароль")
@@ -24,5 +27,8 @@ mixin card(name)
       +button({isArrowButton:true, title:"Перейти к оплате", isColored:true, className:"card-register_button card-register_button-register", size: "big"})
       +button({title:"Войти", isBordered:1, className:"card-register_button card-register_button-login", size: "small"})
       span(class="card_text card_text-question") Нет аккаунта на Toxin?
-      
- 
+    else if name == "card-search"
+      p(class = "card_text card_text-title") Найдем номер под ваши желания
+      +date-dropdown("", "прибытие", "arrow")      
+      +date-dropdown("", "выезд", "arrow")
+       
