@@ -1,0 +1,19 @@
+include ./../date-dropdown/date-dropdown.pug
+include ./../dropdown/dropdown.pug
+include ./../button/button.pug
+
+// Input date for dropdown-guest
+- var dropdown_title = ["Гости", "Сколько гостей", "Взрослые", "Дети", "Младенцы"];
+mixin reservation-card 
+  div(class="reservation_container")
+    div(class="reservation_dropdown reservation_dropdown-arrival")
+      +date-dropdown("", "прибытие", "arrow") 
+    div(class="reservation_dropdown reservation_dropdown-departure") 
+      +date-dropdown("", "выезд", "arrow")
+    div(class="reservation_dropdown reservation_dropdown-guest")
+      +dropdown(dropdown_title, "option_one")
+    
+    // Script implement count for dropdown buttons   
+    script(src="./../count-button/count-button.js")
+
+
