@@ -17,7 +17,7 @@ mixin registration-card
         div(class="registration_textfield registration_textfield-surname")
           +textfield("text", "", "Фамилия")
         div(class="registration_textfield registration_textfield-date")
-          +date-dropdown("", "дата рождения")
+          +date-dropdown("filter", "дата рождения")
         div(class="registration_textfield registration_textfield-email")
           +textfield("email", "данные для входа в сервис", "Email")
         div(class="registration_textfield registration_textfield-password")
