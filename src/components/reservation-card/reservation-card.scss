@@ -21,7 +21,7 @@
     left: 30px;
     z-index: 1; // Solving: dropdown content overlapped by button
     &-departure {left: 200px;}
-    &-guest {top: 224.44px;} 
+    &-guest {top: 207px;} 
   }
   /* Reservation buttons */
   &_button {
@@ -66,31 +66,41 @@
   &_price {
     display: block;
     position: absolute;
-    top: 259px;
-    left: -5px;
-    padding-top: 20px;
-    &-text {
+    top: 239px;
+    left: -8px;
+    list-style: none;
+    height: 36px;
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 18px;
+    color: rgba(31, 32, 65, 0.75);
+    &-title {
+      /* made some space between title and price */
       display: inline-block;
-      width: 210px;
+      width: 196px;
       margin-right: 40px;
       vertical-align: top;  
     }
-    &-total {
+    &-cost {
     /* align price on right corner */
-      width: 60px;
+      width: 80px;
+      padding-top: 8px;
       position: absolute;
       text-align: end;
     }
     &-item {
-      list-style: none;
-      height: 36px;
+      padding-top: 8px;
+    }
+    &-amount {
       font-family: Montserrat;
       font-style: normal;
-      font-weight: normal;
-      font-size: 14px;
-      line-height: 18px;
-      color: rgba(31, 32, 65, 0.75);
-
+      font-weight: bold;
+      font-size: 19px;
+      line-height: 24px;
+      color: #1F2041;
+      margin-top: 10px;
     }
   }
 }

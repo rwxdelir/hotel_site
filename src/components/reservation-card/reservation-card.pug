@@ -27,14 +27,16 @@ mixin reservation-card
       - var dayPrice = "<b>9 990Р</b>";
       p(class="reservation_text-cost") !{dayPrice}  в сутки 
    
+    // Price list
     div(class="reservation_price-container") 
-      - var totalPrices = {days:"39 960",service:"0",add:"300"};
-      - var fEl = {s:"<span class='reservation_price-item reservation_price-text'>", e:"</span>"};
-      - var sEl = {s:"<span class='reservation_price-total'>", e: "</span>"} 
+      - var prices = {days:"39 960",service:"0",add:"300", amount: "38 081"};
+      - var fEl = {s:"<span class='reservation_price-item reservation_price-title'>", e:"</span>"};
+      - var sEl = {s:"<span class='reservation_price-cost'>", e: "</span>"} 
       ul(class="reservation_price") 
-        .li(class="reservation_price-item") !{fEl.s}9 990Р x 4 суток!{fEl.e} !{sEl.s}#{totalPrices.days}Р !{sEl.e}
-        li(class="reservation_price-item") !{fEl.s}Сбор за услуги скидка:!{fEl.e} !{sEl.s}#{totalPrices.service}Р!{sEl.e}
-        li(class="reservation_price-item") !{fEl.s}Сбор за дополнительные услуги!{fEl.e} !{sEl.s}#{totalPrices.add}Р!{sEl.e}
+        li(class="reservation_price-item") !{fEl.s}9 990Р x 4 суток!{fEl.e} !{sEl.s}#{prices.days}Р !{sEl.e}
+        li(class="reservation_price-item") !{fEl.s}Сбор за услуги скидка:!{fEl.e} !{sEl.s}#{prices.service}Р!{sEl.e}
+        li(class="reservation_price-item") !{fEl.s}Сбор за дополнительные услуги!{fEl.e} !{sEl.s}#{prices.add}Р!{sEl.e}
+        li(class="reservation_price-item reservation_price-amount") !{fEl.s}Итого!{fEl.e} !{sEl.s}#{prices.amount}Р!{sEl.e}
 
     // Script implement count for dropdown buttons   
     script(src="./../count-button/count-button.js")
