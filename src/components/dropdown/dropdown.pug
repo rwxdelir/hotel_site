@@ -13,11 +13,12 @@ mixin dropdown(title, option)
     }; 
   div(class="dropdown")
     div(class="dropdown_expand " + classOption.expand)
-    span(class="dropdown_title") #{title[0]}
+    span(class="dropdown-text dropdown-title") #{title[0]} 
+    span(class="dropdown-text dropdown-placeholder") #{title[1]}
     div(class="dropdown_arrow " + classOption.button)
       +arrow("arrow_expand")
     div(class="dropdown_content " + classOption.content)
-      - for (var i = 1; i < title.length; i++)
+      - for (var i = 2; i < title.length; i++)
           a(class="dropdown_link") #{title[i]}
             div(class="dropdown_button-counter " + classOption.button)
               +count-button

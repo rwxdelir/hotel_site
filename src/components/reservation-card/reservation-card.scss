@@ -1,3 +1,5 @@
+@import "../../abstracts/fonts.scss";
+
 .reservation {
   /* Reservation card container */
   &_container {
@@ -15,9 +17,80 @@
   /* Reservation dropdowns: departure, arrival, guest */
   &_dropdown {
     position: absolute;
-    top: 110.44px;
+    top: 90px;
     left: 30px;
+    z-index: 1; // Solving: dropdown content overlapped by button
     &-departure {left: 200px;}
     &-guest {top: 224.44px;} 
+  }
+  /* Reservation buttons */
+  &_button {
+    left: 30px;
+    position: absolute;
+    &-lux {top: 59px; left: 70px;}
+    &-reserve {top: 437px;}
+  }
+  /* Reservation texts */
+  &_text {
+    position: absolute;
+    left: 30px;
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 24px;
+    color: rgba(31, 32, 65, 0.75);
+    &-number {
+      position: absolute;
+      top: 40px;
+      width: 64px;
+      height: 30px;
+      font-style: normal;
+      font-weight: bold;
+      font-size: 18px;
+      line-height: 17px;
+      color: #1F2041;
+      text-transform: uppercase;
+    }
+    &-cost {
+      top: 46px;
+      left: 250px;
+      height: 20px;
+      font-family: Montserrat;
+      font-style: normal;
+      font-size: 14px;
+      color: rgba(31, 32, 65, 0.5);
+    }
+  }
+  /* Reservation price */
+  &_price {
+    display: block;
+    position: absolute;
+    top: 259px;
+    left: -5px;
+    padding-top: 20px;
+    &-text {
+      display: inline-block;
+      width: 210px;
+      margin-right: 40px;
+      vertical-align: top;  
+    }
+    &-total {
+    /* align price on right corner */
+      width: 60px;
+      position: absolute;
+      text-align: end;
+    }
+    &-item {
+      list-style: none;
+      height: 36px;
+      font-family: Montserrat;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 14px;
+      line-height: 18px;
+      color: rgba(31, 32, 65, 0.75);
+
+    }
   }
 }

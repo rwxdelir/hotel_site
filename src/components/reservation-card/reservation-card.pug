@@ -6,13 +6,36 @@ include ./../button/button.pug
 - var dropdown_title = ["Гости", "Сколько гостей", "Взрослые", "Дети", "Младенцы"];
 mixin reservation-card 
   div(class="reservation_container")
+    // Dropdowns
     div(class="reservation_dropdown reservation_dropdown-arrival")
       +date-dropdown("", "прибытие", "arrow") 
     div(class="reservation_dropdown reservation_dropdown-departure") 
       +date-dropdown("", "выезд", "arrow")
     div(class="reservation_dropdown reservation_dropdown-guest")
       +dropdown(dropdown_title, "option_one")
-    
+
+    // Buttons
+    div(class="reservation_button reservation_button-reserve")
+      +button({isArrowButton:true, title:"Забранировать", isColored:true, size: "big"})
+    div(class="reservation_button reservation_button-lux")   
+      +button({title:"люкс", isTextButton: true, size: "small"})
+
+    // Text 
+    div(class="reservation_text-number reservation_text")
+      p № 888
+    div(class="reservation_text reservation_text-cost") 
+      - var dayPrice = "<b>9 990Р</b>";
+      p(class="reservation_text-cost") !{dayPrice}  в сутки 
+   
+    div(class="reservation_price-container") 
+      - var totalPrices = {days:"39 960",service:"0",add:"300"};
+      - var fEl = {s:"<span class='reservation_price-item reservation_price-text'>", e:"</span>"};
+      - var sEl = {s:"<span class='reservation_price-total'>", e: "</span>"} 
+      ul(class="reservation_price") 
+        .li(class="reservation_price-item") !{fEl.s}9 990Р x 4 суток!{fEl.e} !{sEl.s}#{totalPrices.days}Р !{sEl.e}
+        li(class="reservation_price-item") !{fEl.s}Сбор за услуги скидка:!{fEl.e} !{sEl.s}#{totalPrices.service}Р!{sEl.e}
+        li(class="reservation_price-item") !{fEl.s}Сбор за дополнительные услуги!{fEl.e} !{sEl.s}#{totalPrices.add}Р!{sEl.e}
+
     // Script implement count for dropdown buttons   
     script(src="./../count-button/count-button.js")
 

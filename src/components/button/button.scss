@@ -46,7 +46,8 @@ $height-text: 15px;
       width: 320px;
       height: 44px;
       .arrow {
-        left: 284px;
+        position: absolute;
+        left: 285px;
         top: 14px;
       }
     }

@@ -98,7 +98,7 @@
       width: 320px;
       &_title {
         left: 30px;
-        top: 232px;
+        top: 242px;
       }
     }
     .textfield_input {
@@ -106,7 +106,6 @@
       left: 30px;
       &[placeholder="Имя"]{top: 90px;}
       &[placeholder="Фамилия"]{top: 144px;}
-      &[placeholder="ДД.ММ.ГГГГ"]{top: 262px;}
       &[type=email]{ top: 346px;}
       &[type=password] {top: 400px;}
     }
@@ -150,6 +149,10 @@
       }
     }
     .date-dropdown {
+      top: 140px;
+      /* dropdown-date input */
+      &[id="date-right"] {left: 200px;}
+      &[id="date-left"] {left: 30px;}
       &_left {
         position: absolute;
         .arrow { top: 183px; left: 32px;}
@@ -158,10 +161,6 @@
         position: absolute;
         .arrow {top: 183px; left: 204px;}
       }
-      top: 140px;
-      /* dropdown-date input */
-      &[id="date-right"] {left: 200px;}
-      &[id="date-left"] {left: 30px;}
       /* date-dropdown_title label */
       &_title {
         left: 30px;
