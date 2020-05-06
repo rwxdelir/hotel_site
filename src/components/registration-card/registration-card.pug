@@ -1,0 +1,38 @@
+include ./../textfield/textfield.pug
+include ./../button/button.pug
+include ./../radio-button/radio-button.pug
+include ./../toggle-button/toggle-button.pug
+include ./../date-dropdown/date-dropdown.pug
+
+mixin registration-card
+  div(class="registration")
+    // Titles
+    h1(class="registration_title registration_title-main") Регистрация аккаунта
+    h2(class="registration_title registration_title-signin") Уже есть аккаунт на Toxin
+    // Textfields 
+    div(class="registration_textfield-container")
+      div(class="registration_textfield")
+        div(class="registration_textfield registration_textfield-name")
+          +textfield("text", "", "Имя")
+        div(class="registration_textfield registration_textfield-surname")
+          +textfield("text", "", "Фамилия")
+        div(class="registration_textfield registration_textfield-date")
+          +date-dropdown("", "дата рождения")
+        div(class="registration_textfield registration_textfield-email")
+          +textfield("email", "данные для входа в сервис", "Email")
+        div(class="registration_textfield registration_textfield-password")
+          +textfield("password", "", "Пароль")
+    // Buttons 
+    div(class="registration_button-container") 
+      div(class="registration_button") 
+        div(class="registration_button registration_button-radio")
+          +radio-button("button-1", "Мужчина", "Женщина")
+        div(class="registration_button registration_button-toggle")
+          +toggle-button("toggle-offer", "Получать спецпредложения") 
+        div(class="registration_button registration_button-register")
+          +button({isArrowButton:true, title:"Перейти к оплате", isColored:true, size: "big"})
+        div(class="registration_button registration_button-login")
+          +button({title:"Войти", isBordered:1, size:"small"})
+
+ 
+          
