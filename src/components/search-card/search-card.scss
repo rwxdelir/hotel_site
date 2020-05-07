@@ -25,6 +25,7 @@
     position: absolute;
     top: 105px;
     left: 30px;
+    z-index: 1; // Solving: dropdown content overlapped by button
     &-departure {left: 200px;}
     &-guest {top: 225px;}
   }
