@@ -1,0 +1,20 @@
+include ./../date-dropdown/date-dropdown.pug
+include ./../dropdown/dropdown.pug
+include ./../button/button.pug
+
+mixin search-card 
+  div(class="search")
+    // Titles 
+    h1(class="search_title-main search_title") Найдем номера под ваши желания
+    // Dropdowns
+    div(class="search_dropdown search_dropdown-arrival")
+      +date-dropdown("", "прибытие", "arrow") 
+    div(class="search_dropdown search_dropdown-departure") 
+      +date-dropdown("", "выезд", "arrow")
+    div(class="search_dropdown search_dropdown-guest")
+      +dropdown(dropdown_title, "option_one")
+    // Buttons
+    div(class="search_button search_button-find")
+      +button({isArrowButton:true, title:"подобрать номер", isColored:true, size: "big"})
+
+
