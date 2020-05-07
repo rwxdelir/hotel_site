@@ -1,0 +1,17 @@
+-
+  var utfStar = [
+    "<span class='rating_star' id='star_1'>☆</span>",
+    "<span class='rating_star' id='star_2'>☆</span>",
+    "<span class='rating_star' id='star_3'>☆</span>",
+    "<span class='rating_star' id='star_4'>☆</span>",
+    "<span class='rating_star' id='star_5'>☆</span>"
+  ]
+
+mixin rating-button(average_rating)
+  - var condition = (average_rating != undefiend) ? "rating_disabled" : "";
+  div(class="rating " + condition) !{utfStar[0]}!{utfStar[1]}!{utfStar[2]}!{utfStar[3]}!{utfStar[4]}
+ 
+  // Send average rating to rating js file 
+  script. 
+    var averageRating = !{average_rating};
+  script(src="./rating-button.js") 
