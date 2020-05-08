@@ -1,0 +1,10 @@
+include ./slideshow.pug
+
+doctype html
+html
+head
+  script(src="./../slideshow/index.js")
+  meta(name="viewport" content="width=device-width, initial-scale=1.0")
+body
+  +slideshow("./../img1.jpg", "./../img2.jpg", "./../img3.jpg")
+  
