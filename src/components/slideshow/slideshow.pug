@@ -1,0 +1,24 @@
+mixin slideshow(firstImg, secondImg, thirdImg)
+  // Slideshow container
+  div(class="slideshow-container")
+    
+    // Full-width images  
+    div(class="slideshow-slide") 
+      img(src=firstImg style="width:100%") 
+    div(class="slideshow-slide") 
+      img(src=secondImg style="width:100%") 
+    div(class="slideshow-slide")
+      img(src=thirdImg style="width:100%") 
+
+    // Next and previous buttons
+    a(class="slideshow-button slideshow-button-prev") &#10094;
+    a(class="slideshow-button slideshow-button-next") &#10095;
+    
+    // The dots/circles 
+    div(class="slideshow-dot-container") 
+      span(class="slideshow-dot" onclick="currentSlide(1)")
+      span(class="slideshow-dot" onclick="currentSlide(2)")
+      span(class="slideshow-dot" onclick="currentSlide(3)")
+
+    // implement slideshow logic
+    script(src="./slideshow.js")      
