@@ -13,6 +13,7 @@
   transition: background 0.4s;
   /* Title */
   &-text {
+    top: -2px;
     user-select: none; 
     position: absolute;
     width: 210px;

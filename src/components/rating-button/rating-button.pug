@@ -8,6 +8,8 @@
   ]
 
 mixin rating-button(average_rating)
+  // if averag_rating isn`t undefiend we disabled  pointer events of class "rating" 
+  - var condition = (average_rating != undefiend) ? "rating_disabled" : "";
   div(class="rating " + condition) !{utfStar[0]}!{utfStar[1]}!{utfStar[2]}!{utfStar[3]}!{utfStar[4]}
   
   - var rating = (average_rating != undefiend) ? average_rating : false;

@@ -1,5 +1,6 @@
 mixin textfield(input_type, title, placeholder)
   if title != ""
-    label(for=input_type id="textfield_label") #{title}
+    label(for=input_type id="textfield_label" class="textfield_title") #{title}
+
   br
   input(class="textfield_input" type=input_type placeholder=placeholder id=input_type)
