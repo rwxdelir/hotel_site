@@ -1,0 +1,62 @@
+@import "../../abstracts/fonts.scss";
+
+.review {
+  position: absolute;
+  width: 270px;
+  height: 257px;
+    
+  background: #FFFFFF;
+  box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05);
+  border-radius: 4px;
+  &-describe {
+    left: 20px;
+    &-rating {
+      position: absolute;
+      bottom: 42px;
+    }
+    &-number {
+      position: absolute;
+      width: 70px;
+      height: 24px;
+      bottom: 70px;
+      font-family: Montserrat;
+      font-style: normal;
+      font-weight: bold;
+      font-size: 17px;
+      line-height: 17px;
+    }
+    &-recall {
+      position: absolute;
+      bottom: 22.5px;
+      left: 166px;
+      font-family: Montserrat;
+      font-style: normal;
+      font-size: 14px;
+      line-height: 18px;
+      color: rgba(31, 32, 65, 0.5);
+    }
+    &-cost {
+      position: absolute;
+      left: 153px;
+      bottom: 70px;
+      position: absolute;
+      width: 100px;
+      height: 20px;
+      font-family: Montserrat;
+      line-height: 18px;
+      color: rgba(31, 32, 65, 0.5);
+    }
+    &-bold {
+      font-style: normal;
+      font-weight: bold;
+      font-size: 14px;
+    }
+    &-separate {
+      position: absolute;
+      width: 230px;
+      height: 1px;
+      top: 205px;
+      background: rgba(31, 32, 65, 0.1);
+    }
+  }
+}

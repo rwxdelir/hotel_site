@@ -1,2 +1,17 @@
+include ./../rating-button/rating-button.pug
+include ./../slideshow/slideshow.pug
+
 mixin review-card
   div(class="review")
+    +slideshow("./../img2.jpg", "./../img4.jpg", "./../img3.jpg", "./../img1.jpg")
+    div(class="review-describe")
+      div(class="review-describe review-describe-rating")
+        +rating-button("4")
+      div(class="review-describe review-describe-number")
+        p(class="review-describe") № 840
+      div(class="review-describe review-describe-cost")
+        p(class="review-describe") !{"<b class='review-describe-bold'>9 900Р</b>"} в сутки
+      div(class="review-describe review-describe-recall")
+        a(class="review-describe") !{"<b class='review-describe-bold'>65</b>"} Отзывов
+      
+      div(class="review-describe review-describe-separate") 
