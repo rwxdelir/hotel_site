@@ -2,7 +2,7 @@
   /* Image */
   &-slide {
     position: absolute;
-    width: 324px;
+    width: 270px;
     height: 217px;
     display: none;
   }
@@ -16,25 +16,25 @@
     &-next {
       position: absolute;
       width: 42px;
-      left: 290px;
-      height: 181px;
-      /* Right arrow */
+      left: 228px;
+      bottom: 105px;
+      height: 151px;
       &:hover {
         background: linear-gradient(90deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0) 99.99%, rgba(255, 255, 255, 0) 100%);
       }
+      /* Right arrow */
       .arrow {
         position: absolute;
         left: 10px;
-        top: 85px;
+        top: 69px;
         transform: rotate(90deg); 
       }
     }
     /* Previous button */
     &-prev {
-      position: absolute;
       width: 42px;
       left: 9px;
-      height: 181px;
+      height: 151px;
       &:hover {
         background: linear-gradient(-90deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0) 99.99%, rgba(255, 255, 255, 0) 100%);
       }
@@ -42,7 +42,7 @@
       .arrow {
         position: absolute;
         left: 15px;
-        top: 77px;
+        top: 63px;
         transform: rotate(-90deg); 
       }
     }
@@ -71,8 +71,8 @@
     }
     &-container {
       position: absolute;
-      top: 154px;
-      left: 270px;
+      top: 120px;
+      left: 210px;
     }
   }
 }
