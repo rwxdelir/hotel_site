@@ -1,0 +1,45 @@
+include ./../nav/nav.pug
+include ./../logo/logo.pug
+include ./../textfield/textfield.pug
+
+- 
+  // Data for nav mixin
+  var navigation = [ {title: "Navigation", href: "#", isSelected: true},
+    {title: "About Us", href: "#"},
+    {title: "News", href: "#"},
+    {title: "Support", href: "#"},
+    {title: "Products", href: "#"}]
+  var about = [ {title: "About us", href: "#", isSelected: true},
+    {title: "Who we are", href: "#"},
+    {title: "Our team", href: "#"},
+    {title: "Careers", href: "#"},
+    {title: "Investors", href: "#"}]
+  var support = [ {title: "Support", href: "#", isSelected: true},
+    {title: "Documentation", href: "#"},
+    {title: "Community", href: "#"},
+    {title: "Get in Touch", href: "#"}]
+  
+mixin footer 
+  div(class="footer")
+    // Menu navigation, aboutus, support
+    div(class="footer-menu")
+      div(class="footer-menu footer-menu-navigation")
+        +nav("nav_vertical", navigation)
+      div(class = "footer-menu footer-menu-about") 
+        +nav("nav_vertical", about)
+      div(class = "footer-menu footer-menu-support")
+        +nav("nav_vertical", support)
+
+    // Logo 
+    div(class="footer-logo")
+      +logo
+      p(class="footer-text footer-logo-describe") Lorem ipsum dolor sit amet consectetur adipiscing elit aliquam eget nullam pellentesque aliquam curabitur cociis.
+
+    // Subscribe textfield
+    div(class="footer-subscribe") 
+      div(class="footer-subscribe-textfield")
+        +textfield("email", "", "Your email address", "arrow")
+      div(class="footer-subscribe-text")
+        p(class="footer-title footer-subscribe-title") Subscribe to our newsletter
+        p(class="footer-text footer-subscribe-describe") Recieve our latest news and promotions in your inbox!
+    
