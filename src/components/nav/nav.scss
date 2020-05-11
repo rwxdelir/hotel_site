@@ -106,6 +106,24 @@
   &__home-hide {display: none;}
 }
 
+.nav_vertical {
+  display: block;
+  .nav__item {
+    margin-top: 20px;
+    margin-right: 0px;
+    text-align: left;
+  }
+  .nav__item_arrow {
+    left: 64px;
+    top: 3.5px;
+  }
+  .nav__expanded {
+    &_content-show {
+      position: relative;
+    }
+  }
+}
+
 @media screen and (max-width: 600px) {
   .logo {display: none;}
   .nav {
