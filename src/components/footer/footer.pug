@@ -1,6 +1,7 @@
 include ./../nav/nav.pug
 include ./../logo/logo.pug
 include ./../textfield/textfield.pug
+include ./../copyright-bar/copyright-bar.pug
 
 - 
   // Data for nav mixin
@@ -42,4 +43,9 @@ mixin footer
       div(class="footer-subscribe-text")
         p(class="footer-title footer-subscribe-title") Subscribe to our newsletter
         p(class="footer-text footer-subscribe-describe") Recieve our latest news and promotions in your inbox!
+   
+    // Copyright bar 
+    div(class="footer-copyright")
+      +copyright-bar
+
     

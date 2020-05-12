@@ -1,9 +1,11 @@
 include ./../rating-button/rating-button.pug
+include ./../button/button.pug
 include ./../slideshow/slideshow.pug
 
-mixin review-card
+mixin review-card(option)
   div(class="review")
     +slideshow("./../img2.jpg", "./../img4.jpg", "./../img3.jpg", "./../img1.jpg")
+    // Describe field
     div(class="review-describe")
       div(class="review-describe review-describe-rating")
         +rating-button("4")
@@ -14,4 +16,9 @@ mixin review-card
       div(class="review-describe review-describe-recall")
         a(class="review-describe") !{"<b class='review-describe-bold'>65</b>"} Отзывов
       
+      if option == "lux" 
+        div(class="review-describe review-describe-sign")
+          +button({title:"люкс", isTextButton: true, size: "small"})
+      
+      // Separate line between rating/recall and number/cost
       div(class="review-describe review-describe-separate") 

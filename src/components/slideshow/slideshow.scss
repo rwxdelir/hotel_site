@@ -1,4 +1,7 @@
 .slideshow {
+  -moz-user-select: none;
+  -khtml-user-select: none;
+  -webkit-user-select: none;
   /* Image */
   &-slide {
     position: absolute;

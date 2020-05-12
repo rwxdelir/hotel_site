@@ -1,7 +1,7 @@
 // Load an icon library to show a hamburger menu (bars) on small screens 
 link(rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css")
 - 
-  const DEFAULT_ITEMS = [
+  const ITEMS = [
     {title: "Home", href: "#", isSelected: true},
     {title: "About Us", href: "#"},
     {title: "Services", href: "#", isExpanded: 
@@ -19,7 +19,8 @@ link(rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/
     {title: "News", href: "#"},
     {title: "Documentation"}]
 
-mixin nav(className)
+mixin nav(className, options)
+  - var DEFAULT_ITEMS = (options != undefiend) ? options : ITEMS
   // show menu list icon for mobiles
   a(href="javascript:void(0);" class="nav__show-icon" onclick="showMenu()")
     i(class="fa fa-bars nav__show-list")

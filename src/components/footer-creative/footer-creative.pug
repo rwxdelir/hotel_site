@@ -1,0 +1,22 @@
+include ./../logo/logo.pug
+
+mixin footer-creative
+  // Font awesome
+  script(src="https://kit.fontawesome.com/8ec038fa62.js" crossorigin="anonymous")
+  div(class="creative") 
+    div(class="creative-logo-container")
+      div(class="creative-logo")
+        +logo 
+      div(class="creative-logo-description")
+        p Lorem ipsum dolor sit amet consectetur adipiscing elit aliquam eget nullam pellentesque aliquam curabitur cociis.
+
+    div(class="creative-brand")
+      div(class="creative-brand-instagram") 
+        a(href="https://www.instagram.com" class="creative-brand-link")
+          i(class="fab fa-instagram")
+      div(class="creative-brand-twitter")
+        a(href="https://www.twitter.com" class="creative-brand-link")
+          i(class="fab fa-twitter")
+      div(class="creative-brand-facebook")
+        a(href="https://www.facebook.com" class="creative-brand-link")
+          i(class="fab fa-facebook")

@@ -1,6 +1,12 @@
-mixin textfield(input_type, title, placeholder)
+include ./../arrow/arrow.pug
+
+mixin textfield(input_type, title, placeholder, arrow)
   if title != ""
     label(for=input_type id="textfield_label" class="textfield_title") #{title}
-
+  
   br
-  input(class="textfield_input" type=input_type placeholder=placeholder id=input_type)
+  div(class="textfield")
+    input(class="textfield_input" type=input_type placeholder=placeholder id=input_type)
+  if (arrow != undefiend)
+    div(class="textfield_arrow") 
+      +arrow("arrow_forward", "#BC9CFF")

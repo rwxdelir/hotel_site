@@ -6,7 +6,7 @@ include ../card/card.pug
 mixin header 
   header(class = "header")
     div(class="menu")
-      +nav("header_nav")
+      +nav("header_nav nav_vertical")
       +logo("header_logo")
       +button({title:"register", isColored:true, className:"header_button header_button-register"})
       +button({title:"login", isBordered:1, className:"header_button header_button-login"})
