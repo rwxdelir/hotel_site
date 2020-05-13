@@ -1,0 +1,11 @@
+// Material icons
+link(href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet")
+
+mixin like-button(input_id)
+  // Icon label
+  label(for="like" class= "like-icon material-icons") favorite_border  
+  // Counter label
+  label(for="like" class="like-counter") 0
+  // Like input
+  input(id="like" class="like" type="checkbox")
+
