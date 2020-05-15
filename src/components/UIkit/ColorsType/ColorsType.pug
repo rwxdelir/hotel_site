@@ -1,0 +1,63 @@
+include ./../../logo/logo.pug
+
+doctype html
+html
+head
+  script(src="./ColorsType.js")
+  meta(name="viewport" content="width=device-width, initial-scale=1.0")
+body
+  div(class = "uikit")
+    div(class = "uikit--logo")
+      +logo("uikit")
+    //-- Fonts
+    div(class="uikit-font")
+      // Titles 
+      h1(class="uikit-font") This one is the sub-section or widget title 
+      h2(class="uikit-font") Next one is the item title inside widgets
+      h3(class="uikit-font") This is a label or CTA text
+      p(class="uikit-font") This is the body text which is used for most of the design, like paragraphs, lists, etc. 
+      // Fonts prefixs    
+      h1(class="prefix") H1
+      h2(class="prefix") H2
+      h3(class="prefix") H3
+      p(class="prefix") Body
+
+    //-- Colors
+    div(class="uikit-colors")
+      // Dark shade
+      div(class = "uikit-color--dshade-container")
+        div(class="uikit-color uikit-color--dshade") 
+
+        div(class="uikit-color uikit-color--dshade-75")
+        div(class="uikit-color uikit-color--dshade-50")
+        div(class="uikit-color uikit-color--dshade-25")
+        div(class="uikit-color uikit-color--dshade-5")
+      // Purple
+      div(class = "uikit-color uikit-color--purple")
+        div(class="purple") 
+      // Green
+      div(class = "uikit-color uikit-color--green")
+        div(class="green")   
+
+      // Colors prefixs
+      // Dark shade prefix
+      span(class = "uikit-color--prefix uikit-color--dshade-prefix") Dark Shade 100%
+      span(class = "uikit-color--prefix uikit-color--prefix-hex uikit-color--dshade-prefix") #1F2041
+      //d Dark shade 75 prefix
+      span(class = "uikit-color--prefix uikit-color--dshade-75-prefix") Dark Shade 75%
+      span(class = "uikit-color--prefix uikit-color--prefix-hex uikit-color--dshade-75-prefix") #1F2041
+      // Dark shade 50 prefix
+      span(class = "uikit-color--prefix uikit-color--dshade-50-prefix") Dark Shade 50%
+      span(class = "uikit-color--prefix uikit-color--prefix-hex uikit-color--dshade-50-prefix") #1F2041
+      // Dark shade 25 prefix
+      span(class = "uikit-color--prefix uikit-color--dshade-25-prefix") Dark Shade 25%
+      span(class = "uikit-color--prefix uikit-color--prefix-hex uikit-color--dshade-25-prefix") #1F2041
+      // Dark shade 5 prefix
+      span(class = "uikit-color--prefix uikit-color--dshade-5-prefix") Dark Shade 5%
+      span(class = "uikit-color--prefix uikit-color--prefix-hex uikit-color--dshade-5-prefix") #1F2041
+      // Purple prefix
+      span(class = "uikit-color--prefix uikit-color--purple-prefix") Purple
+      span(class = "uikit-color--prefix uikit-color--prefix-hex uikit-color--purple-prefix") #BC9CFF 
+      // Green prefix
+      span(class = "uikit-color--prefix uikit-color--green-prefix") Green
+      span(class = "uikit-color--prefix uikit-color--prefix-hex uikit-color--green-prefix") #6FCF97

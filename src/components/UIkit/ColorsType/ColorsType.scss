@@ -1,0 +1,113 @@
+@import "./../../../abstracts/variables.scss";
+@import "./../../../assets/fonts/fonts.css";
+
+.uikit {
+  position: relative;
+  width: 1440px;
+  height: 900px;
+  background: #FFFFFF;
+  &--logo {
+    position: absolute;
+    left: 30px;
+    top: 30px;
+  }
+}
+
+/* Fonts */ 
+.uikit-font {
+  left: 913px;
+  /* Prefix */
+  .prefix {
+    position: absolute;
+    color: $dark-shade-25;
+  }
+  /* Titles */
+  h1 {
+    @include h1-title;
+    top: 145px;
+    &.prefix {left: 854px; top: 145px;}
+  }
+  h2 {   
+    @include h2-title;
+    top: 255px;
+    &.prefix {left: 856px; top: 255px;}
+  }
+  h3 {
+    @include h3-title;
+    top: 353px;
+    &.prefix {left: 866px;top: 353px;}
+  }
+  /* Text */
+  p {
+    @include usual-text;
+    top: 418px;
+    &.prefix {left: 846px;top: 418px;}
+  }
+}
+
+/** Colors **/
+
+/* Prefix */
+.uikit-color--prefix {
+ @include h2-title;
+  position: absolute;
+  width: 159px;
+  height: 57px;
+  left: 260px;
+  /* Hex number prefix */
+  &-hex {
+    left: 260; 
+    font-weight: normal;
+    margin-top: 30px;
+  }
+}
+.uikit-color {
+  position: absolute;
+  width: 70px;
+  height: 70px;
+  left: 150px;
+  top: 145px;
+  border-radius: 6px;
+  /* Dark Shade */
+  &--dshade {
+    background: $dark-shade;
+    &-prefix {top: 152px;}
+  } 
+  /* Dark Shade 75% */
+  &--dshade-75 {
+    top: 235px; 
+    background:$dark-shade-75;
+    &-prefix {top: 242px;}
+  }
+  /* Dark Shade 50% */
+  &--dshade-50 {
+    top: 324.56px; 
+    background:$dark-shade-50;
+    &-prefix { top: 332px;}
+  }
+  /* Dark Shade 25% */
+  &--dshade-25 {
+    top: 415px; 
+    background:$dark-shade-25;
+    &-prefix {top: 422px;}  
+  }
+  /* Dark Shade 5% */
+  &--dshade-5 {
+    top:505px; 
+    background:$dark-shade-5;
+    &-prefix {top: 511px;}
+  } 
+  /* Purple */
+  &--purple {
+    top: 595px;
+    background: $purple;
+    &-prefix {top: 601px;}
+  }
+  /* Green */
+  &--green {
+    top: 685px; 
+    background: $green;
+    &-prefix {top: 692px;}
+  }
+}
+
