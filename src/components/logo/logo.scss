@@ -34,6 +34,11 @@ $font-eng:Quicksand, Arial, sans-serif;
   /* Rules for mobile version of header */
   &-hide {display: none;}
   &-show {display: block;}
+
+  /* Style for uikit version */
+  &-uikit {
+    path {fill: $dark-25;}   
+  }
 }
 
 svg[id="logo_text"]:hover{ 
