@@ -1,0 +1,23 @@
+/** Montserrat Regular **/
+@font-face {
+    font-family: "Montserrat";
+    font-weight: 400;
+    font-style: normal;
+    src: url("Montserrat-Regular.ttf") format('truetype');
+}
+
+/** Montserrat Bold **/
+@font-face {
+    font-family: "Montserrat";
+    font-weight: 700;
+    font-style: normal;
+    src: url("Montserrat-Bold.ttf") format('truetype');
+}
+
+/** Quicksand Bold **/
+@font-face {
+    font-family: "Quicksand";
+    src: url("Quicksand-Bold.ttf") format('truetype');
+}
+
+
