@@ -1,4 +1,3 @@
-@import "../../abstracts/fonts.scss";
 * {
   box-sizing: border-box;
 }
@@ -11,11 +10,11 @@
   position: absolute;
   width: 1440px;
   height: 70px;
-  left: 0px;
-  top: 150px;
+
   background: #FFFFFF;
   box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05);
   &_logo {
+    position: absolute;
     top: 15px;
     left: 140px;
   }
@@ -55,60 +54,4 @@
 
 
 
-@media (max-width: 1980px){
-  .header {
-    width: 1980px;
-    &_button {
-      left: 1480px;
-    }
-    &_nav {
-      left: 860px;
-      width: 1000px;
-    }
-  }
-}
-
-@media (max-width: 1440px){
-  .header {
-    width: 1544px;
-    &_button {
-      left: 1143px;
-    }
-    &_nav {
-      left: 543px;
-    }
-  }
-}
-
-@media (max-width: 952px){
-  .header {
-    position: absolute;
-    width: 1170px;
-    &_logo {
-      left: 50px;
-    }
-    &_button {
-      left: 790px;
-    }
-    &_nav {
-      left: 170px;
-    }
-  }
-}
-
-@media screen and (max-width: 600px) {
-  .header {
-    width: 600px;
-    position: absolute;
-    &_logo {
-      left: 39px;
-      top: 23px;
-    }
-    &_button {
-      left: 350px;
-      top: 29px;
-      width: 80px;
-    } 
-  }
-}
 

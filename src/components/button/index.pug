@@ -1,0 +1,9 @@
+include ./button.pug
+doctype html
+html
+head
+  script(src="./button.js")
+  meta(name="viewport" content="width=device-width, initial-scale=1.0")
+body
+  +button({title:"register", isColored:true, className:"header_button header_button-register"})
+  +button({title:"login", isBordered:1, className:"header_button header_button-login"})

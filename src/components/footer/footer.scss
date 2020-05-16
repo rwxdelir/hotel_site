@@ -1,5 +1,3 @@
-@import "../../abstracts/fonts.scss";
-
 .footer {
   position: absolute;
   width: 1440px;
@@ -9,7 +7,7 @@
   /* Logo and describe */
   &-logo {
     position: absolute;
-    top: 100px;
+    top: 115px;
     left: 140px;
     &-describe {top: 46px;}
   }
@@ -27,6 +25,8 @@
   }
   /* Subscribe field */
   &-subscribe {
+    position: absolute;
+    top: 3.5px;
     .textfield_input {
       position: absolute;
       width: 260px;
@@ -44,7 +44,7 @@
     }
     &-title {
       left: 1040px;
-      top: 96px;
+      top: 104px;
     }
   }
   /* Text */

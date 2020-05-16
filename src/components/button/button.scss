@@ -1,5 +1,5 @@
-@import "../../abstracts/_variables.scss";
-@import "../../abstracts/_mixins.scss";
+@import "../../abstracts/variables.scss";
+@import "../../assets/fonts/fonts.css";
 
 $purple-50: rgba($purple, 0.5);
 $blue-50: rgba($blue, 0.5);
@@ -77,7 +77,7 @@ $height-text: 15px;
       color: $purple;
       background: none;
       &:hover {
-        color: $dark-50;
+        color: $dark-shade-50;
       }
     }
     &_arrow {
