@@ -1,0 +1,39 @@
+@import "./../../../assets/fonts/fonts.css";
+
+body {
+  position: relative;
+  width: 1440px;
+  height: 1350px;
+  background: #F4F4F6;
+  margin: 0px;
+}
+
+/* Logo */
+.uikit-logo {
+  position: absolute;
+  left: 30px;
+  top: 30px;
+}
+
+/* Header */
+.uikit-header {
+  position: absolute;
+  top: 150px;
+  left: 0px;
+  /* Header logged */
+  &-logged {
+    position: absolute;
+    top: 260px;
+  }
+}
+
+/* Footer */
+.uikit-footer {
+  position: absolute;
+  top: 370px;
+  /* Footer creative */
+  &-creative {
+    position: absolute;
+    top: 853px;
+  }
+}
