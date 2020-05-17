@@ -1,5 +1,3 @@
-import "./count-button.scss";
-
 var plusBtn = document.querySelectorAll(".count-button_plus");
 var minusBtn = document.querySelectorAll(".count-button_minus");
 var counterBtn = document.querySelectorAll(".count-button_counter");
