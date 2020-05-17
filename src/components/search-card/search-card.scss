@@ -1,4 +1,5 @@
-@import "../../abstracts/fonts.scss";
+@import "./../../assets/fonts/fonts.css";
+@import "./../../abstracts/variables.scss";
 
 .search {
   position: absolute;
@@ -15,9 +16,10 @@
   &_title {
     position: absolute;
     left: 30px;
-    font-family: Montserrat;
+    /* Include title mixin with Quicksand font */
+    @include h1-title("russian");
     &-main {
-      top: 40px;  
+      top: 25px;  
     }
   }
   /* Search dropdowns: departure, arrival, guest */
