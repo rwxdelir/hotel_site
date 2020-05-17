@@ -1,3 +1,12 @@
 import "./ColorsType.scss";
 import "./../../logo/logo.scss";
 import "./../../nav/nav.scss";
+import "./../../header/header.scss";
+import "./../../header_logged/header_logged.scss";
+import "./../../button/button.scss";
+import "./../../footer/footer.scss";
+import "./../../footer-creative/footer-creative.scss";
+import "./../../textfield/textfield.scss";
+import "./../../copyright-bar/copyright-bar.scss";
+import "./../../arrow/arrow.scss";
+import "./../../count-button/count-button.scss";

@@ -29,12 +29,10 @@
   color: $dark-shade;
 }
 /* H2 title */
-@mixin h2-title {
+@mixin h2-title($lang) {
   position: absolute;
   width: 282px;
   height: 48px;
-  left: 913px;
-  top: 255px;
   font-family: pickFont($lang);
   font-style: normal;
   font-weight: bold;
@@ -84,4 +82,4 @@ $purple-25: rgba($purple, 0.25);
 $blue:#8ba4f9;
 $blue-25: rgba($blue, 0.25);
 $font: Montserrat, Arial, sans-serif;
-$font-eng:Quicksand, Arial, sans-serif;
+
