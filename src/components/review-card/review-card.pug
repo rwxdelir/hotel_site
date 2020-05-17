@@ -2,13 +2,24 @@ include ./../rating-button/rating-button.pug
 include ./../button/button.pug
 include ./../slideshow/slideshow.pug
 
-mixin review-card(option)
+- 
+  var def = [{
+    lux: true,
+    rating: 5,
+    firstImg: "./../../../assets/images/img2.jpg",
+    secondImg: "./../../../assets/images/img1.jpg",
+    thirdImg: "./../../../assets/images/img3.jpg",
+    fourthImg: "./../../../assets/images/img1.jpg"
+  }]
+
+mixin review-card(item)
+  //- var item = (item != undefiend) ? item : def
   div(class="review")
-    +slideshow("./../../../assets/images/img1.jpg", "./../../../assets/images/img2.jpg", "./../../../assets/images/img3.jpg")
+    +slideshow(item.firstImg, item.secondImg, item.thirdImg, item.Fourth)
     // Describe field
     div(class="review-describe")
       div(class="review-describe review-describe-rating")
-        +rating-button("4")
+        +rating-button(item.rating)
       div(class="review-describe review-describe-number")
         span № 
         span(class = "review-describe-number-digit") 840
@@ -17,7 +28,7 @@ mixin review-card(option)
       div(class="review-describe review-describe-recall")
         a(class="review-describe") !{"<b class='review-describe-bold'>65</b>"} Отзывов
       
-      if option == "lux" 
+      if item.lux = true
         div(class="review-describe review-describe-sign")
           +button({title:"люкс", isTextButton: true, size: "small"})
       
