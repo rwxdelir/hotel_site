@@ -1,0 +1,27 @@
+@import "./../../../abstracts/variables.scss";
+@import "./../../../assets/fonts/fonts.css";
+
+body {
+  position: relative;
+  width: 1440px;
+  height: 1350px;
+  background: #F4F4F6;
+}
+
+/* Logo */
+.uikit-logo {
+  position: absolute;
+  left: 30px;
+  top: 30px;
+}
+
+/* Review cards */
+.uikit-review {
+  position: absolute;
+  top: 513px;
+  left: 970px;
+  /* Lux */
+  &-lux {
+    top: 843px;
+  }
+}

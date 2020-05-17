@@ -1,0 +1,50 @@
+include ./../../logo/logo.pug
+include ./../../search-card/search-card.pug
+include ./../../date-dropdown/date-dropdown.pug
+include ./../../dropdown/dropdown.pug
+include ./../../logo/logo.pug
+include ./../../header/header.pug
+include ./../../header_logged/header_logged.pug
+include ./../../button/button.pug
+include ./../../footer/footer.pug
+include ./../../footer-creative/footer-creative.pug
+include ./../../textfield/textfield.pug
+include ./../../copyright-bar/copyright-bar.pug
+include ./../../arrow/arrow.pug
+include ./../../count-button/count-button.pug
+include ./../../registration-card/registration-card.pug
+include ./../../reservation-card/reservation-card.pug
+include ./../../login-card/login-card.pug
+include ./../../review-card/review-card.pug
+include ./../../slideshow/slideshow.pug
+
+doctype html
+html
+head
+  script(src="./cards.js")
+  meta(name="viewport" content="width=device-width, initial-scale=1.0")
+body
+  // Logod
+  div(class = "uikit-logo")
+    +logo("uikit")
+
+  // Search card
+  div(class = "uikit-search")
+    +search-card
+  // Registration card
+  div(class = "uikit-registration")
+    +registration-card
+  // Reservation card
+  div(class = "uikit-reservation")
+    +reservation-card
+  // Login card
+  div(class = "uikit-login")
+    +login-card
+  div(class = "uikit-review")
+    +review-card
+    
+  div(class = "uikit-review uikit-review-lux")
+    +review-card("lux")
+  
+  script(src = "./../../slideshow/slideshow.js")
+  script(src = "./../../rating-button/rating-button.js")
