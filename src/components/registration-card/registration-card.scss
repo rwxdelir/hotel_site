@@ -1,4 +1,5 @@
-@import "../../abstracts/fonts.scss";
+@import "./../../assets/fonts/fonts.css";
+@import "./../../abstracts/variables.scss";
 
 .registration {
   position: absolute;
@@ -14,23 +15,18 @@
   /* Titles main, signin */
   &_title {
     position: absolute;
-    width: 320px;
-    height: 30px;
-    font-family: Montserrat;
-    font-style: normal;
-    font-weight: bold;
-    font-size: 24px;
-    line-height: 30px;
-    color: #1F2041;
+    left: 30px;
+    /* Include title mixin with Quicksand font */
+    @include h1-title("russian");
+    color: $dark-shade;
     &-main {
-      top: 50px;
+      top: 40px;
       left: 30px;
     }
     &-signin {
-      top: 584px;
+      top: 574px;
       left: 30px;
       color: #000000;
-      font-style: normal;
       font-weight: normal;
       font-size: 14px;
       line-height: 18px;
@@ -58,7 +54,7 @@
     }
     &-radio {top: 208.5px;}
     &-toggle {top: 465px;}
-    &-register {top: 498px;}
+    &-register {top: 505px;}
     &-login {left: 221px; top: 572px;}
   }
 }

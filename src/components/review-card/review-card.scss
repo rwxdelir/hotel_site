@@ -1,4 +1,5 @@
-@import "../../abstracts/fonts.scss";
+@import "./../../assets/fonts/fonts.css";
+@import "./../../abstracts/variables.scss";
 
 .review {
   position: absolute;
@@ -15,15 +16,13 @@
       bottom: 42px;
     }
     &-number {
-      position: absolute;
-      width: 70px;
-      height: 24px;
-      bottom: 70px;
-      font-family: Montserrat;
-      font-style: normal;
-      font-weight: bold;
-      font-size: 17px;
+      @include h1-title("");
+      bottom: 16px;
       line-height: 17px;
+      font-size: 14px;
+      &-digit {
+        font-size: 19px;
+      }
     }
     &-sign {
       position: absolute;
@@ -45,10 +44,11 @@
       left: 153px;
       bottom: 70px;
       position: absolute;
-      width: 100px;
+      width: 150px;
       height: 20px;
       font-family: Montserrat;
       line-height: 18px;
+      font-size: 13px;
       color: rgba(31, 32, 65, 0.5);
     }
     &-bold {

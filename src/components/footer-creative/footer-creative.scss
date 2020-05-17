@@ -1,3 +1,5 @@
+@import "./../../assets/fonts/fonts.css";
+@import "./../../abstracts/variables.scss";
 
 .creative {
   position: absolute;
@@ -10,18 +12,11 @@
     top: 113px;
     left: 667px;
     &-description {
-      position: absolute;
-      width: 560px;
-      height: 48px;
+      @include usual-text;
       left: 440px;
       top: 160px;
-      font-family: Montserrat;
-      font-style: normal;
-      font-weight: normal;
-      font-size: 14px;
-      line-height: 24px;
+      width: 560px;
       text-align: center;
-      color: rgba(31, 32, 65, 0.75);
     }
   }
   /* Footer creative brand */
@@ -36,12 +31,12 @@
     display: flex;
     align-items: center;
     text-align: center;
-    color: #BC9CFF;
+    color: $purple;
     top: 233px;
     left: 664px;
     margin-top: 20px;
     &-twitter {margin-left: 20px;}
     &-facebook {margin-left: 20px;}
-    &-link {color: #BC9CFF;}   
+    &-link {color: $purple;}   
   }
 }

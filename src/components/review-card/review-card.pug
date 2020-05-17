@@ -4,13 +4,14 @@ include ./../slideshow/slideshow.pug
 
 mixin review-card(option)
   div(class="review")
-    +slideshow("./../img2.jpg", "./../img4.jpg", "./../img3.jpg", "./../img1.jpg")
+    +slideshow("./../../../assets/images/img1.jpg", "./../../../assets/images/img2.jpg", "./../../../assets/images/img3.jpg")
     // Describe field
     div(class="review-describe")
       div(class="review-describe review-describe-rating")
         +rating-button("4")
       div(class="review-describe review-describe-number")
-        p(class="review-describe") № 840
+        span № 
+        span(class = "review-describe-number-digit") 840
       div(class="review-describe review-describe-cost")
         p(class="review-describe") !{"<b class='review-describe-bold'>9 900Р</b>"} в сутки
       div(class="review-describe review-describe-recall")

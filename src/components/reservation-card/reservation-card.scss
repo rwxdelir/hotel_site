@@ -1,4 +1,5 @@
-@import "../../abstracts/fonts.scss";
+@import "./../../assets/fonts/fonts.css";
+@import "./../../abstracts/variables.scss";
 
 .reservation {
   /* Reservation card container */
@@ -34,48 +35,37 @@
   &_text {
     position: absolute;
     left: 30px;
-    font-family: Montserrat;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 14px;
-    line-height: 24px;
-    color: rgba(31, 32, 65, 0.75);
+    @include usual-text;
+    color: $dark-shade-75;
     &-number {
       position: absolute;
-      top: 40px;
+      top: 49px;
       width: 64px;
-      height: 30px;
-      font-style: normal;
-      font-weight: bold;
-      font-size: 18px;
-      line-height: 17px;
-      color: #1F2041;
-      text-transform: uppercase;
+      left: 30px;
+      @include h1-title("");
+      font-size: 14px;
+      &-digit {
+        font-size: 24px;
+        top: -9px;
+      }
+      color: $dark-shade;
     }
     &-cost {
-      top: 46px;
-      left: 250px;
-      height: 20px;
-      font-family: Montserrat;
-      font-style: normal;
-      font-size: 14px;
-      color: rgba(31, 32, 65, 0.5);
+      top: 21px;
+      left: 122px;
+      @include usual-text;
+      color: $dark-shade-50;
     }
   }
   /* Reservation price */
   &_price {
     display: block;
-    position: absolute;
     top: 239px;
     left: -8px;
     list-style: none;
-    height: 36px;
-    font-family: Montserrat;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 14px;
+    @include usual-text;
     line-height: 18px;
-    color: rgba(31, 32, 65, 0.75);
+    color: $dark-shade-75;
     &-title {
       /* made some space between title and price */
       display: inline-block;
@@ -94,12 +84,10 @@
       padding-top: 8px;
     }
     &-amount {
-      font-family: Montserrat;
-      font-style: normal;
+      @include usual-text;
       font-weight: bold;
       font-size: 19px;
-      line-height: 24px;
-      color: #1F2041;
+      color: $dark-shade;
       margin-top: 10px;
     }
   }

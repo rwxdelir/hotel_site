@@ -21,8 +21,8 @@ mixin reservation-card
       +button({title:"люкс", isTextButton: true, size: "small"})
 
     // Text 
-    div(class="reservation_text-number reservation_text")
-      p № 888
+    div(class="reservation_text-number")
+      span !{'<b>№</b>'} !{'<span class = "reservation_text-number-digit")> 888</span>'}
     div(class="reservation_text reservation_text-cost") 
       - var dayPrice = "<b>9 990Р</b>";
       p(class="reservation_text-cost") !{dayPrice}  в сутки 
@@ -39,6 +39,6 @@ mixin reservation-card
         li(class="reservation_price-item reservation_price-amount") !{fEl.s}Итого!{fEl.e} !{sEl.s}#{prices.amount}Р!{sEl.e}
 
     // Script implement count for dropdown buttons   
-    script(src="./../count-button/count-button.js")
+    script(src="./../../count-button/count-button.js")
 
 

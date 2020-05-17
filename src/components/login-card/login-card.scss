@@ -1,4 +1,5 @@
-@import "../../abstracts/fonts.scss";
+@import "./../../assets/fonts/fonts.css";
+@import "./../../abstracts/variables.scss";
 
 .login {
   position: absolute;
@@ -13,27 +14,18 @@
   border-radius: 4px;
   /* Login card titles: main and singup */
   &_title {
-    position: absolute; 
     left: 30px;
-    font-family: Montserrat;
-    font-style: normal;
+    @include usual-text;
     &-main {
-      width: 320px;
-      height: 30px;
       top: 30px;
       font-weight: bold;
-      color: #1F2041;
+      color: $dark-shade;
       font-size: 24px;
-      line-height: 30px;
     }
     &-signup {
-      top: 294px;
-      width: 164px;
-      height: 18px;
-      font-size: 14px;
-      font-weight: normal;
+      
+      top: 282px;
       color: #000000;
-      line-height: 18px;
     }
   }
   /* Textfields */

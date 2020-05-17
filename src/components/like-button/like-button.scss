@@ -1,4 +1,5 @@
-@import "../../abstracts/fonts.scss";
+@import "./../../assets/fonts/fonts.css";
+@import "./../../abstracts/variables.scss";
 
 .like { 
   /* Reset deafault styles for input */
@@ -30,31 +31,24 @@
     display: flex;
     align-items: center;
     text-align: center;
-    color: rgba(31, 32, 65, 0.25);
+    color: $dark-shade-25;
     /* Material icon favorite */
-    &-favorite { 
-      color: #BC9CFF;
-    }
+    &-favorite {color: $purple;}
   }
   /* Input checked */
-  &:checked {
-    border-color: #BC9CFF;
-  }
+  &:checked {border-color: $purple;}
   /* Like counter */
   &-counter {
+    @include usual-text;
     z-index: 2;
-    position: absolute;
     width: 6px;
     height: 13px;
     left: 27px;
     top: 8px;
-    font-family: Montserrat;
-    font-style: normal;
-    font-weight: normal;
     font-size: 10px;
     line-height: 12px;
     text-align: center;
-    color: rgba(31, 32, 65, 0.25);
+    color: $dark-shade-25;
   }
   /* Disable button */
   &-disabled {pointer-events: none;}

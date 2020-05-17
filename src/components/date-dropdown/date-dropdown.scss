@@ -1,4 +1,5 @@
-@import "../../abstracts/fonts.scss";
+@import "./../../assets/fonts/fonts.css";
+@import "./../../abstracts/variables.scss";
 
 .date-dropdown {
   position: absolute;
@@ -19,10 +20,8 @@
   &[placeholder] {
     padding-left: 15px;
     font-family: Montserrat;
-    font-style: normal;
-    font-weight: normal;
     font-size: 14px;
-    line-height: 18px;
+    line-height: 13px;
     color: rgba(31, 32, 65, 0.75);
   }
   &_arrow {
@@ -31,16 +30,7 @@
     top: 53px;
   }
   &_title {
-    position: absolute;
-    width: 118px;
-    height: 15px;
+    @include h3-title;
     top: 15.44px;
-    font-family: Montserrat;
-    font-style: normal;
-    font-weight: bold;
-    font-size: 12px;
-    line-height: 15px;
-    text-transform: uppercase;
-    color: #1F2041;
   }
 }
