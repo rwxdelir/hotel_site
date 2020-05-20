@@ -8,12 +8,12 @@
   ]
 
 mixin rating-button(average_rating)
-  // if averag_rating isn`t undefiend we disabled  pointer events of class "rating" 
-  - var condition = (average_rating != undefiend) ? "rating_disabled" : "";
-  div(class="rating " + condition) !{utfStar[0]}!{utfStar[1]}!{utfStar[2]}!{utfStar[3]}!{utfStar[4]}
+  // if averag_rating isn`t false we disabled  pointer events of class "rating" 
+  - var condition = (average_rating != false) ? " rating_disabled" : "";
+  div(class="rating" + condition) !{utfStar[0]}!{utfStar[1]}!{utfStar[2]}!{utfStar[3]}!{utfStar[4]}
   
   // Send average rating to rating js file
   - var rating = (average_rating != undefiend) ? average_rating : false;
   script.
-    let averageRating = !{rating}; 
+    !{average_rating}; 
   script(src="./../../rating-button/rating-button.js") 
