@@ -12,13 +12,14 @@
   &-describe {
     left: 20px;
     &-rating {
-      position: absolute;
-      bottom: 42px;
+      margin-top: 64px;
+      margin-left: 12px;
     }
     &-number {
-      @include h1-title("");
-      bottom: 16px;
+      font-family: 'Quicksand';
+      position: absolute;
       line-height: 17px;
+      bottom: 62px;
       font-size: 14px;
       &-digit {
         font-size: 19px;
@@ -26,33 +27,25 @@
     }
     &-sign {
       position: absolute;
-      bottom: 59.5px;
+      bottom: 62px;
       left: 55px;
     }
     &-recall {
       position: absolute;
-      bottom: 22.5px;
+      bottom: -5px;
       left: 166px;
-      font-family: Montserrat;
-      font-style: normal;
-      font-size: 14px;
-      line-height: 18px;
+      @include usual-text;
       color: rgba(31, 32, 65, 0.5);
     }
     &-cost {
       position: absolute;
       left: 153px;
-      bottom: 70px;
-      position: absolute;
-      width: 150px;
-      height: 20px;
-      font-family: Montserrat;
-      line-height: 18px;
+      bottom: 49px;
+      font-family: "Montserrat";
       font-size: 13px;
-      color: rgba(31, 32, 65, 0.5);
+      color: $dark-shade-50;
     }
     &-bold {
-      font-style: normal;
       font-weight: bold;
       font-size: 14px;
     }

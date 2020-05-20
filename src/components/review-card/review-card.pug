@@ -5,6 +5,7 @@ include ./../slideshow/slideshow.pug
 - 
   var def = [{
     lux: true,
+    number: 840,
     rating: 5,
     firstImg: "./../../../assets/images/img2.jpg",
     secondImg: "./../../../assets/images/img1.jpg",
@@ -13,22 +14,22 @@ include ./../slideshow/slideshow.pug
   }]
 
 mixin review-card(item)
-  //- var item = (item != undefiend) ? item : def
+  - var item = (item != undefiend) ? item : def
   div(class="review")
     +slideshow(item.firstImg, item.secondImg, item.thirdImg, item.Fourth)
     // Describe field
     div(class="review-describe")
       div(class="review-describe review-describe-rating")
-        +rating-button(item.rating)
+        +rating-button(item.rating != false ? item.rating : false)
       div(class="review-describe review-describe-number")
         span № 
-        span(class = "review-describe-number-digit") 840
+        span(class = "review-describe-number-digit") #{item.number}
       div(class="review-describe review-describe-cost")
-        p(class="review-describe") !{"<b class='review-describe-bold'>9 900Р</b>"} в сутки
+        p(class="review-describe") !{"<b class='review-describe-bold'>"}!{item.cost}!{"₽</b>"} в сутки
       div(class="review-describe review-describe-recall")
-        a(class="review-describe") !{"<b class='review-describe-bold'>65</b>"} Отзывов
+        a(class="review-describe") !{"<b class='review-describe-bold'>"}!{item.recalls}!{"</b>"} Отзывов
       
-      if item.lux = true
+      if item.lux == true
         div(class="review-describe review-describe-sign")
           +button({title:"люкс", isTextButton: true, size: "small"})
       
