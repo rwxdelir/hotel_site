@@ -1,6 +1,6 @@
 @import "./../../assets/fonts/fonts.css";
 @import "./../../abstracts/variables.scss";
-
+/* Review card */
 .review {
   position: absolute;
   width: 270px;
@@ -11,10 +11,12 @@
   border-radius: 4px;
   &-describe {
     left: 20px;
+    /* Rating button */
     &-rating {
       margin-top: 64px;
       margin-left: 12px;
     }
+    /* Hotel number */
     &-number {
       font-family: 'Quicksand';
       position: absolute;
@@ -25,11 +27,13 @@
         font-size: 19px;
       }
     }
+    /* Lux sign */ 
     &-sign {
       position: absolute;
-      bottom: 62px;
-      left: 55px;
+      bottom: 63px;
+      left: 52px;
     }
+    /* Recalls */
     &-recall {
       position: absolute;
       bottom: -5px;
@@ -37,6 +41,7 @@
       @include usual-text;
       color: rgba(31, 32, 65, 0.5);
     }
+    /* Room cost*/
     &-cost {
       position: absolute;
       left: 153px;
@@ -45,10 +50,12 @@
       font-size: 13px;
       color: $dark-shade-50;
     }
+    /* Rule for bolded text*/
     &-bold {
       font-weight: bold;
       font-size: 14px;
     }
+    /* Separate between number/cost and rating/recall */
     &-separate {
       position: absolute;
       width: 230px;
