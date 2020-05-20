@@ -15,13 +15,13 @@ body {
   top: 30px;
 }
 
-/* Review cards */
+/* UI kit review */
 .uikit-review {
-  position: absolute;
-  top: 513px;
-  left: 970px;
-  /* Lux */
+  position: relative;
+  left: 980px;
+  top: 856.5px;
   &-lux {
-    top: 843px;
+    position: relative;
+    top: 559.5px;
   }
 }

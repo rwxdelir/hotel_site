@@ -18,6 +18,9 @@ include ./../../login-card/login-card.pug
 include ./../../review-card/review-card.pug
 include ./../../slideshow/slideshow.pug
 
+
+
+
 doctype html
 html
 head
@@ -40,11 +43,38 @@ body
   // Login card
   div(class = "uikit-login")
     +login-card
+  // Review card
   div(class = "uikit-review")
-    +review-card
-    
+    - 
+      var card1 = {
+        lux: false,
+        number: 840,
+        cost: "9 900",
+        rating: 4,
+        recalls: 65,
+        firstImg: "./../../../assets/images/img4.jpg",
+        secondImg: "./../../../assets/images/img3.jpg",
+        thirdImg: "./../../../assets/images/img2.jpg",
+        fourthImg: "./../../../assets/images/img1.jpg"
+      }
+    +review-card(card1)
+  // Lux review card
   div(class = "uikit-review uikit-review-lux")
-    +review-card("lux")
+    -
+      var card2 = {
+        lux: true,
+        number: 888,
+        recalls: 145,
+        cost: "9 990",
+        rating: 5,
+        firstImg: "./../../../assets/images/img1.jpg",
+        secondImg: "./../../../assets/images/img2.jpg",
+        thirdImg: "./../../../assets/images/img3.jpg",
+        fourthImg: "./../../../assets/images/img4.jpg"
+      }
+    +review-card(card2)
   
   script(src = "./../../slideshow/slideshow.js")
   script(src = "./../../rating-button/rating-button.js")
+
+  
