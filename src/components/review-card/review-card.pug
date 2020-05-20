@@ -16,7 +16,7 @@ include ./../slideshow/slideshow.pug
 mixin review-card(item)
   - var item = (item != undefiend) ? item : def
   div(class="review")
-    +slideshow(item.firstImg, item.secondImg, item.thirdImg, item.Fourth)
+    +slideshow(item.firstImg, item.secondImg, item.thirdImg, item.fourthImg)
     // Describe field
     div(class="review-describe")
       div(class="review-describe review-describe-rating")
