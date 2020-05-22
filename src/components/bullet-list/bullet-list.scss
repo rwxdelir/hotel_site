@@ -17,6 +17,9 @@
     background: rgba(31, 32, 65, 0.25);
     margin-top: 7px;
     margin-left: -20px;
+    &:hover {
+      box-shadow: 0 0 0 1.5px $purple;
+    }
   }
   /* Bullet list items */ 
   &-item {
