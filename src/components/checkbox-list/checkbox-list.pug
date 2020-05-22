@@ -10,6 +10,7 @@ mixin checkbox-list(title, list)
       +arrow("arrow_expand", "rgba(31, 32, 65, 0.5)")
   - var labelEl = '<label class = "checkbox-icon" for = "checkbox-input"></label>'
   - var inputEl = '<input class = "checkbox-input" id="checkbox-input" type = "checkbox">'
-  each item in list
-    li(class = "checkbox-list") !{labelEl}!{inputEl}!{'<span class = "checkbox-item">'}!{item}!{'</span>'}
+  div(class = "checkbox-list-container")
+    each item in list
+      li(class = "checkbox-list") !{labelEl}!{inputEl}!{'<span class = "checkbox-item">'}!{item}!{'</span>'}
 
