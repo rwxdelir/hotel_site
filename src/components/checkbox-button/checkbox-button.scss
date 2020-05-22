@@ -54,4 +54,29 @@
     line-height: 18px;
     color: rgba(31, 32, 65, 0.5);
   }
+  /* Rules for buttons wuth rich option */
+  &-rich {
+    /* Rich checkbox item (text)*/
+    &-item {
+      font-size: 12px;
+      line-height: 14px;
+      width: 236px;
+      height: 28px;
+      margin-top: 33px;
+    }
+    /* Rich checkbox list */
+    &-list {
+      height: 62px;
+    }
+    /* Rich checkbox item title */
+    &-title {
+      @include usual-text;
+      width: 236px;
+      height: 28px;
+      font-weight: bold;
+      font-size: 14px;
+      padding-top: 9px;
+      margin-left: 10px;
+    }
+  }
 }

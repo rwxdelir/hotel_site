@@ -1,12 +1,21 @@
 // Material icons
 link(href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet")
 
-// List is array of items
-mixin checkbox-button(list)
+// If it`s usual button list is array of items
+// Else it`s rich checkbox button and list is object with fields title and text
+mixin checkbox-button(list, rich)
   ul(class = "checkbox")
-  - var labelEl = '<label class = "checkbox-icon" for = "checkbox-input"></label>'
-  - var inputEl = '<input class = "checkbox-input" id="checkbox-input" type = "checkbox">'
-  div(class = "checkbox-list-container")
-    each item in list
-      li(class = "checkbox-list") !{labelEl}!{inputEl}!{'<span class = "checkbox-item">'}!{item}!{'</span>'}
+  - var labelEl = '<label class="checkbox-icon" for ="checkbox-input"></label>'
+  - var inputEl = '<input class="checkbox-input" id="checkbox-input" type="checkbox">'
+  - var itemEl = {st: '<span class = "checkbox-item">', en: '</span>'}
 
+  if (rich != true)
+    div(class = "checkbox-list-container")
+      each item in list
+        li(class = "checkbox-list") !{labelEl}!{inputEl}!{itemEl.st}!{item}!{itemEl.en}        
+  else
+    - var richItem = {st: '<span class = "checkbox-item checkbox-rich-item">', en: '</span>'}
+    - var titleEl = {st: '<span class = "checkbox-rich-title">', en: '</span>'}
+    div(class = "checkbox-list-container")
+      each item in list
+        li(class = "checkbox-list checkbox-rich-list") !{labelEl}!{inputEl}!{richItem.st}!{item.text}!{richItem.en}!{titleEl.st}!{item.title}!{titleEl.en}
