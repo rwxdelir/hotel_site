@@ -6,6 +6,7 @@
   left: 0px;
   &--arrow {
     position: absolute;
+    width: 10px;
     left: 222px;
     top: -2.6px;
   }
@@ -52,9 +53,12 @@
     display: block;
     line-height: 18px;
   }
+  /* Checkbox container of list */
+  &-list-container {
+    display: block;
+  }
   /* Checkbox item */
   &-item {
-
     @include usual-text;
     margin-top: 12px;
     margin-left: 10px;
