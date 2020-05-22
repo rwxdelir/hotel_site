@@ -1,0 +1,33 @@
+@import "./../../assets/fonts/fonts.css";
+@import "./../../abstracts/variables.scss";
+
+.bullet-list {
+  position: absolute;
+  left: 100px;
+  list-style-type: none;
+  padding: 0px;
+  margin: 0px;
+  padding-left: 10px;
+  /* Bullet marker */
+  &-marker {
+    position: absolute;
+    width: 10.43px;
+    height: 10px;
+    border-radius: 5px;
+    background: rgba(31, 32, 65, 0.25);
+    margin-top: 7px;
+    margin-left: -20px;
+  }
+  /* Bullet list items */ 
+  &-item {
+    font-family: 'Montserrat';
+    width: 242.56px;
+    height: 24px;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 13.9px;
+    line-height: 24px;
+    padding-bottom: 14px;
+    color: rgba(31, 32, 65, 0.75);
+  }
+}
