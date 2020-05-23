@@ -1,0 +1,26 @@
+include ./../like-button/like-button.pug
+
+//- - 
+//-   var def = {
+//-     like : {id: "like1", amount: "12"},
+//-     user : {name: "Мурад Сарафанов", img: "./../../assets/images/user-photo.png"},
+//-     date : "5 дней назад",
+//-     text : "Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей."
+//-   }
+mixin recall(recall)
+  div(class = "recall")
+    // Like button
+    div(class = "recall-like")
+      +like-button(recall.like.id, recall.like.amount)
+    // User information
+    div(class = "recall-user") 
+      div(class = "recal-user-name")
+        span !{recall.user.name}
+      div(class = "recall-user-photo")
+        img(src = `${recall.user.img}` width = "85px" style = "position: absolute; left: -21.5px; top: -11px;")
+    // Recall text
+    div(class = "recall-text")
+      span !{recall.text}
+    // Recall date
+    div(class = "recall-date recall-text")
+      span !{recall.date}
