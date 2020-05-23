@@ -1,23 +1,26 @@
-let likeInput = document.querySelector(".like");
-let likeLabel = document.querySelector(".like-icon");
-let likeCounter = document.querySelector(".like-counter");
+let likeInput = document.querySelectorAll(".like");
+let likeLabel = document.querySelectorAll(".like-icon");
+let likeCounter = document.querySelectorAll(".like-counter");
 let likeCondition = document.querySelectorAll(".like-condition");
 
-likeInput.addEventListener('change', function(){
-  if (likeInput.checked) {
-    /* Change icon */
-    likeLabel.innerHTML = "favorite";
-    likeLabel.classList.add("like-icon-favorite")
-    /* Disable like btn */
-    likeInput.disabled = true; 
-    /* Increment and digit color */
-    ++likeCounter.innerHTML; 
-    likeCounter.style.color = "#BC9CFF"
-  } else {
-    likeLabel.innerHTML = "favorite_border";
-    likeLabel.classList.remove("like-icon-favorite")
-  } 
-});
-
-
+for (let i = 0; i < likeInput.length; i++) {
+  likeLabel[i].innerHTML = "favorite_border";
+}
+for (let i = 0; i < likeInput.length; i++) {
+  likeInput[i].addEventListener('change', function(){
+    if (likeInput[i].checked) {
+      /* Change icon */
+      likeLabel[i].innerHTML = "favorite";
+      likeLabel[i].classList.add("like-icon-favorite")
+      /* Disable like btn */
+      likeInput[i].disabled = true; 
+      /* Increment and digit color */
+      ++likeCounter[i].innerHTML; 
+      likeCounter[i].style.color = "#BC9CFF"
+    } else {
+      likeLabel[i].innerHTML = "favorite_border";
+      likeLabel[i].classList.remove("like-icon-favorite")
+    } 
+  });
+}
 

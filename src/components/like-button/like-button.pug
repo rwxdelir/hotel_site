@@ -1,11 +1,12 @@
 // Material icons
 link(href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet")
 
-mixin like-button(input_id)
+mixin like-button(input_id, amount)
+  - var likeAmount = (amount != undefiend) ? amount : "0"
   // Icon label
-  label(for="like" class= "like-icon material-icons") favorite_border  
+  label(for=input_id class= "like-icon material-icons")   
   // Counter label
-  label(for="like" class="like-counter") 0
+  label(for=input_Id class="like-counter") !{likeAmount} 
   // Like input
-  input(id="like" class="like" type="checkbox")
+  input(id=input_id class="like" type="checkbox")
 
