@@ -1,0 +1,54 @@
+@import "./../../assets/fonts/fonts.css";
+@import "./../../abstracts/variables.scss";
+
+.pagination {
+  display: inline-block;
+  /* Pagination link */
+  &-link {
+    padding: 12px 16px;
+    text-decoration: none;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 15px;
+    align-items: center;
+    text-align: center;
+    color: rgba(31, 32, 65, 0.5);
+  }
+  /* Pagination text */
+  &-text {
+    @include usual-text;
+    font-size: 13.9px;
+    left: 5px;
+    top: 35.56px;
+  }
+  /* Pagination next */
+  &-next {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    color: white;
+    font-weight: bold;
+    border-radius: 50%;
+    box-sizing: border-box;
+    background: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%);
+    /* Pagination arrow */
+    .arrow {
+      margin-left: 11px;
+      margin-top: 11px;
+    }
+  }
+}
+.active {
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  color: white;
+  font-weight: bold;
+  background: gold; 
+  border-radius: 50%;
+  background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+  box-sizing: border-box;
+}
+
