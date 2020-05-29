@@ -1,5 +1,5 @@
-var maxOutput = document.querySelector(".range-output-max");
-var minOutput = document.querySelector(".range-output-min");
+var maxOutput = document.querySelector(".rangeslider-output-max");
+var minOutput = document.querySelector(".rangeslider-output-min");
 
 (function() {
 
@@ -19,30 +19,31 @@ var minOutput = document.querySelector(".range-output-min");
       var rangeGroup = $(this).attr('name'),
           minBtn = $(this).parent().children('.min'),
           maxBtn = $(this).parent().children('.max'),
-          range_min = $(this).parent().children('.range_min'),
-          range_max = $(this).parent().children('.range_max'),
+          range_min = $(this).parent().children('.rangeslider-range-min'),
+          range_max = $(this).parent().children('.rangeslider-range-max'),
           minVal = parseInt($(minBtn).val()),
           maxVal = parseInt($(maxBtn).val()),
           origin = $(this).context.className;
-          
-        //  / console.log(maxBtn.context.value)
-      
 
       if(origin === 'min' && minVal > maxVal-5){
           $(minBtn).val(maxVal-5);
       }
       var minVal = parseInt($(minBtn).val());
-      $(range_min).html(addSeparator(minVal*1000) + ' ₽');
+      $(range_min).html(addSeparator(minVal * 133 - 54).replace(".", " ") + ' ₽');
       
       if(origin === 'max' && maxVal-5 < minVal){
           $(maxBtn).val(5+ minVal);
       }
       var maxVal = parseInt($(maxBtn).val());
-      maxOutput.style.width = maxVal * 2
-      minOutput.style.width = minVal * 2
-  
-      $(range_max).html(addSeparator(maxVal*1000) + ' ₽');
+      
+      maxOutput.style.width = maxVal * 2.6
+      minOutput.style.width = minVal * 2.6
+      maxOutput.style.left = "0px";
+
+      $(range_max).html(addSeparator(maxVal * 133 + 25).replace(".", " ") + ' ₽');
   }
 
 $('input[type="range"]').on( 'input', rangeInputChangeEventHandler);
 })();
+
+

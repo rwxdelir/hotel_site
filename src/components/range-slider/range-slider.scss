@@ -1,5 +1,8 @@
+@import "./../../assets/fonts/fonts.css";
+@import "./../../abstracts/variables.scss";
+
 input[type='range'] {
-  width: 210px;
+  width: 266px;
   height: 30px;
   overflow: hidden;
   cursor: pointer;
@@ -28,6 +31,7 @@ input[type='range']:nth-child(2)::-webkit-slider-runnable-track{
 input[type='range']::-webkit-slider-thumb {
   position: relative;
   height: 15px;
+  
   width: 15px;
   margin-top: -5px;
   background: #fff;
@@ -60,16 +64,13 @@ input[type='range']:nth-child(1)::-webkit-slider-thumb{
   position: absolute;
 }
 
-@import "./../../assets/fonts/fonts.css";
-@import "./../../abstracts/variables.scss";
-
 .rangeslider span{
   position: absolute;
   margin-top: 30px;
   left: 0;
 }
 
-.rangeslider .light {
+.rangeslider .rangeslider-range {
   width: 102px;
   height: 15px;
   font-family: Montserrat;
@@ -82,48 +83,47 @@ input[type='range']:nth-child(1)::-webkit-slider-thumb{
   color: rgba(31, 32, 65, 0.5);
 }
 
-.rangeslider .right{
-  bottom: 60px;
-  width: 100px;
-  left: 115px;
-  align-items: left;
-}
 
-.rangeslider .left {
-  left: 40px;  
-  width: 100px;
-  bottom: 60px;
-  align-items: right;
-}
-
-.range-dash {
-  bottom: 60px;
-  margin-left: 51px
-}
-
-/* Range max indicator*/
-.range-output-max {
+/* Rangeslider range counters */
+.rangeslider-range {
   position: absolute;
-  bottom: 50%;
-  left: 0;
+  bottom: 65px;
+  /* Range right counter*/
+  &-right {
+    margin-left: 170px;
+    align-items: right;
+  }
+  /* Range left counter*/
+  &-left {
+    margin-left: 105px;
+    width: 0px;
+    align-items: right;
+  }
+  /* Range counter dash */
+  &-dash {
+    margin-left: 116px
+  }
+}
+
+
+/* Range indicator */
+.rangeslider-output {
+  position: absolute;
   margin-bottom: 12px;
   margin-left: 4px;
-  text-align: center;
-  width: 204px;
-  font-family: 'Advent Pro', sans-serif;
-  background: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%);  
   padding: 1px;
-}
-/* Range min indicator */
-.range-output-min {
-  position: absolute;
+  text-align: center;
   bottom: 50%;
-  left: 0;
-  margin-bottom: 12px;
-  margin-left: 4px;
-  text-align: center;
-  width: 0px;
-  font-family: 'Advent Pro', sans-serif;
-  background: white;  
-  padding: 1px;
+  /* Range maximum indicator */
+  &-max {
+    width: 90; 
+    left: 95px;
+    background: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%);    
+  }
+  /* Range minimum indicator */
+  &-min {
+    left: 0;
+    width: 0px;
+    background: white;  
+  }
 }
