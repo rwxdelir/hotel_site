@@ -1,0 +1,228 @@
+include ./../../logo/logo.pug
+include ./../../range-slider/range-slider.pug
+include ./../../button/button.pug
+include ./../../pagination/pagination.pug
+include ./../../checkbox-button/checkbox-button.pug
+include ./../../radio-button/radio-button.pug
+include ./../../toggle-button/toggle-button.pug
+include ./../../like-button/like-button.pug
+include ./../../rating-button/rating-button.pug
+include ./../../dropdown/dropdown.pug
+include ./../../count-button/count-button.pug
+include ./../../icon-list/icon-list.pug
+include ./../../checkbox-list/checkbox-list.pug
+include ./../../recall/recall.pug
+include ./../../bullet-list/bullet-list.pug
+include ./../../textfield/textfield.pug
+include ./../../date-dropdown/date-dropdown.pug
+
+doctype html
+html
+head
+  script(src="./formElements.js")
+  meta(name="viewport" content="width=device-width, initial-scale=1.0")
+body
+  div(class = "uikit")
+    div(class = "uikit--logo")
+      +logo("uikit")
+    
+    // Rangeslider
+    div(class = "uikit-rangeslider")
+      span(class = "uikit-title") range slider
+      +range-slider
+      script(src="./../../range-slider/range-slider.js")
+
+    // Button
+    div(class = "uikit-button")
+      span(class = "uikit-title") buttons
+      div(class = "uikit-button-colored")
+        +button({isColored: true,size: "small", title: "click me"})
+        div(class = "uikit-button-active")
+          +button({isColored: true, size: "small", title: "click me"})
+      div(class = "uikit-button-bordered")
+        +button({isBordered: true,size: "small", title: "click me"})
+        div(class = "uikit-button-active")
+          +button({isBordered: true, size: "small", title: "click me"})
+      div(class = "uikit-button-text")
+        +button({isTextButton: true,size: "small", title: "click me"})
+        div(class = "uikit-button-active")
+          +button({isTextButton: true, size: "small", title: "click me"})
+      div(class = "uikit-button-product")
+        +button({isColored: true, isArrowButton: true, size:"big", title: "перейти к оплате", className: "button_type_arrow"})
+      
+    // Pagination 
+    div(class = "uikit-pagination")
+      span(class = "uikit-title") pagination
+      - 
+        var pages = [
+          {number: '1', link: '#', active: true},
+          {number: '2', link: '#'},
+          {number: '3', link: '#'},
+          {number: '...', link: '#'},
+          {number: '15', link: '#'}
+        ];
+      +pagination(pages)
+    
+    // Checkbox button
+    div(class = "uikit-checkbox-button")
+      span(class = "uikit-title") checkbox buttons
+      - 
+        var checkboxBtnList = [
+          "Можно курить", 
+          "Можно с питомцами",
+          "Можно пригласить гостей (до 10 человек)"
+        ];
+      +checkbox-button(checkboxBtnList)
+      script(src="./../../checkbox-button/checkbox-button.js")
+    // Radio button
+    div(class = "uikit-radio")
+      span(class = "uikit-title") radio buttons
+      +radio-button("uikit-radio", "Мужчина", "Женщина")
+
+    // Toggle 
+    div(class = "uikit-toggle")
+      span(class = "uikit-title") toggle
+      +toggle-button("uikiti-toggle", "Получать спецпредложения")
+      div(class = "uikit-toggle-active")
+        +toggle-button("uikiti-toggle-active", "Получать спецпредложения", true)
+
+    // Like button 
+    div(class = "uikit-like")
+      span(class = "uikit-title") like button
+      +like-button("uikiti-like", "2")
+      div(class = "uikit-like-active")
+        +like-button("uikiti-like", "12", true)
+      // Include logic for icons and responds on click      
+      script(src = "./../../like-button/like-button.js")
+    
+    // Rating button
+    div(class = "uikit-rating")
+      span(class = "uikit-title") rate button 
+      +rating-button("4") 
+      div(class = "uikit-rating-full")
+        +rating-button("5")
+      script(src  = "./../../rating-button/rating-button.js")
+    
+    // Dropdown 
+    div(class = "uikit-dropdown")
+      - const dropdown_title1 = ["dropdown", "3 гостя", "взрослые", "дети", "младенцы"]
+      +dropdown(dropdown_title1, "option_two")
+      div(class = "uikit-dropdown-apply")
+        - const dropdown_title2 = ["dropdown", "Сколько гостей", "взрослые", "дети", "младенцы"]
+        +dropdown(dropdown_title2, "option_one")
+      div(class = "uikit-dropdown-default")
+        - const dropdown_title3 = ["dropdown", "2 спальни, 2 кровати"]
+        +dropdown(dropdown_title3)
+      div(class = "uikit-dropdown-expanded")
+        - const dropdown_title4 = ["dropdown", "2 спальни, 2 кровати", "спальни", "кровати", "ванные комнаты"]        
+        +dropdown(dropdown_title4)
+      
+      script(src="./../../dropdown/dropdown.js")
+      script(src="./../../count-button/count-button.js")
+
+    // Icon list  
+    div(class = "uikit-icon")
+      - 
+        var icon_list = [{
+            title: "Комфорт", 
+            text: "Шумополглощающие стены",
+            icon: "insert_emoticon"
+          },{
+            title: "Удобство", 
+            text: "Окно в каждой из спален",
+            icon: "location_city"
+          }];
+      +icon-list(icon_list)
+    
+    // Expandable checkbox list
+    div(class = "uikit-checkbox-list")
+      - 
+        var checkboxList1 = [
+          "Завтрак", 
+          "Письменный стол",
+          "Стул для кормления",
+          "Кроватка",
+          "Телевизор",
+          "Шампунь"
+        ];
+      +checkbox-list("expandable checkbox list", checkboxList1)
+      div(class = "uikit-checkbox-list-expanded")
+        - 
+          var checkboxList2 = [
+            "Завтрак", 
+            "Письменный стол",
+            "Стул для кормления",
+            "Кроватка",
+            "Телевизор",
+            "Шампунь"
+          ];
+        +checkbox-list("expandable checkbox list", checkboxList2)
+      // Include responds on click      
+      script(src = "./../../checkbox-list/checkbox-list.js")
+
+    // Recall
+    div(class = "uikit-recall") 
+      - 
+        var recall1 = {
+          like : {id: "like1", amount: "12", liked: true},
+          user : {name: "Мурад Сарафанов", img: "./../../../assets/images/user-photo.png"},
+          date : "5 дней назад",
+          text : "Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей."
+        }
+      +recall(recall1)
+      // Include responds on like
+      script(src="./../../like-button/like-button.js")      
+    
+    // Rich checkbox
+    div(class = "uikit-rich-checkbox")
+      span(class = "uikit-title") rich checkbox buttons 
+      - 
+        var richCheckbox = [{
+          title: "Широкий коридор",
+          text: "Ширина коридора в номере не менее 91 см."
+        },{
+          title: "Помощник для инвалидов",
+          text: "На 1 этаже вас встретит специалист и проводит до номера."
+        }];
+      +checkbox-button(richCheckbox, true)
+    
+    // Bullet list
+    div(class = "uikit-bullet-list")
+      span(class = "uikit-title") bullet list 
+      - 
+        var list1 = [
+          "Нельзя с питомцами",
+          "Без вечеринок и мероприятий",
+          "Время прибытия — после 13:00, а выезд до 12:00."
+        ];
+      +bullet-list(list1)
+
+    // Textfield
+    div(class = "uikit-textfield")
+      span(class = "uikit-title") text field
+      +textfield("uikit-email-field", "Email")
+      div(class = "uikit-textfield-focused")
+        span(class = "uikit-title") text field 
+        +textfield("uikit-focused-field","Text", "This is pretty awesome") 
+      div(class = "uikit-textfield-masked")
+          span(class = "uikit-title") masked text field 
+          +textfield("uikit-masked-field", "ДД.ММ.ГГГГ")
+    
+    // Date dropdown
+    div(class = "uikit-date-dropdown")
+      span(class = "uikit-title") masked text field 
+      +date-dropdown("uikit-masked-field", "")
+      div(class = "uikit-date-dropdown-filled")
+        span(class = "uikit-title") masked text field 
+        +date-dropdown("uikit-masked-field", "", "19.08.2019")
+      div(class = "uikit-date-dropdown-filter")
+        span(class = "uikit-title") filter date dropdown 
+        +date-dropdown("filter", "", "19 авг - 23 авг", "filter-date-dropdown")
+      div(class = "uikit-date-dropdown-subscription")
+        span(class = "uikit-title") subscription text field 
+        +date-dropdown("subscribe", "",  "Email", "subscription-date-dropdown")
+
+    // Dropdwon for textfield field 
+    div(class = "uikit-dropdown-guests")
+      - const dropdownGuestsTitle = ["dropdown", "Сколько гостей", "взрослые", "дети", "младенцы"]
+      +dropdown(dropdownGuestsTitle, "option_one")

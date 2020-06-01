@@ -1,0 +1,276 @@
+@import "./../../../assets/fonts/fonts.css";
+@import "./../../../abstracts/variables.scss";
+
+body {
+  position: relative;
+  width: 1440px;
+  height: 1350px;
+  background: #ffffff;
+}
+/* Uikit logo */
+.uikit--logo {
+  position: absolute;
+  left: 30px;
+  top: 30px;
+}
+
+/* UI kit title */
+.uikit-title {
+  @include h3-title;
+}
+
+/* UI kit rangeslider */
+.uikit-rangeslider {
+  position: absolute;
+  top: 143px;
+  left: 979px;
+  /* Aligns title for rangeslider */
+  .uikit-title {
+    height: 15px;
+    bottom: 5px;
+    left: 2px;
+  }
+}
+
+/* UI kit buttons */ 
+.uikit-button {
+  position: absolute;
+  top: 231px;
+  left: 979px;
+  /* Aligns title for buttons */
+  .uikit-title {
+    top: -30px;
+  }
+  &-colored {
+    display: flex;
+  }
+  &-bordered {
+    display: flex;
+    margin-top: 30px;
+  }
+  &-text {
+    display: flex;
+    margin-top: 31px;
+    margin-left: -19px;
+  }
+  &-product {
+    margin-top: 30px;
+  }
+  /* UI kit active buttons */
+  &-active {
+    margin-left: 19px;
+    opacity: 0.5;
+  }
+}
+
+/* UI kit pagination */
+.uikit-pagination {
+  position: absolute;
+  top: 540px;
+  left: 979px;
+  /* UI kit title for pagination */
+  .uikit-title {
+    top: -30px;
+  }
+}
+
+/* UI kit checkbox button */
+.uikit-checkbox-button {
+  position: absolute;
+  top: 143;
+  left: 587px;
+  /* UI kit title for checkbox */
+  .uikit-title {
+    top: -21px;
+    left: 2px;
+  }
+}
+
+/* UI kit radio button */
+.uikit-radio {
+  position: absolute;
+  top: 313px;
+  left: 587px;
+  /* UI kit title for radio */
+  .uikit-title {
+    top: -30px;
+    left: 2px;
+  }
+}
+
+/* UI kit toggle button */
+.uikit-toggle {
+  position: absolute;
+  left: 587px;
+  top: 442px;
+  &-active {
+    position: absolute;
+    bottom: 39px;
+  }
+  /* UI kit title for toggle */
+  .uikit-title {bottom: 50px;}
+}
+
+/* UI kit like button */
+.uikit-like {
+  position: absolute;
+  top: 534px;
+  left: 587px;
+  &-active {
+    position: absolute;
+    left: 50px;
+  }
+  /* UI kit title for like button*/
+  .uikit-title {bottom: 14px;}
+}
+
+/* UI kit rating button */
+.uikit-rating {
+  position: absolute;
+  top: 625px;
+  left: 584px;
+  &-full {
+    position: absolute;
+    left: 150px;
+  }
+  /* UI kit title for rating */
+  .uikit-title {bottom: 8px;}
+}
+
+/* UI kit dropdown */
+.uikit-dropdown {
+  position: absolute;
+  left: 979px;
+  top: 876px;
+  /* Shows dropdown content */
+  .dropdown_content {
+    display: block;
+  }
+  /* Dropdown with apply option */
+  &-apply {
+    position: absolute;
+    right: 392px;
+  }
+  /* Default dropdown without any option */
+  &-default {
+    position: absolute;
+    right: 840px;
+    .dropdown_content {
+      display: none;
+      width: 0px;
+      height: 0px;
+      padding: 0px;
+      border: 0px;
+    }
+  }
+  /* Default dropdown in expanded state */
+  &-expanded {
+    position: absolute;
+    right: 840px;
+    top: 85px;
+  }
+}
+
+/* UI kit icon list */
+.uikit-icon {
+  position: absolute;
+  left: 140px;
+  top: 1564px;
+}
+
+/* UI kit expandable checkbox list */
+.uikit-checkbox-list {
+  position: absolute;
+  top: 1230px;
+  left: 140px;
+  &-expanded {
+    position: absolute;
+    bottom: 259px;
+    .checkbox-list { 
+      &-container {
+        display: none;
+      }
+      &--arrow {
+        transform: rotate(0deg);
+        top: -2.6px;   
+        margin-left: -2px;
+      }
+    }
+  }
+}
+
+/* UI kit recall */
+.uikit-recall {
+  top: 1584px;
+  left: 587px;
+  position: absolute;
+}
+
+/* UI kit rich checkbox */
+.uikit-rich-checkbox {
+  position: absolute;
+  top: 1196px;
+  left: 587px;
+  .uikit-title {
+    top: -18px;
+  }
+}
+
+/* UI kit bullet list */
+.uikit-bullet-list {
+  position: absolute;
+  top: 1208px;
+  left: 979px;
+  
+  .uikit-title {
+    margin-top: -25px;
+  }
+}
+
+/* UI kit textfield */
+.uikit-textfield {
+  position: absolute;
+  top: 124px;
+  left: 141px;
+  &-focused {
+    position: absolute;
+    top: 87px;
+    .textfield_input[type] {
+      border: 1px solid rgba(31, 32, 65, 0.50);
+      color: rgba(31, 32, 65, 0.75);    }
+  }
+  &-masked {
+    position: absolute;
+    top: 252px;
+  }
+}
+
+/* UI kit date dropdown*/
+.uikit-date-dropdown {
+  position: absolute;
+  top: 455px;
+  left: 141px;
+  .uikit-title {top: 15px;}
+  /* Option filled */
+  &-filled {
+    position: absolute;
+    left: 170px;
+  }
+  /* Option filter*/
+  &-filter {
+    position: absolute;
+    top: 105px;
+  }
+  /* Option subscription */
+  &-subscription {
+    position: absolute;
+    top: 207px;
+  }
+}
+
+/* UI kit dropdwon guests */
+.uikit-dropdown-guests {
+  position: absolute;
+  top: 312.44px;
+  left: 141px;
+}
