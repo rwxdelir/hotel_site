@@ -1,12 +1,25 @@
 include ./../arrow/arrow.pug
 
-mixin date-dropdown(option, input_title, arrow, input_text, input_id)
-  - var filter = (option == "filter") ? "date-dropdown_filter" : "";
+mixin date-dropdown(option, input_title, input_text, input_id)
   - var text = (input_text != undefiend) ? input_text : "ДД.ММ.ГГГГ";
   - var title = (input_title != undefiend) ? input_title : "";
   div(class="date-dropdown_container")
-    label(for=input_id class="date-dropdown_title") #{title}
-    input(id=input_id placeholder=text class="date-dropdown " + filter)    
-    div(class="date-dropdown_arrow")
-      if arrow != undefiend
-        +arrow("arrow_expand")
+    
+    if option == "filter"
+      label(for=input_id class="date-dropdown_title") #{title}
+      input(id=input_id placeholder=text class="date-dropdown date-dropdown-filter")    
+      div(class="date-dropdown-filter_arrow")
+        +arrow("arrow_expand", "rgba(31, 32, 65, 0.5)")
+
+    else if option == "subscribe"
+      label(for=input_id class="date-dropdown_title") #{title}
+      input(id=input_id placeholder=text class="date-dropdown date-dropdown-subscribe")    
+      div(class = "date-dropdown-subscribe_arrow")
+        +arrow("arrow_forward", "#8BA4F9")
+
+    else 
+      label(for=input_id class="date-dropdown_title") #{title}
+      input(id=input_id placeholder=text class="date-dropdown")    
+      div(class="date-dropdown_arrow")
+        +arrow("arrow_expand", "rgba(31, 32, 65, 0.5)")
+

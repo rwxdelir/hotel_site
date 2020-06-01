@@ -1,6 +1,7 @@
 // Material icons
 link(href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet")
 
+// list { title: "Comfort", text: "noise absorbing walls", icon: "insert_emoticon"}
 mixin icon-list(list)
   - var iconClass = "<span class='icon-list-sign material-icons'>"
   - var titleClass = "<span class='icon-list-title icon-list-text'>"
@@ -9,9 +10,9 @@ mixin icon-list(list)
     each item, i in list
       - var iconEl = `${iconClass}` + `${item.icon}` + "</span>"
       - var titleEl = `${titleClass}` + `${item.title}` + "</span>"
-      - var textEl = `${textClass}` + `${item.text}` + "</span>"
-    
+      - var textEl = `${textClass}` + `${item.text}` + "</span>"    
       li(class = "icon-list-item") !{iconEl}!{titleEl}!{textEl} 
+      
     // Adds separate line between icons 
     each item, i in list  
       - var separateLine = (i+1)%2 == 1 ? "<div class='icon-list-line'></div>" : "";
