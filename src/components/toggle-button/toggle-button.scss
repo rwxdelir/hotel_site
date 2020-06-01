@@ -23,7 +23,7 @@
   /* Toggle hover */
   &:hover {
     border: 1px solid $blue;
-    box-shadow: 0 0 0 1.5px #8BA4F9;
+    box-shadow: 0 0 0 1.5px $blue;
   }
   &-label:hover:after {
       box-shadow: 0 0 0 2px $blue;
