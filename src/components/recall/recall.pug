@@ -11,7 +11,7 @@ mixin recall(recall)
   div(class = "recall")
     // Like button
     div(class = "recall-like")
-      +like-button(recall.like.id, recall.like.amount)
+      +like-button(recall.like.id, recall.like.amount, recall.like.liked)
     // User information
     div(class = "recall-user") 
       div(class = "recal-user-name")
