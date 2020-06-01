@@ -4,6 +4,8 @@
 .checkbox {
   padding: 0;
   left: 0px;
+  top: 0px;
+  margin: 0px;
   &--arrow {
     position: absolute;
     width: 10px;
@@ -52,6 +54,7 @@
     margin-top: 12px;
     margin-left: 10px;
     line-height: 18px;
+    width: 192px;
     color: rgba(31, 32, 65, 0.5);
   }
   /* Rules for buttons wuth rich option */
