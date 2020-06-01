@@ -1,16 +1,6 @@
 include ./../arrow/arrow.pug
 
-mixin pagination(pages)
-  //- div(class = "pagination")
-  //-   a(href = "#" class = "pagination-link active") 1 
-  //-   a(href = "#" class = "pagination-link") 2    
-  //-   a(href = "#" class = "pagination-link") 3 
-  //-   a(href = "#" class = "pagination-link") ...
-  //-   a(href = "#" class = "pagination-link") 15
-  //-   a(href = "#" class = "pagination-lin pagination-next") 
-  //-     +arrow("arrow_forward", "#FFFFFF")
-
-  //- p(class = "pagination-text")  1 – 12 из 100+ вариантов аренды   
+mixin pagination(pages)   
   div(class = "pagination")
   each page, i in pages
     - var classActive = (page.active == true) ? " active" : ""
@@ -21,9 +11,7 @@ mixin pagination(pages)
     +arrow("arrow_forward", "#FFFFFF")
   p(class = "pagination-text")  1 – 12 из 100+ вариантов аренды   
   
-  // Pagination script 
-  script(src= "./pagination.js")
-    
+      
     
   
 
