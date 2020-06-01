@@ -6,7 +6,7 @@ input[type='range'] {
   height: 30px;
   overflow: hidden;
   cursor: pointer;
-    outline: none;
+  outline: none;
 }
 input[type='range'],
 input[type='range']::-webkit-slider-runnable-track,
@@ -54,20 +54,12 @@ input[type='range']:nth-child(1)::-webkit-slider-thumb{
   height: 60px;
   width: 210px;
   display: inline-block;
-  margin-top: -5px;
-  margin-left: 20px;
 }
 .rangeslider input{
   position: absolute;
 }
 .rangeslider{
   position: absolute;
-}
-
-.rangeslider span{
-  position: absolute;
-  margin-top: 30px;
-  left: 0;
 }
 
 .rangeslider .rangeslider-range {
@@ -83,25 +75,24 @@ input[type='range']:nth-child(1)::-webkit-slider-thumb{
   color: rgba(31, 32, 65, 0.5);
 }
 
-
 /* Rangeslider range counters */
 .rangeslider-range {
   position: absolute;
   bottom: 65px;
   /* Range right counter*/
   &-right {
-    margin-left: 170px;
+    margin-left: 168px;
     align-items: right;
   }
   /* Range left counter*/
   &-left {
-    margin-left: 105px;
+    margin-left: 100px;
     width: 0px;
     align-items: right;
   }
   /* Range counter dash */
   &-dash {
-    margin-left: 116px
+    margin-left: 112px
   }
 }
 

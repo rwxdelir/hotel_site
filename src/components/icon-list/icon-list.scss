@@ -3,6 +3,9 @@
 
 .icon-list {
   position: absolute;
+  padding: 0px;
+  margin: 0px;
+  
   /* Icon list item */
   &-item {
     list-style-type: none;
