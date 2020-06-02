@@ -8,9 +8,9 @@ mixin reservation-card
   div(class="reservation_container")
     // Dropdowns
     div(class="reservation_dropdown reservation_dropdown-arrival")
-      +date-dropdown("", "прибытие", "arrow") 
+      +date-dropdown("", "прибытие") 
     div(class="reservation_dropdown reservation_dropdown-departure") 
-      +date-dropdown("", "выезд", "arrow")
+      +date-dropdown("", "выезд")
     div(class="reservation_dropdown reservation_dropdown-guest")
       +dropdown(dropdown_title, "option_one")
 
@@ -39,6 +39,6 @@ mixin reservation-card
         li(class="reservation_price-item reservation_price-amount") !{fEl.s}Итого!{fEl.e} !{sEl.s}#{prices.amount}Р!{sEl.e}
 
     // Script implement count for dropdown buttons   
-    script(src="./../../count-button/count-button.js")
+    //script(src="./../../count-button/count-button.js")
 
 

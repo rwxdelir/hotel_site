@@ -6,5 +6,34 @@ head
   script(src="./../review-card/review-card.js")
   meta(name="viewport" content="width=device-width, initial-scale=1.0")
 body
-  +review-card("lux")
+  - 
+    var card1 = {
+      lux: true,
+      number: 840,
+      recalls: 32,
+      cost: "8 000",
+      rating: 2,
+      firstImg: "./../../assets/images/img2.jpg",
+      secondImg: "./../../assets/images/img1.jpg",
+      thirdImg: "./../../assets/images/img3.jpg",
+      fourthImg: "./../../assets/images/img1.jpg"
+    }
+  +review-card(card1)
+
+  - 
+    var card2 = {
+      lux: false,
+      number: 888,
+      cost: "9 900",
+      rating: 4,
+      recalls: 65,
+      firstImg: "./../../assets/images/img2.jpg",
+      secondImg: "./../../assets/images/img1.jpg",
+      thirdImg: "./../../assets/images/img3.jpg",
+      fourthImg: "./../../assets/images/img1.jpg"
+    }
+  div(style = "left: 400px; position: absolute;")
+    +review-card(card2)
+  
+
  

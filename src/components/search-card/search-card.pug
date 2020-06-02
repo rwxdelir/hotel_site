@@ -10,11 +10,12 @@ mixin search-card
     h1(class="search_title-main search_title") Найдём номера под ваши желания 
     // Dropdowns
     div(class="search_dropdown search_dropdown-arrival")
-      +date-dropdown("", "прибытие", "arrow") 
+      +date-dropdown("", "прибытие") 
     div(class="search_dropdown search_dropdown-departure") 
-      +date-dropdown("", "выезд", "arrow")
+      +date-dropdown("", "выезд")
     div(class="search_dropdown search_dropdown-guest")
-      +dropdown(dropdown_title, "option_one")
+        - const dropdown_title2 = ["dropdown", "Сколько гостей", "взрослые", "дети", "младенцы"]
+        +dropdown(dropdown_title2, "option_one")
     // Buttons
     div(class="search_button search_button-find")
       +button({isArrowButton:true, title:"подобрать номер", isColored:true, size: "big"})

@@ -51,6 +51,16 @@ $height-text: 15px;
         top: 14px;
       }
     }
+    &-header {
+      &-login {
+        width: 87px;
+        height: 34px;
+      }
+      &-register {
+        width: 196px;
+        height: 34px;
+      }
+    }
   }
 
   &_type {

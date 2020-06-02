@@ -146,6 +146,8 @@ body
           "Шампунь"
         ];
       +checkbox-list("expandable checkbox list", checkboxList1)
+      script(src = "./../../checkbox-button/checkbox-button.js")
+
       div(class = "uikit-checkbox-list-expanded")
         - 
           var checkboxList2 = [
@@ -185,7 +187,7 @@ body
           text: "На 1 этаже вас встретит специалист и проводит до номера."
         }];
       +checkbox-button(richCheckbox, true)
-    
+      script(src = "./../../checkbox-button/checkbox-button.js")
     // Bullet list
     div(class = "uikit-bullet-list")
       span(class = "uikit-title") bullet list 
