@@ -1,12 +1,15 @@
-* {
-  box-sizing: border-box;
-}
+@import "./../../assets/fonts/fonts.css";
+@import "./../../abstracts/variables.scss";
 
 .header {
   -webkit-user-select: none;     
   -moz-user-select: none; 
   -ms-user-select: none;
-
+  position: absolute;
+  left: 0px;
+  padding: 0px;
+  margin: 0px;
+  right: 0px;
   position: absolute;
   width: 1440px;
   height: 70px;
@@ -19,26 +22,24 @@
     left: 140px;
   }
   &_button {
-    height: 34px;
     left: 1143px;
     &-login {
       position: absolute;
       top: 16px;
-      width: 79px;
+      margin-left: -90px;
     } 
     &-register {
       position: absolute;
       top: 15px;
-      width: 101px;
-      margin-left: 100px;
+      margin-left: 20px;
     } 
   }
   &_nav {
     position: absolute;
     width: 527px;
     height: 21px;
-    left: 543px;
-    top: 10px;
+    left: 531px;
+    top: -5px;
   }
   &_card {
     &-login {

@@ -1,22 +1,42 @@
 - 
 
-  // Data for nav mixin
-  var navigation = [ {title: "Navigation", href: "#", isSelected: true},
+  // Data for nav mixin in english
+  var navEng = [ {title: "Navigation", href: "#", isSelected: true},
     {title: "About Us", href: "#"},
     {title: "News", href: "#"},
     {title: "Support", href: "#"},
     {title: "Products", href: "#"}]
-  var about = [ {title: "About us", href: "#", isSelected: true},
+  var aboutEng = [ {title: "About us", href: "#", isSelected: true},
     {title: "Who we are", href: "#"},
     {title: "Our team", href: "#"},
     {title: "Careers", href: "#"},
     {title: "Investors", href: "#"}]
-  var support = [ {title: "Support", href: "#", isSelected: true},
+  var supportEng = [ {title: "Support", href: "#", isSelected: true},
     {title: "Documentation", href: "#"},
     {title: "Community", href: "#"},
     {title: "Get in Touch", href: "#"}]
   
-mixin footer 
+  // Data for nav mixin in russian
+  var navRus = [ {title: "Навигация", href: "#", isSelected: true},
+    {title: "О нас", href: "#"},
+    {title: "Новости", href: "#"},
+    {title: "Служба поддержки", href: "#"},
+    {title: "Услуги", href: "#"}]
+  var aboutRus = [ {title: "О нас", href: "#", isSelected: true},
+    {title: "О сервисе", href: "#"},
+    {title: "Наша команда", href: "#"},
+    {title: "Вакансии", href: "#"},
+    {title: "Инвесторы", href: "#"}]
+  var supportRus = [ {title: "Служба поддержки", href: "#", isSelected: true},
+    {title: "Соглашения", href: "#"},
+    {title: "Сообщества", href: "#"},
+    {title: "Связь с нами", href: "#"}]
+mixin footer(lang)
+  - var navigation = (lang == "eng") ? navEng : navRus
+  - var about = (lang == "eng") ? aboutEng : aboutRus
+  - var support = (lang == "eng") ? supportEng : supportRus
+
+
   div(class="footer")
     // Menu navigation, aboutus, support
     div(class="footer-menu")
@@ -30,15 +50,21 @@ mixin footer
     // Logo 
     div(class="footer-logo")
       +logo
-      p(class="footer-text footer-logo-describe") Lorem ipsum dolor sit amet consectetur adipiscing elit aliquam eget nullam pellentesque aliquam curabitur cociis.
-
+      if lang == "eng"
+        p(class="footer-text footer-logo-describe") Lorem ipsum dolor sit amet consectetur adipiscing elit aliquam eget nullam pellentesque aliquam curabitur cociis.
+      else 
+        p(class="footer-text footer-logo-describe") Бронирование номеров в лучшем отеле 2019 года по версии ассоциации «Отельные взгляды»
     // Subscribe textfield
     div(class="footer-subscribe") 
       div(class="footer-subscribe-textfield")
-        +textfield("email", "", "Your email address", "arrow")
+        +textfield("email", "Email", "", "arrow")
       div(class="footer-subscribe-text")
-        p(class="footer-title footer-subscribe-title") Subscribe to our newsletter
-        p(class="footer-text footer-subscribe-describe") Recieve our latest news and promotions in your inbox!
+        if lang == "eng"
+          p(class="footer-title footer-subscribe-title") Subscribe to our newsletter
+          p(class="footer-text footer-subscribe-describe") Recieve our latest news and promotions in your inbox!
+        else
+          p(class="footer-title footer-subscribe-title") Подписка
+          p(class="footer-text footer-subscribe-describe") Получайте специальные предложения и новости сервиса
    
     // Copyright bar 
     div(class="footer-copyright")

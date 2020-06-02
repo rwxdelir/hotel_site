@@ -3,13 +3,37 @@ include ../button/button.pug
 include ../logo/logo.pug
 include ../card/card.pug
 
-mixin header 
+- 
+  var navItems = [
+    {title: "О нас", href: "#"},
+    {title: "Услуги", href: "#", isExpanded:
+    [
+      {title: "Service 1"},
+      {title: "Service 2"},
+      {title: "service 3"}
+    ]},
+    {title: "Вакансии", href: "#"},
+    {title: "Новости", href: "#"},
+    {title: "Соглашения", href: "#", isExpanded: 
+      [{title: "Sevice1"}]}
+  ]
+
+mixin header(uikit)
   header(class = "header")
     div(class="menu")
-      +nav("header_nav")
-      div(class = "header_logo")
-        +logo
-      +button({title:"register", isColored:true, className:"header_button header_button-register"})
-      +button({title:"login", isBordered:1, className:"header_button header_button-login"})
-      +card("header_card-login card-login")  
+      if uikit != undefiend
+        +nav("header_nav")
+        div(class = "header_logo")
+          +logo
+        +button({title:"register", isColored:true, className:"header_button header_button-register"})
+        +button({title:"login", isBordered:1, className:"header_button header_button-login"})
+ 
+      else 
+        +nav("header_nav", navItems)
+        div(class = "header_logo")
+          +logo
+        +button({title:"Зарегистрироваться", isColored:true, size: "header-register", className:"header_button header_button-register"})
+        +button({title:"Войти", isBordered:1, size: "header-login", className:"header_button header_button-login"})
+      
+
         

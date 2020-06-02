@@ -7,12 +7,22 @@
   height: 372px;
   background: #FFFFFF;
   box-shadow: 0px 1px 0px rgba(31, 32, 65, 0.1);
+  /* Text */
+  &-text {
+    @include usual-text;
+  }
   /* Logo and describe */
   &-logo {
     position: absolute;
     top: 115px;
     left: 140px;
-    &-describe {top: 46px;}
+    /* Logo text */
+    &-describe {
+      top: 46px; 
+      width: 260px; 
+      height: 72px; 
+      line-height: 24px;
+    }
   }
   /* Navigation menu */
   &-menu {
@@ -29,7 +39,8 @@
   /* Subscribe field */
   &-subscribe {
     position: absolute;
-    top: 3.5px;
+    top: 7px;
+    left: 50px;
     .textfield_input {
       position: absolute;
       width: 260px;
@@ -44,15 +55,13 @@
     &-describe {
       top: 128px;
       left: 1040px;
+      width: 260px;
+      height: 48px;
     }
     &-title {
       left: 1040px;
       top: 104px;
     }
-  }
-  /* Text */
-  &-text {
-    @include usual-text;
   }
   /* Title */
   &-title {
