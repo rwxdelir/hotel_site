@@ -7,12 +7,13 @@ mixin pagination(pages)
       - var classActive = (page.active == true) ? " active" : ""
       if (i < 5)
         a(href = `${page.link}` class = "pagination-link" + classActive) !{page.number}
-
-    a(href = "#" class = "pagination-lin pagination-next") 
-      +arrow("arrow_forward", "#FFFFFF")
-    p(class = "pagination-text")  1 – 12 из 100+ вариантов аренды   
+        
   
-  else 
-    div(class = "pagination")
+  
+  div(class = "pagination")
+    p(class = "pagination-text") 1 – 12 из 100+ вариантов аренды   
+
+  a(href = "#" class = "pagination-lin pagination-next") 
+    +arrow("arrow_forward", "#FFFFFF")
 
       
