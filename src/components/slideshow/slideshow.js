@@ -8,10 +8,6 @@ for (let i = 0; i < btnPrev.length; i++) {
   btnNext[i].onclick = function() {plusSlides(1, i);}
 }
 
-var dot = document.querySelectorAll(".slideshow-dot");
-for (let i = 0; i < dot.length; i++) {
-  dot[i].onclick = function() {currentSlide(i+1, i);}
-}
 
 /* Increases count indexes if we add new slideshow */
 var slideIndex = [];
@@ -25,9 +21,35 @@ function plusSlides(n, s) {
 }
 
 function currentSlide(n, s) {
-  showSlides(slideIndex = n, s);
+  showSlides(slideIndex[s] = n, s);
 } 
 
+
+var dot = document.querySelectorAll(".slideshow-dot");
+for (let i = 0; i < dot.length; i++) {
+  dot[i].onclick = function() {
+    let slides = slideshow[Math.floor(i/4)].getElementsByClassName("slideshow-slide");
+    let dots = slideshow[Math.floor(i/4)].getElementsByClassName("slideshow-dot");
+    let dotsAmount = ((Math.floor(i/4)) + 1) * 4;
+    let currentDot =  4 - (dotsAmount - i);
+
+    for (let j = 0; j < slides.length; j++) {
+      slides[j].style.display = "none";
+    }
+    for (let j = 0; j < slides.length; j++) {
+      dots[j].className = dots[j].className.replace(" slideshow-dot-active", "");
+    }
+
+    slides[currentDot].style.display = "block";
+    dots[currentDot].className += " slideshow-dot-active";    
+    slideIndex[Math.floor(i/4)] = currentDot+1;
+  }
+}
+
+for (let i = 0; i < slideshow.length; i++) {
+  
+  console.log(slideIndex[i])
+}
 /* Shows number 'n' slide from slideshow with index 'no' */
 function showSlides(n, no) {
   var i;

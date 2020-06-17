@@ -5,13 +5,13 @@ mixin slideshow(firstImg, secondImg, thirdImg, fourthImg)
     
     // Full-width images  
     div(class="slideshow-slide") 
-      img(src=firstImg style="width:100%") 
+      img(class = "slideshow-slide-img" src=firstImg style="width:100%; border-radius: 4px;") 
     div(class="slideshow-slide") 
-      img(src=secondImg style="width:100%") 
+      img(class = "slideshow-slide-img" src=secondImg style="width:100%; border-radius: 4px;") 
     div(class="slideshow-slide")
-      img(src=thirdImg style="width:100%") 
+      img(class = "slideshow-slide-img" src=thirdImg style="width:100%; border-radius: 4px;") 
     div(class="slideshow-slide")
-      img(src=fourthImg style="width:100%") 
+      img(class = "slideshow-slide-img" src=fourthImg style="width:100%; border-radius: 4px;") 
 
     // Next and previous buttons
     div(class= "slideshow-button slideshow-button-prev") 
@@ -26,5 +26,4 @@ mixin slideshow(firstImg, secondImg, thirdImg, fourthImg)
       span(class="slideshow-dot" onclick="currentSlide(3)")
       span(class="slideshow-dot" onclick="currentSlide(4)")
 
-    // implement slideshow logic
-    script(src="./../../slideshow/slideshow.js")      
+  
