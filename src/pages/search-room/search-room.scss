@@ -1,0 +1,134 @@
+body {
+  position: absolute;
+  width: 1440px;
+  height: 900px;
+  left: 0px;
+  top: 0px;
+  margin: auto;
+}
+
+/* Searchroom search results */
+.searchroom-result {
+  position: absolute;
+  display: block;
+}
+
+/* Searchroom pagination */
+.searchroom-pagination {
+  position: absolute;
+  top: 1282px;
+  left: 756px;
+}
+
+/* Title for forms */
+.searchroom-formtitle {
+  position: absolute;
+  width: 209px;
+  height: 15px;
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: bold;
+  font-size: 12px;
+  line-height: 15px;
+  text-transform: uppercase;
+  color: #1F2041;
+}
+
+/* Rangeslider */
+.searchroom-rangeslider {
+  position: absolute;
+  left: 140px;
+  top: 316.44px;
+  /* Rangeslider title */
+  &-title {
+    @extend .searchroom-formtitle;
+    margin-top: -20px;
+  }
+  /* Rangeslider describe */
+  &-describe {  
+    position: absolute;
+    width: 264px;
+    height: 14px;
+    margin-top: 32px;
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 14px;  
+    color: rgba(31, 32, 65, 0.5);
+  }
+}
+
+/* Searchroom title */
+.searchroom-title {
+  position: absolute;
+  width: 600px;
+  height: 30px;
+  left: 465px;
+  top: 79px;
+
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 30px;
+  color: #1F2041;
+}
+
+/* Searchroom dropdowns */
+.searchroom-dropdown {
+  position: absolute;
+  left: 140px;
+  &-first {
+    position: absolute;
+    top: 120px;
+  }
+  &-second {
+    position: absolute;
+    top: 204px;
+  }
+  &-third {
+    position: absolute;
+    top: 735px;
+  }
+}
+
+/* Checkboxbtn */
+.searchroom-checkboxbtn {
+  position: absolute;
+  left: 140px;
+  top: 411.56px;
+  &-title {
+    @extend .searchroom-formtitle;
+    top: -30px;
+  }
+}
+
+/* Richcheckbox */
+.searchroom-richcheckbox {
+  position: absolute;
+  left: 140px;
+  top: 571px;
+  /* Richcheckbox title */
+  &-title {
+    @extend .searchroom-formtitle;
+    top: -30px;
+  }
+}
+
+/* Checkbox list */
+.searchroom-checkboxlist {
+  position: absolute;
+  left: 140px;
+  top: 825px;
+}
+
+/* Footer */
+.searchroom-footer {
+  position: absolute;
+  left: 0px;
+  top: 1427px;
+  .footer {
+    border-top: 1px solid rgba(31, 32, 65, 0.25);
+  }
+}

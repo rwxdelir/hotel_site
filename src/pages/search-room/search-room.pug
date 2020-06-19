@@ -1,0 +1,148 @@
+include ./../../components/header/header.pug
+include ./../../components/nav/nav.pug
+include ./../../components/logo/logo.pug
+include ./../../components/reservation-card/reservation-card.pug
+include ./../../components/date-dropdown/date-dropdown.pug
+include ./../../components/dropdown/dropdown.pug
+include ./../../components/button/button.pug
+include ./../../components/login-card/login-card.pug
+include ./../../components/search-card/search-card.pug
+include ./../../components/count-button/count-button.pug
+include ./../../components/textfield/textfield.pug
+include ./../../components/radio-button/radio-button.pug
+include ./../../components/toggle-button/toggle-button.pug
+include ./../../components/date-dropdown/date-dropdown.pug
+include ./../../components/search-card/search-card.pug
+include ./../../components/rating-button/rating-button.pug
+include ./../../components/footer/footer.pug
+include ./../../components/copyright-bar/copyright-bar.pug
+include ./../../components/review-card/review-card.pug
+include ./../../components/slideshow/slideshow.pug
+include ./../../components/rating-button/rating-button.pug
+include ./../../components/pagination/pagination.pug
+include ./../../components/header/header.pug
+include ./../../components/nav/nav.pug
+include ./../../components/range-slider/range-slider.pug
+include ./../../components/checkbox-button/checkbox-button.pug
+include ./../../components/checkbox-list/checkbox-list.pug
+
+doctype html
+html
+head
+  script(src = "./search-room.js")
+  meta(name="viewport" content="width=device-width, initial-scale=1.0")
+body(class = "searchroom")
+  // Rangeslider 
+  div(class = "searchroom-rangeslider") 
+    +range-slider
+    span(class = "searchroom-rangeslider-title") диапазон цены
+    span(class = "searchroom-rangeslider-describe") Стоимость за сутки пребывания в номере
+  
+  // Header
+  div(class = "searchroom-header") 
+    +header
+
+  // Searchroom title
+  div(class = "searchroom-title") 
+    p Номера, которые мы для вас подобрали 
+  -
+    var card1 = {
+      lux: true,
+      number: 840,
+      recalls: 32,
+      cost: "8 000",
+      rating: 0,
+      firstImg: "",
+      secondImg: "",
+      thirdImg: "",
+      fourthImg: ""
+    }
+  
+  // Pagination search results
+  div(class = "searchroom-result")
+    div(style = "position: absolute; left: 466px; top: 151px")
+      +review-card(card1)
+    div(style = "position: absolute; left: 748px; top: 151px")
+      +review-card(card1)
+    div(style = "position: absolute; left: 1030px; top: 151px")
+      +review-card(card1)
+    div(style = "position: absolute; left: 466px; top: 428px")
+      +review-card(card1)
+    div(style = "position: absolute; left: 748px; top: 428px")
+      +review-card(card1)
+    div(style = "position: absolute; left: 1030px; top: 428px")
+      +review-card(card1)
+    div(style = "position: absolute; left: 466px; top: 706px")
+      +review-card(card1)
+    div(style = "position: absolute; left: 748px; top: 706px")
+      +review-card(card1)
+    div(style = "position: absolute; left: 1030px; top: 706px")
+      +review-card(card1)
+    div(style = "position: absolute; left: 466px; top: 984px")
+      +review-card(card1)
+    div(style = "position: absolute; left: 748px; top: 984px")
+      +review-card(card1)
+    div(style = "position: absolute; left: 1030px; top: 984px")
+      +review-card(card1)
+
+  // Searchroom pagination
+  div(class = "searchroom-pagination")
+    +pagination
+
+  // Dropdown
+  div(class = "searchroom-dropdown")
+    div(class = "searchroom-dropdown-first")
+      - const dropdown_title1 = ["даты пребывания в отеле", "19 авг - 23 авг"]
+      +dropdown(dropdown_title1)
+    div(class = "searchroom-dropdown-second")
+      - const dropdown_title2 = ["гости", "Сколько гостей", "взрослые", "дети", "младенцы"]
+      +dropdown(dropdown_title2)
+    div(class = "searchroom-dropdown-third") 
+      - const dropdown_title3 = ["удобства номера", "2 спальни. 2 кровати...", "спальни", "кровати", "ванные комнаты"]
+      +dropdown(dropdown_title3)
+
+  // Checkbox button
+  div(class = "searchroom-checkboxbtn")
+    - var checkboxBtnList = ["Можно курить", "Можно с питомцами", "Можно пригласить гостей (до 10 человек)"];
+    +checkbox-button(checkboxBtnList, false)
+    p(class = "searchroom-checkboxbtn-title") checkbox buttons
+
+  // Rich checkbox 
+  div(class = "searchroom-richcheckbox")
+    p(class = "searchroom-richcheckbox-title") доступность 
+    - 
+      var richCheckbox = [{
+        title: "Широкий коридор",
+        text: "Ширина коридора в номере не менее 91 см."
+      },{
+        title: "Помощник для инвалидов",
+        text: "На 1 этаже вас встретит специалист и проводит до номера."
+      }];
+    +checkbox-button(richCheckbox, true)
+
+  // Checkbox list  
+  div(class = "searchroom-checkboxlist")
+    - 
+      var checkboxList1 = [
+        "Завтрак", 
+        "Письменный стол",
+        "Стул для кормления",
+        "Кроватка",
+        "Телевизор",
+        "Шампунь"
+      ];
+    +checkbox-list("дополнительные удобства", checkboxList1)
+
+  // Footer 
+  div(class = "searchroom-footer")
+    +footer
+
+  script(src = "./../../components/checkbox-list/checkbox-list.js")
+  script(src = "./../../components/range-slider/range-slider.js")
+  script(src = "./../../components/pagination/pagination.js")
+  script(src="./../../components/dropdown/dropdown.js")
+  script(src="./../../components/count-button/count-button.js")
+  script(src="./../../components/checkbox-button/checkbox-button.js")
+  script(src="./../../components/slideshow/slideshow.js")
+  script(src="./../../components/rating-button/rating-button.js")
+  script(src="./data.js")
