@@ -1,32 +1,34 @@
-include ./../arrow/arrow.pug
 include ./../count-button/count-button.pug
 include ./../button/button.pug
 
-// title it's array where first element title for dropdown_title 
-// values for option: "option_one", "option_two" 
-mixin dropdown(title, option)
-  - 
-    var classOption = (option == undefiend) ? "" : {
-      button: "dropdown_button-optional",
-      expand: "dropdown_expand-option",
-      content: "dropdown_content-option"
-    }; 
-  div(class="dropdown")
-    div(class="dropdown_expand " + classOption.expand)
-    span(class="dropdown-text dropdown-title") #{title[0]} 
-    span(class="dropdown-text dropdown-placeholder") #{title[1]}
-    div(class="dropdown_arrow " + classOption.button)
-      +arrow("arrow_expand", "#1F2041")
-    div(class="dropdown_content " + classOption.content)
-      - for (var i = 2; i < title.length; i++)
-          a(class="dropdown_link") #{title[i]}
-            div(class="dropdown_button-counter " + classOption.button)
-              +count-button
-      if option != undefiend
-        +button({isTextButton: true, size: "small", title: "применить", className: "dropdown_button-apply " + classOption.button})
-      if option == "option_two"
-        +button({isTextButton: true, size: "small", title: "очистить", className: "dropdown_button-erase " + classOption.button})
- 
-      
-        
-   
+// Material icons 
+link(href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet")
+
+// Options: guests, date and comfort
+- 
+  var dropdowns = {
+    guests: {
+      placeholder: "Сколько гостей", 
+      items: ["взрослые", "дети", "младенцы"]},
+    comfort: {
+      placeholder: "2 спальни, 2 кровати...", 
+      items: ["спальни", "кровати", "ванные комнаты"]
+    }
+  };
+
+mixin dropdown(option, size, placeholderTitle) 
+  - var sizeClass = (size == "big") ? " dropdown-size-big" : " dropdown-size-medium"
+  div(class = "dropdown" + sizeClass)
+    div(class = "dropdown-button")
+      span(class = "dropdown-button--title") #{dropdowns[option].placeholder}
+      span(class = "dropdown-button--icon material-icons") keyboard_arrow_down
+    div(class = "dropdown-content")
+      - for (var i = 0; i < dropdowns[option].items.length; i++)
+        li(class="dropdown-content--item") #{dropdowns[option].items[i]}
+          div(class="dropdown-counter")
+            button(class="dropdown-counter--btn dropdown-counter--btn-minus") - 
+            span(class="dropdown-counter--amount") 0
+            button(class="dropdown-counter--btn dropdown-counter--btn-plus") +  
+    div(class = "dropdown-textbtn")                  
+      +button({isTextButton: true, size: "small", title: "очистить", className: "dropdown-textbtn-erase"})
+      +button({isTextButton: true, size: "small", title: "применить", className: "dropdown-textbtn-apply"})

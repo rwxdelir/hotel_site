@@ -1,92 +1,122 @@
 @import "./../../assets/fonts/fonts.css";
 @import "./../../abstracts/variables.scss";
 
+/* Dropdown */
 .dropdown {
   position: absolute;
-  display: inline-block;
-  &_arrow {
-    position:absolute;
-    top: 18px;
-    left: 244px;
-  }
-  &-text {
-    @include usual-text;
-    width: 160px;
-  }
-  &-placeholder {
-    top: 9px;
-    left: 15px;
-  }
-  &-title {
-    top: -22.5px;
-    font-size: 12px;
-    text-transform: uppercase;
-    color: #1F2041;
-    font-weight: bold;
-  }
-  &_expand {
+  cursor: default;
+  /* Dropdown button */
+  &-button {
     position: absolute;
     width: 266px;
     height: 44px;
     background: #FFFFFF;
     border: 1px solid rgba(31, 32, 65, 0.25);
     box-sizing: border-box;
-    border-radius: 2px;
-    &-option {width: 320px;}
-  }
-
-  &_button {
-    &-counter {
+    border-radius: 4px;
+    /* Dropdown button title */
+    &--title {
       position: absolute;
-      top: 38px;
+      width: 160px;
+      height: 18px;
+      padding: 13px 0px 13px 15px;
+      font-family: 'Montserrat';
+      font-style: normal;
+      font-weight: normal;
+      font-size: 14px;
+      line-height: 18px;    
+      color: rgba(31, 32, 65, 0.75);
     }
-    /* classes below enabled if dropdown has argument option */
-    &-apply {
-      left: 165px; 
-      margin-top: 19px;
-    }
-    &-erase {
-      right: 220px; 
-      margin-top: 19px;
-      color: rgba(31, 32, 65, 0.5) !important;
-    }
-    &-optional {
+    /* Dropdown button arrow icon */
+    &--icon {
       position: absolute;
-      margin-left: 50px;
+      width: 44px;
+      height: 44px;
+      left: 226px;
+      font-family: Material Icons;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 24px;
+      line-height: 24px;
+      display: flex;
+      align-items: center;
+      text-align: center;    
+      color: rgba(31, 32, 65, 0.75);
     }
-    /* End */
   }
-  &_content {
-    display: none;
-    position: relative;
+  /* Show content on hover */
+  &-button:hover ~ &-content, 
+  &-content:hover {
+    display: block;
+  }
+  /* Dropdown content */
+  &-content {
     width: 266px;
-    height: 119px;
-    top: 43px;
-    background: #FFFFFF;
+    height: 159px;
+    margin-top: 43px;
+    background: #FFFFFF;  
     border: 1px solid rgba(31, 32, 65, 0.5);
     box-sizing: border-box;
-    white-space: nowrap;
-    /* enabled if dropdown has argument option */
-    &-option {
-      width: 320px;
-      height: 159px;
+    box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05);
+    display: none;
+    /* Dropdown items */
+    &--item {
+      list-style-type: none;
+      width: 133px;
+      height: 15px;
+      padding-left: 15px;    
+      font-family: 'Montserrat';
+      font-style: normal;
+      font-weight: bold;
+      font-size: 12px;
+      line-height: 15px;
+      text-transform: uppercase;
+      color: #1F2041;
+      &:first-child { padding: 13px 168px 22px 15px;}
+      &:last-child { padding: 22px 168px 17px 15px;}
     }
   }
-  &_link {
-    @include h3-title;
-    position: relative; // Overwrites mixin h3-title position rule
-    width: 83px;
-    height: 15px;
-    display: flex;
-    padding-bottom: 22px;
-    padding-left: 15px;
-    top: 13px;
-    color: #1F2041;
+  /* Dropdown counter */
+  &-counter {
+    position: absolute;
+    left: 155px;
+    margin-top: -22px;
+    &--btn {
+      cursor: pointer;
+      margin-left: 10px; 
+      margin-right: 10px; 
+      outline: none; 
+      width: 30px;
+      height: 30px;
+      font-family: 'Montserrat';
+      font-style: normal;
+      font-weight: normal;
+      font-size: 18px;
+      line-height: 22px;
+      border-radius: 30px;
+      background: white;
+      border: 1px solid rgba(31, 32, 65, 0.5);
+    } 
   }
-  &:hover {
-    .dropdown_content {
-      display: block;
+  /* Drodown text buttons */
+  &-textbtn {
+    position: absolute;
+    top: 172px;
+    left: 2px;
+    &-apply { position: absolute; margin-left: 159px;}
+    &-erase { 
+      position: absolute;
+      color: rgba(31, 32, 65, 0.5) !important;
+      display: none;
     }
+    
   }
+  /* Dropdown size big (default size is medium) */
+  &-size-big {
+    .dropdown-button { width: 320px; height: 44px;}
+    .dropdown-content { width: 320px; height: 159px;}
+    .dropdown-button--icon {left: 280px;}
+    .dropdown-counter {left: 209px;}
+    .dropdown-textbtn-apply {left: -213px;}
+  }   
 }
-
