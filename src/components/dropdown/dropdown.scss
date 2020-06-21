@@ -44,11 +44,6 @@
       color: rgba(31, 32, 65, 0.75);
     }
   }
-  /* Show content on hover */
-  &-button:hover ~ &-content, 
-  &-content:hover {
-    display: block;
-  }
   /* Dropdown content */
   &-content {
     width: 266px;
@@ -103,13 +98,17 @@
     position: absolute;
     top: 172px;
     left: 2px;
-    &-apply { position: absolute; margin-left: 159px;}
+    &-apply { position: absolute; margin-left: 159px; display: none;}
     &-erase { 
       position: absolute;
       color: rgba(31, 32, 65, 0.5) !important;
       display: none;
-    }
-    
+    }    
+  }
+  /* Show content on hover */
+  .dropdown:hover &-content, 
+  .dropdown:hover &-textbtn > &-textbtn-apply {
+    display: block;
   }
   /* Dropdown size big (default size is medium) */
   &-size-big {
