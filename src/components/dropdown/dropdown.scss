@@ -17,7 +17,7 @@
     /* Dropdown button title */
     &--title {
       position: absolute;
-      width: 160px;
+      width: 190px;
       height: 18px;
       padding: 13px 0px 13px 15px;
       font-family: 'Montserrat';
@@ -76,10 +76,16 @@
     position: absolute;
     left: 155px;
     margin-top: -22px;
-    &--btn {
+    &--amount {
+      position: absolute;
+      float: right;
+      left: 52px;
+      margin-top: 7px;
+    }
+    &--btnminus {
       cursor: pointer;
-      margin-left: 10px; 
-      margin-right: 10px; 
+      margin-left: 12.7px; 
+      margin-right: 12.7px; 
       outline: none; 
       width: 30px;
       height: 30px;
@@ -90,14 +96,16 @@
       line-height: 22px;
       border-radius: 30px;
       background: white;
-      border: 1px solid rgba(31, 32, 65, 0.5);
+      border: 1px solid rgba(31, 32, 65, 0.5);  
     } 
+    &--btnplus { @extend .dropdown-counter--btnminus;}
   }
   /* Drodown text buttons */
   &-textbtn {
     position: absolute;
     top: 172px;
     left: 2px;
+    display: none;
     &-apply { position: absolute; margin-left: 159px; display: none;}
     &-erase { 
       position: absolute;
@@ -107,6 +115,7 @@
   }
   /* Show content on hover */
   .dropdown:hover &-content, 
+  .dropdown:hover &-textbtn,
   .dropdown:hover &-textbtn > &-textbtn-apply {
     display: block;
   }
@@ -116,6 +125,6 @@
     .dropdown-content { width: 320px; height: 159px;}
     .dropdown-button--icon {left: 280px;}
     .dropdown-counter {left: 209px;}
-    .dropdown-textbtn-apply {left: -213px;}
+    .dropdown-textbtn-apply {margin-left: 213px;}
   }   
 }

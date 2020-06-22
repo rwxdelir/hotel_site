@@ -18,17 +18,18 @@ link(href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesh
 
 mixin dropdown(option, size, placeholderTitle) 
   - var sizeClass = (size == "big") ? " dropdown-size-big" : " dropdown-size-medium"
-  div(class = "dropdown" + sizeClass)
+  - var typeClass = (option == "guests") ? " dropdown-guests" : " dropdown-comfort"
+  div(class = "dropdown" + sizeClass + typeClass)
     div(class = "dropdown-button")
       span(class = "dropdown-button--title") #{dropdowns[option].placeholder}
       span(class = "dropdown-button--icon material-icons") keyboard_arrow_down
     div(class = "dropdown-content")
       - for (var i = 0; i < dropdowns[option].items.length; i++)
-        li(class="dropdown-content--item") #{dropdowns[option].items[i]}
+        li(class="dropdown-content--item") !{"<span class='dropdown-content--itemname'>"}#{dropdowns[option].items[i]}!{"</span>"}
           div(class="dropdown-counter")
-            button(class="dropdown-counter--btn dropdown-counter--btn-minus") - 
+            button(class="dropdown-counter--btnminus") - 
             span(class="dropdown-counter--amount") 0
-            button(class="dropdown-counter--btn dropdown-counter--btn-plus") +  
+            button(class="dropdown-counter--btnplus") +  
     div(class = "dropdown-textbtn")                  
       +button({isTextButton: true, size: "small", title: "очистить", className: "dropdown-textbtn-erase"})
-      +button({isTextButton: true, size: "small", title: "применить", className: "dropdown-textbtn-apply"})
+      +button({isTextButton: true, size: "small", title: "применить", className: "dropdown-textbtn-apply"}) 
