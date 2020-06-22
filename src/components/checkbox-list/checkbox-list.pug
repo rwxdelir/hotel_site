@@ -1,12 +1,13 @@
 include ./../arrow/arrow.pug
 include ./../checkbox-button/checkbox-button.pug
+// Material icons 
+link(href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet")
 
 // List is array of items
 mixin checkbox-list(title, list)
   ul(class = "checkbox-list")
     p(class = "сheckbox-item checkbox-list-title") #{title}
-    div(class = "checkbox-list--arrow") 
-      +arrow("arrow_expand", "rgba(31, 32, 65, 0.5)")
+    span(class = "checkbox-list--arrow material-icons") keyboard_arrow_down
     div(class = "checkbox-expanded-content")
       +checkbox-button(list)
-    //- /script(src="./../checkbox-button/checkbox-button.js")
+
