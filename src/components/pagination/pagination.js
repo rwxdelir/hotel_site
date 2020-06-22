@@ -1,7 +1,5 @@
 import cards from './../../pages/search-room/cards.js'
 
-console.log(cards)
-
 var pagination = document.querySelector(".pagination");
 var slideshow = document.querySelectorAll(".slideshow");
 var slideEl = document.getElementsByClassName("slideshow-slide-img");
@@ -14,9 +12,79 @@ var paginationLink = document.querySelectorAll(".pagination-link");
 var review = document.querySelectorAll(".review");
 var nextBtn = document.querySelector(".pagination-next");
 var paginationText = document.querySelector(".pagination-text")
+var rangeMinValue = document.querySelectorAll(".rangeslider-range-min")
+var rangesliderMin = document.querySelectorAll(".min");
+var searchResult = searchRoom(cards);
 
-var amountObj = 140;
-initializePages(amountObj);
+function searchRoom(cards) {
+  let result = [];
+  for (let i = 0; i < cards.length; i++) {
+    let rangeMin = parseInt(rangeMinValue[0].innerHTML.toString().split(" ").join(""));
+    let cost = parseInt(cards[i].cost.toString().split(" ").join(""));
+    if (cost >= rangeMin) { result.push(cards[i])} 
+  } return result;
+}
+
+rangesliderMin[0].addEventListener("change", function () {
+  createPagination(cards)
+})
+
+var amountObj;
+let currentIndex = 0;
+function createPagination(myObj) {
+  if (typeof(pagination) != 'undefiend') {
+    while (pagination.firstChild) {
+      pagination.removeChild(pagination.lastChild);
+    }
+  } 
+  searchResult = searchRoom(myObj);
+  amountObj = searchResult.length;
+  initializePages(amountObj);
+  
+  var paginationLink = document.querySelectorAll(".pagination-link");
+  var seaparatePages = document.querySelectorAll(".pagination-separatepage")
+  
+  currentPage(0);
+  hidePages(3, paginationLink.length-1)
+  showCards(0);
+  variationsOfRent(0);
+  alignPagination();
+
+  /* Responds on click to pages */
+  for (let i = 0; i < paginationLink.length; i++) {
+    if (paginationLink.length <= 7) {
+      showPages(0, paginationLink.length-1)
+      paginationLink[i].onclick = function () {
+        showCards(i*12);
+        currentPage(i);
+        variationsOfRent(i);
+        currentIndex = i;
+      } 
+      nextBtn.onclick = function () {
+        showCards((currentIndex+1)*12);
+        currentPage(currentIndex + 1);
+        variationsOfRent(currentIndex + 1);
+        currentIndex += 1;
+      }
+    } else {
+      seaparatePages[1].style.display = "inline-block"
+      paginationLink[i].onclick = function () {
+        nextPage(i);
+        variationsOfRent(i);
+      }
+      nextBtn.onclick = function () {
+        var paginationLink = document.querySelectorAll(".pagination-link");
+        if (currentIndex != paginationLink.length-1) {
+          currentIndex += 1;
+          nextPage(currentIndex);
+          variationsOfRent(currentIndex);
+        } 
+      }
+    }
+  }
+}
+
+createPagination(cards)
 
 /* Function creates pages and append it to the HTML DOM */
 function initializePages(amountObj) {
@@ -28,36 +96,41 @@ function initializePages(amountObj) {
     page.innerHTML = i+1;
     page.className = "pagination-link";
     pagination.appendChild(page);
-  }  
+  }
+  var paginationLink = document.querySelectorAll(".pagination-link");
+  document.querySelector(".pagination-next").style.display = "inline-block";
+  if (paginationLink.length > 7) {
+    // Creates separating pages and hide them
+    let separateStart = document.createElement("a");
+    let separateEnd = document.createElement("a");
 
-}
+    separateStart.innerHTML = "...";
+    separateEnd.innerHTML = "...";
 
-var paginationLink = document.querySelectorAll(".pagination-link");
+    separateStart.className = "pagination-separatepage";
+    separateEnd.className = "pagination-separatepage";    
 
-separatePages(0, true)
-separatePages(paginationLink.length-1, false)
-function separatePages(pageIndex, after) {
-  let separateEl = document.createElement("a");
-  separateEl.innerHTML = "...";
-  separateEl.className = "pagination-link pagination-separatepage";
+    paginationLink[0].after(separateStart);
+    paginationLink[paginationLink.length-1].before(separateEnd);
+
+    var seaparatePages = document.querySelectorAll(".pagination-separatepage")
+    seaparatePages[0].style.display = "none";
+    seaparatePages[1].style.display = "none"
+  } 
   
-
-  let separatePage = document.querySelectorAll(".pagination-separatepage");
-  if (separatePage.length > 1) {
-    separatePage[1].remove();
-  }
-  if (after == true)  {
-    paginationLink[pageIndex].after(separateEl);
-    separateEl.style.display = "none";
-  } else {
-    paginationLink[pageIndex].before(separateEl);
-    separateEl.style.display = "inline-block";
+  // Creates pagination text 
+  let text = document.createElement("p")
+  text.className = "pagination-text";
+  pagination.appendChild(text);
+  
+  if (paginationLink.length <= 1) {
+    document.querySelector(".pagination-next").style.display = "none";
   }
 }
 
-currentPage(0);
 /* Function markes current page */
 function currentPage(pageIndex) {
+  var paginationLink = document.querySelectorAll(".pagination-link");
   for (let i = 0; i < paginationLink.length; i++) {
     if (paginationLink[i].classList.contains("active")) {
       paginationLink[i].classList.remove("active");
@@ -66,39 +139,8 @@ function currentPage(pageIndex) {
   paginationLink[pageIndex].classList.add("active");
 }
 
-hidePages(0, paginationLink.length-1)
-/* Responds on click to pages */
-if (paginationLink.length <= 7) {
-  for (let i = 0; i < paginationLink.length; i++) {
-    paginationLink[i].onclick = function () {
-      showCards(i*12);
-      currentPage(i);
-      variationsOfRent(i);
-    }
-  }
-  document.querySelectorAll(".pagination-separatepage")[1].style.display = "none";
-  alert(paginationLink.length)
-  showCards(0);
-  showPages(0, paginationLink.length+1);
-} else {
-  for (let i = 0; i < paginationLink.length; i++) {
-    paginationLink[i].onclick = function () {
-      nextPage(i);
-      currentIndex = i;
-      variationsOfRent(i);
-    }
-  }
-}
-
-nextBtn.onclick = function () {
-  if (currentIndex != paginationLink.length-1) {
-    nextPage(currentIndex+1);
-    currentIndex += 1;
-  }
-}
-
-variationsOfRent(0);
 function variationsOfRent(i) {
+  var paginationText = document.querySelector(".pagination-text");
   if (i == 0) {
     paginationText.innerText = "1 – 12 из " + ((amountObj - 100 > 0) ? "100+" : amountObj) + " вариантов аренды";
   } else if (i == paginationLink.length-1) {
@@ -111,92 +153,114 @@ function variationsOfRent(i) {
 }
 
 function nextPage(i) {
+  var seaparatePages = document.querySelectorAll(".pagination-separatepage")
+  var paginationLink = document.querySelectorAll(".pagination-link");
+
+  currentIndex = i;
+  hidePages(0, paginationLink.length-1);
   showCards(i*12);
-  console.log(i*12)
-  hidePages(0, paginationLink.length-1)
-  variationsOfRent(i);
+  showPages(0, 0);
   currentPage(i);
-  if (i >= paginationLink.length-4) {
-    showPages(paginationLink.length-4, i)
-  } 
-  let separatePage = document.querySelectorAll(".pagination-separatepage")
-  console.log(separatePage[1]);
-  if (i < 4 && i != paginationLink.length-4) {
-    showPages(i, i+2);
-  }
+
   if (i < 4) {
-    showPages(0, 3)
-    separatePage[0].style.display = "none";
-    pagination.style.marginLeft = "7px";
-    if (i == 2) {
-      pagination.style.marginLeft = "-15px";
-    }
-    if (i == 3) {
-      pagination.style.marginLeft = "-25px";
-    }
-  } else if (i >= 4 && i < paginationLink.length-4) {
-    separatePage[0].style.display = "inline-block";
-    showPages(0, 1)
-    showPages(i-1, i+2)
-    pagination.style.marginLeft = "-35px";
+    showPages(0, 2);
+    seaparatePages[0].style.display = "none";
   } else {
-    showPages(0,1);
-    showPages(paginationLink.length - 5, paginationLink.length)
-    separatePage[0].style.display = "inline-block";
-    pagination.style.marginLeft = "-35px";
-    if (i > paginationLink.length - 4) {
-      hidePages(paginationLink.length - 6, paginationLink.length - 4);
-      pagination.style.marginLeft = "-22px";
+    seaparatePages[0].style.display = "inline-block";
+  }
+
+  if (i < paginationLink.length-1 && i > 1) {
+    showPages(i, i+1);
+    showPages(i-1, i);
+  }
+  if (i > paginationLink.length - 5) {
+    showPages(paginationLink.length-3, paginationLink.length-1)
+    seaparatePages[1].style.display = "none";
+  } else {
+    seaparatePages[1].style.display = "inline-block";
+  }
+
+  alignPagination()
+}
+
+/* Align pagination */
+function alignPagination() {
+  var paginationLink = document.querySelectorAll(".pagination-link")
+  let displayCounter = 0;
+  for (let j = 0; j < paginationLink.length; j++) {
+    if (paginationLink[j].style.display != "none") {
+      ++displayCounter;
+    }
+  }
+
+  if (paginationLink.length > 7) {
+    if (displayCounter == 4) {
+      document.querySelectorAll(".pagination")[0].style.marginLeft = "20px";
+    } else if (displayCounter == 5) {
+      document.querySelectorAll(".pagination")[0].style.marginLeft = "5px";
+      document.querySelectorAll(".pagination-next")[0].style.marginRight = "50px";
+    } else if (displayCounter == 6) {
+      document.querySelectorAll(".pagination")[0].style.marginLeft = "-12px";
+      document.querySelectorAll(".pagination-next")[0].style.marginRight = "50px";
+    }
+  } else {
+    if (paginationLink.length == 7) {
+      document.querySelectorAll(".pagination")[0].style.marginLeft = "-24px";
+      document.querySelectorAll(".pagination-next")[0].style.marginRight = "50px";
+    } else if (paginationLink.length == 6) {
+      document.querySelectorAll(".pagination")[0].style.marginLeft = "-12px";
+      document.querySelectorAll(".pagination-next")[0].style.marginRight = "50px";
     } 
-    if (i > paginationLink.length - 3) {
-      hidePages(paginationLink.length - 5, paginationLink.length - 3);
-      pagination.style.marginLeft = "-5px";
+    else if (paginationLink.length == 5) {
+      document.querySelectorAll(".pagination")[0].style.marginLeft = "5px";
+      document.querySelectorAll(".pagination-next")[0].style.marginRight = "50px";
+    } else if (paginationLink.length == 4) {
+      document.querySelectorAll(".pagination")[0].style.marginLeft = "18px";
+      document.querySelectorAll(".pagination-next")[0].style.marginRight = "50px";
+    } else if (paginationLink.length == 3) {
+      document.querySelectorAll(".pagination")[0].style.marginLeft = "30px";
+    } else if (paginationLink.length == 2) {
+      document.querySelectorAll(".pagination")[0].style.marginLeft = "50px";
+    } else {
+      document.querySelectorAll(".pagination")[0].style.marginLeft = "100px";
     }
-  } 
-  if (i >= paginationLink.length-4 && i > 3) {
-    separatePage[1].style.display = "none";
-  } else {
-    separatePage[1].style.display = "inline-block";
   }
 }
 
-hidePages(0, paginationLink.length-1)
 /* Hides pages */
 function hidePages(startIndex, endIndex) {
+  var paginationLink = document.querySelectorAll(".pagination-link");
   for (let i = startIndex; i < endIndex; i++) {
     paginationLink[i].style.display = "none";
   }
 }
 
-showPages(0, 3);
 /* Shows pages */
 function showPages(startIndex, endIndex) {
-  for (let i = startIndex; i < endIndex; i++) {
+  var paginationLink = document.querySelectorAll(".pagination-link");
+  for (let i = startIndex; i <= endIndex; i++) {
     paginationLink[i].style.display = "inline-block";
   }
 }
 
-let currentIndex = 0;
-showCards(currentIndex);
-
 let amountOfCards = amountObj;
+
 function showCards(startIndex) {
   let cardIndex = startIndex;
-
   for (let i = 0; i < 12; i++) {
     cardIndex = startIndex + i;  
-    if (typeof cards[cardIndex] != 'undefined') {
-      slideshow[i].getElementsByClassName("slideshow-slide-img")[0].setAttribute("src", cards[cardIndex].firstImg); 
-      slideshow[i].getElementsByClassName("slideshow-slide-img")[1].setAttribute("src", cards[cardIndex].secondImg); 
-      slideshow[i].getElementsByClassName("slideshow-slide-img")[2].setAttribute("src", cards[cardIndex].thirdImg);
-      slideshow[i].getElementsByClassName("slideshow-slide-img")[3].setAttribute("src", cards[cardIndex].fourthImg);
+    if (typeof searchResult[cardIndex] != 'undefined') {
+      slideshow[i].getElementsByClassName("slideshow-slide-img")[0].setAttribute("src", searchResult[cardIndex].firstImg); 
+      slideshow[i].getElementsByClassName("slideshow-slide-img")[1].setAttribute("src", searchResult[cardIndex].secondImg); 
+      slideshow[i].getElementsByClassName("slideshow-slide-img")[2].setAttribute("src", searchResult[cardIndex].thirdImg);
+      slideshow[i].getElementsByClassName("slideshow-slide-img")[3].setAttribute("src", searchResult[cardIndex].fourthImg);
 
-      roomNumber[i].innerHTML = cards[cardIndex].number;
-      luxSign[i].style.display = (cards[cardIndex].lux == true) ? "block" : "none";
-      dayPrice[i].innerHTML = cards[cardIndex].cost;
-      recallsAmount[i].innerHTML = cards[cardIndex].recalls;
-
-      for (let j = 0; j <= cards[cardIndex].rating-1; j++) {
+      roomNumber[i].innerHTML = searchResult[cardIndex].number;
+      luxSign[i].style.display = (searchResult[cardIndex].lux == true) ? "block" : "none";
+      dayPrice[i].innerHTML = searchResult[cardIndex].cost;
+      recallsAmount[i].innerHTML = searchResult[cardIndex].recalls;
+      
+      for (let j = 0; j <= searchResult[cardIndex].rating-1; j++) {
         rating[i].getElementsByClassName("rating_star")[j].innerHTML = '★';
         rating[i].style.direction = 'ltr';
         rating[i].style.pointerEvents = 'none';
@@ -209,3 +273,4 @@ function showCards(startIndex) {
   amountOfCards -= 12;
   if (amountOfCards <= 0) {amountOfCards = amountObj;}
 }
+
