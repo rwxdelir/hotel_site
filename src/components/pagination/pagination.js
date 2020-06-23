@@ -2,7 +2,6 @@ import cards from './../../pages/search-room/cards.js'
 
 var pagination = document.querySelector(".pagination");
 var slideshow = document.querySelectorAll(".slideshow");
-var slideEl = document.getElementsByClassName("slideshow-slide-img");
 var roomNumber = document.querySelectorAll(".review-describe-number-digit")
 var luxSign = document.querySelectorAll(".review-describe-sign");
 var dayPrice = document.querySelectorAll(".review-describe-dayprice");
@@ -11,33 +10,74 @@ var rating = document.querySelectorAll(".rating");
 var paginationLink = document.querySelectorAll(".pagination-link");
 var review = document.querySelectorAll(".review");
 var nextBtn = document.querySelector(".pagination-next");
-var paginationText = document.querySelector(".pagination-text")
 var rangeMinValue = document.querySelectorAll(".rangeslider-range-min")
 var rangesliderMin = document.querySelectorAll(".min");
-var searchResult = searchRoom(cards);
+var checkboxInput = document.querySelectorAll(".checkbox-input");
 
-function searchRoom(cards) {
+let searchOptions = {'smoking': 1, 'animals': 1};
+let searchResult = searchRoom(cards, searchOptions);
+
+function searchRoom(cards, searchOptions) {
   let result = [];
+  let rangeMin = parseInt(rangeMinValue[0].innerHTML.toString().split(" ").join(""));
   for (let i = 0; i < cards.length; i++) {
-    let rangeMin = parseInt(rangeMinValue[0].innerHTML.toString().split(" ").join(""));
     let cost = parseInt(cards[i].cost.toString().split(" ").join(""));
-    if (cost >= rangeMin) { result.push(cards[i])} 
-  } return result;
+    if (parseInt(cost) >= parseInt(rangeMin)) { 
+      result.push(cards[i])
+    } 
+  } 
+  
+  let garbage = [];
+  for (let i = 0; i < Object.keys(searchOptions).length; i++) {
+    if (searchOptions[Object.keys(searchOptions)[i]] == true) {
+      for (let j = 0; j < result.length; j++) {
+        if (result[j][Object.keys(searchOptions)[i]] = 1) {
+          garbage.push(j);
+       }
+      }
+    }
+  }
+  for (let i = 0; i < garbage.length; i++) {
+    console.log(result[garbage[i]])
+    result.splice([garbage[i]], 1)
+  }
+
+  console.log(result)
+  return result;
+}
+
+checkboxInput[0].onclick = function () {
+  if (!searchOptions.smoking) {
+    searchOptions.smoking = 1;
+  } else {
+    searchOptions.smoking = 1;
+  }
+  createPagination(searchRoom(cards, searchOptions));
+}
+
+checkboxInput[1].onclick = function () {
+  if (!searchOptions.animals) {
+    searchOptions.animals = true;
+  } else {
+    searchOptions.animals = false;
+  }
+  createPagination(searchRoom(cards, searchOptions));
 }
 
 rangesliderMin[0].addEventListener("change", function () {
-  createPagination(cards)
+  createPagination(searchRoom(searchResult, searchOptions))
+  searchResult = searchRoom(cards, searchOptions);
 })
 
 var amountObj;
 let currentIndex = 0;
-function createPagination(myObj) {
+function createPagination(searchResult) {
   if (typeof(pagination) != 'undefiend') {
     while (pagination.firstChild) {
       pagination.removeChild(pagination.lastChild);
     }
   } 
-  searchResult = searchRoom(myObj);
+  // searchResult = searchRoom(myObj);
   amountObj = searchResult.length;
   initializePages(amountObj);
   
@@ -46,7 +86,7 @@ function createPagination(myObj) {
   
   currentPage(0);
   hidePages(3, paginationLink.length-1)
-  showCards(0);
+  showCards(0, searchResult);
   variationsOfRent(0);
   alignPagination();
 
@@ -55,13 +95,13 @@ function createPagination(myObj) {
     if (paginationLink.length <= 7) {
       showPages(0, paginationLink.length-1)
       paginationLink[i].onclick = function () {
-        showCards(i*12);
+        showCards(i*12, searchResult);
         currentPage(i);
         variationsOfRent(i);
         currentIndex = i;
       } 
       nextBtn.onclick = function () {
-        showCards((currentIndex+1)*12);
+        showCards((currentIndex+1)*12, searchResult);
         currentPage(currentIndex + 1);
         variationsOfRent(currentIndex + 1);
         currentIndex += 1;
@@ -84,7 +124,7 @@ function createPagination(myObj) {
   }
 }
 
-createPagination(cards)
+createPagination(searchResult)
 
 /* Function creates pages and append it to the HTML DOM */
 function initializePages(amountObj) {
@@ -158,7 +198,7 @@ function nextPage(i) {
 
   currentIndex = i;
   hidePages(0, paginationLink.length-1);
-  showCards(i*12);
+  showCards(i*12, searchResult);
   showPages(0, 0);
   currentPage(i);
 
@@ -245,7 +285,7 @@ function showPages(startIndex, endIndex) {
 
 let amountOfCards = amountObj;
 
-function showCards(startIndex) {
+function showCards(startIndex, searchResult) {
   let cardIndex = startIndex;
   for (let i = 0; i < 12; i++) {
     cardIndex = startIndex + i;  
