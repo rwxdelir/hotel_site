@@ -11,63 +11,108 @@ var paginationLink = document.querySelectorAll(".pagination-link");
 var review = document.querySelectorAll(".review");
 var nextBtn = document.querySelector(".pagination-next");
 var rangeMinValue = document.querySelectorAll(".rangeslider-range-min")
+var rangeMaxValue = document.querySelectorAll(".rangeslider-range-max")
 var rangesliderMin = document.querySelectorAll(".min");
+var rangesliderMax = document.querySelectorAll(".max");
 var checkboxInput = document.querySelectorAll(".checkbox-input");
 
-let searchOptions = {'smoking': 1, 'animals': 1};
+let searchOptions = {
+  'smoking': 0, 'animals': 0, 'parties': 0, 
+  'widehall': 0, "disabledAssistant": 0, 'widehall': 0, 
+  'breakfast': 0, 'writingDesk': 0,'feedingСhair': 0,
+  'crib': 0, 'television': 0, 'shampoo': 0, 'minRange': 5000, 
+  'maxRange': 10000
+};
+
 let searchResult = searchRoom(cards, searchOptions);
 
 function searchRoom(cards, searchOptions) {
-  let result = [];
-  let rangeMin = parseInt(rangeMinValue[0].innerHTML.toString().split(" ").join(""));
+  let sortResult = [];
+  for(let i = 0; i < cards.length; i++) {
+    cards[i].active = true;
+  }
+  
+  console.log(cards)
+
+  let rangeMin = searchOptions['minRange']
+  let rangeMax = searchOptions['maxRange']
+
   for (let i = 0; i < cards.length; i++) {
     let cost = parseInt(cards[i].cost.toString().split(" ").join(""));
-    if (parseInt(cost) >= parseInt(rangeMin)) { 
-      result.push(cards[i])
+    if (parseInt(cost) < parseInt(rangeMin)) { 
+      cards[i].active = false;
+      console.log(cost + " < " + rangeMin)
     } 
-  } 
+    if (parseInt(cost) > parseInt(rangeMax)) { 
+      cards[i].active = false;
+      console.log(cost + " > " + rangeMax)
+    } 
+  }
   
-  let garbage = [];
+  let result = [];
+  for (let i = 0; i < cards.length; i++) {
+    if (cards[i].active == true) {
+      result.push(cards[i]);
+    }
+  }  
+  
+  for(let i = 0; i < result.length; i++) {
+    result[i].active = true;
+  }
+
   for (let i = 0; i < Object.keys(searchOptions).length; i++) {
+    console.log(searchOptions[Object.keys(searchOptions)[i]]);
     if (searchOptions[Object.keys(searchOptions)[i]] == true) {
       for (let j = 0; j < result.length; j++) {
-        if (result[j][Object.keys(searchOptions)[i]] = 1) {
-          garbage.push(j);
-       }
+        if (result[j][Object.keys(searchOptions)[i]] == 0) {
+          result[j].active = false;
+        }
       }
     }
   }
-  for (let i = 0; i < garbage.length; i++) {
-    console.log(result[garbage[i]])
-    result.splice([garbage[i]], 1)
+  
+  for (let i = 0; i < result.length; i++) {
+    if (result[i].active == true) {
+      sortResult.push(result[i]);
+    }
+  }
+  
+  if (sortResult.length > 0) {
+    console.log(sortResult.length)
+    console.log(sortResult);
+    console.log(searchOptions);
+    return sortResult;  
   }
 
   console.log(result)
+  console.log(searchOptions);
   return result;
 }
 
-checkboxInput[0].onclick = function () {
-  if (!searchOptions.smoking) {
-    searchOptions.smoking = 1;
-  } else {
-    searchOptions.smoking = 1;
+for (let i = 0; i < checkboxInput.length; i++) {
+  let option = Object.keys(searchOptions)[i];
+  checkboxInput[i].onclick = function () {
+    if (!searchOptions[option]) {
+      searchOptions[option] = 1;
+    } else {
+      searchOptions[option] = 0;
+    }
+    createPagination(searchRoom(cards, searchOptions));
   }
-  createPagination(searchRoom(cards, searchOptions));
 }
 
-checkboxInput[1].onclick = function () {
-  if (!searchOptions.animals) {
-    searchOptions.animals = true;
-  } else {
-    searchOptions.animals = false;
-  }
-  createPagination(searchRoom(cards, searchOptions));
-}
-
-rangesliderMin[0].addEventListener("change", function () {
+rangesliderMin[0].addEventListener("input", function () {
   createPagination(searchRoom(searchResult, searchOptions))
   searchResult = searchRoom(cards, searchOptions);
+  searchOptions['minRange'] = parseInt(rangeMinValue[0].innerHTML.toString().split(" ").join(""));
 })
+
+rangesliderMax[0].addEventListener("input", function () {
+  createPagination(searchRoom(searchResult, searchOptions))
+  searchResult = searchRoom(cards, searchOptions);
+  searchOptions['maxRange'] = parseInt(rangeMaxValue[0].innerHTML.toString().split(" ").join(""));
+})
+
 
 var amountObj;
 let currentIndex = 0;
