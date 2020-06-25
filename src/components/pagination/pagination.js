@@ -15,13 +15,15 @@ var rangeMaxValue = document.querySelectorAll(".rangeslider-range-max")
 var rangesliderMin = document.querySelectorAll(".min");
 var rangesliderMax = document.querySelectorAll(".max");
 var checkboxInput = document.querySelectorAll(".checkbox-input");
+var drpdwn = document.querySelectorAll(".dropdown")
 
 let searchOptions = {
   'smoking': 0, 'animals': 0, 'parties': 0, 
   'widehall': 0, "disabledAssistant": 0, 'widehall': 0, 
   'breakfast': 0, 'writingDesk': 0,'feedingСhair': 0,
   'crib': 0, 'television': 0, 'shampoo': 0, 'minRange': 5000, 
-  'maxRange': 10000
+  'maxRange': 10000, 'drpdwnGuests': {'guests': 0, 'childs': 0},
+  'drpdwnComfort': {'beds': 0, 'bedrooms': 0, 'bathrooms': 0}
 };
 
 let searchResult = searchRoom(cards, searchOptions);
@@ -32,8 +34,6 @@ function searchRoom(cards, searchOptions) {
     cards[i].active = true;
   }
   
-  console.log(cards)
-
   let rangeMin = searchOptions['minRange']
   let rangeMax = searchOptions['maxRange']
 
@@ -41,11 +41,9 @@ function searchRoom(cards, searchOptions) {
     let cost = parseInt(cards[i].cost.toString().split(" ").join(""));
     if (parseInt(cost) < parseInt(rangeMin)) { 
       cards[i].active = false;
-      console.log(cost + " < " + rangeMin)
     } 
     if (parseInt(cost) > parseInt(rangeMax)) { 
       cards[i].active = false;
-      console.log(cost + " > " + rangeMax)
     } 
   }
   
@@ -61,7 +59,6 @@ function searchRoom(cards, searchOptions) {
   }
 
   for (let i = 0; i < Object.keys(searchOptions).length; i++) {
-    console.log(searchOptions[Object.keys(searchOptions)[i]]);
     if (searchOptions[Object.keys(searchOptions)[i]] == true) {
       for (let j = 0; j < result.length; j++) {
         if (result[j][Object.keys(searchOptions)[i]] == 0) {
@@ -71,9 +68,31 @@ function searchRoom(cards, searchOptions) {
     }
   }
   
+  if (searchOptions['drpdwnGuests']['guests'] > 0) {
+    let guests = searchOptions['drpdwnGuests']['guests'];
+    let childs = searchOptions['drpdwnGuests']['childs'];
+    for (let j = 0; j < result.length; j++) { 
+      if (guests > result[j].guests) { result[j].active = false;}
+      if (childs > result[j].childs) { result[j].active = false;}
+    }
+  }
+
+  if (searchOptions['drpdwnComfort']['beds'] > 0) {
+    let beds = searchOptions['drpdwnComfort']['beds'];
+    let bedrooms = searchOptions['drpdwnComfort']['bedrooms'];
+    let bathrooms = searchOptions['drpdwnComfort']['bathrooms'];
+    for (let j = 0; j < result.length; j++) { 
+      if (beds > result[j].beds) { result[j].active = false;}
+      if (bedrooms > result[j].bedrooms) { result[j].active = false;}
+      if (bathrooms > result[j].bathrooms) { result[j].active = false;}
+    }
+  }
+
+  
   for (let i = 0; i < result.length; i++) {
     if (result[i].active == true) {
       sortResult.push(result[i]);
+      console.log("bathrooms: " + result[i].bathrooms)
     }
   }
   
@@ -89,6 +108,25 @@ function searchRoom(cards, searchOptions) {
   return result;
 }
 
+/* Onclick dropdown button */
+for (let i = 0; i < drpdwn.length; i++) {
+  let btnApply = drpdwn[i].getElementsByClassName("dropdown-textbtn-apply");
+  let counterAmount = drpdwn[i].getElementsByClassName("dropdown-counter--amount"); 
+  btnApply[0].onclick = function () {
+    if (drpdwn[i].classList.contains("dropdown-guests")) {
+      searchOptions['drpdwnGuests']['guests'] = parseInt(counterAmount[0].innerHTML) + parseInt(counterAmount[1].innerHTML);
+      searchOptions['drpdwnGuests']['childs'] = parseInt(counterAmount[2].innerHTML);
+      createPagination(searchRoom(cards, searchOptions));
+    } else if (drpdwn[i].classList.contains("dropdown-comfort")) {
+      searchOptions['drpdwnComfort']['beds'] = parseInt(counterAmount[0].innerHTML);
+      searchOptions['drpdwnComfort']['bedrooms'] = parseInt(counterAmount[1].innerHTML);
+      searchOptions['drpdwnComfort']['bathrooms'] = parseInt(counterAmount[2].innerHTML);
+      createPagination(searchRoom(cards, searchOptions));
+    }
+  }
+}
+
+/* Onclick checkbox button */
 for (let i = 0; i < checkboxInput.length; i++) {
   let option = Object.keys(searchOptions)[i];
   checkboxInput[i].onclick = function () {
@@ -122,7 +160,6 @@ function createPagination(searchResult) {
       pagination.removeChild(pagination.lastChild);
     }
   } 
-  // searchResult = searchRoom(myObj);
   amountObj = searchResult.length;
   initializePages(amountObj);
   
@@ -146,10 +183,12 @@ function createPagination(searchResult) {
         currentIndex = i;
       } 
       nextBtn.onclick = function () {
-        showCards((currentIndex+1)*12, searchResult);
-        currentPage(currentIndex + 1);
-        variationsOfRent(currentIndex + 1);
-        currentIndex += 1;
+        if (i < paginationLink.length-1) {
+          howCards((currentIndex+1)*12, searchResult);
+          urrentPage(currentIndex + 1);
+          ariationsOfRent(currentIndex + 1);
+          urrentIndex += 1;
+        }
       }
     } else {
       seaparatePages[1].style.display = "inline-block"
