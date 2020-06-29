@@ -7,7 +7,6 @@ include ./../../components/dropdown/dropdown.pug
 include ./../../components/button/button.pug
 include ./../../components/login-card/login-card.pug
 include ./../../components/search-card/search-card.pug
-include ./../../components/count-button/count-button.pug
 include ./../../components/textfield/textfield.pug
 include ./../../components/radio-button/radio-button.pug
 include ./../../components/toggle-button/toggle-button.pug
@@ -91,15 +90,15 @@ body(class = "searchroom")
 
   // Dropdown
   div(class = "searchroom-dropdown")
+    span(class = "searchroom-dropdown-firsttitle") даты пребывания в отеле 
+    span(class = "searchroom-dropdown-secondtitle") гости 
+    span(class = "searchroom-dropdown-thirdtitle") удобства номера
     div(class = "searchroom-dropdown-first")
-      - const dropdown_title1 = ["даты пребывания в отеле", "19 авг - 23 авг"]
-      +dropdown(dropdown_title1)
+      +dropdown("guests")
     div(class = "searchroom-dropdown-second")
-      - const dropdown_title2 = ["гости", "Сколько гостей", "взрослые", "дети", "младенцы"]
-      +dropdown(dropdown_title2)
+      +dropdown("guests")
     div(class = "searchroom-dropdown-third") 
-      - const dropdown_title3 = ["удобства номера", "2 спальни. 2 кровати...", "спальни", "кровати", "ванные комнаты"]
-      +dropdown(dropdown_title3)
+      +dropdown("comfort")
 
   // Checkbox button
   div(class = "searchroom-checkboxbtn")
@@ -136,13 +135,14 @@ body(class = "searchroom")
   // Footer 
   div(class = "searchroom-footer")
     +footer
-
+  
+  script(src="./data.js")
+  script(src = "./../../components/nav/nav.js")
+  script(src = "./../../components/header/header.js")
   script(src = "./../../components/checkbox-list/checkbox-list.js")
   script(src = "./../../components/range-slider/range-slider.js")
   script(src = "./../../components/pagination/pagination.js")
   script(src="./../../components/dropdown/dropdown.js")
-  script(src="./../../components/count-button/count-button.js")
   script(src="./../../components/checkbox-button/checkbox-button.js")
   script(src="./../../components/slideshow/slideshow.js")
   script(src="./../../components/rating-button/rating-button.js")
-  script(src="./data.js")

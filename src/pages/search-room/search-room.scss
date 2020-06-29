@@ -79,17 +79,32 @@ body {
 .searchroom-dropdown {
   position: absolute;
   left: 140px;
+  &-firsttitle {
+    @extend .searchroom-formtitle;
+    top: 100px;
+  }
+  &-secondtitle {
+    @extend .searchroom-formtitle;
+    top: 184.44px;
+  }
+  &-thirdtitle {
+    @extend .searchroom-formtitle;
+    top: 715.44px;
+  }
   &-first {
     position: absolute;
     top: 120px;
+    z-index: 3;
   }
   &-second {
     position: absolute;
     top: 204px;
+    z-index: 2;
   }
   &-third {
     position: absolute;
     top: 735px;
+    z-index: 2;
   }
 }
 

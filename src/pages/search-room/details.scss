@@ -1,0 +1,37 @@
+.header_nav {
+  margin-top: 13px;
+}
+
+.header {
+  top: 0px;
+  
+  //background-color: blue !important;
+}
+
+.details {
+  &-collage-firstimg {
+    position: absolute;
+    width: 981px;
+    height: 485px;
+    left: 0px;
+    top: 70px;
+    //background: gold;
+  }
+  &-collage-secondimg {
+    position: absolute;
+    width: 461px;
+    height: 243px;
+    left: 981px;
+    top: 70px;
+    background: hotpink; 
+    transform: matrix(-1, 0, 0, 1, 0, 0);
+  }
+  &-collage-thirdimg {
+    position: absolute;
+    width: 461px;
+    height: 243px;
+    left: 981px;
+    top: 312px;
+    background: orange;
+  }
+}
