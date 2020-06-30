@@ -87,24 +87,16 @@ function searchRoom(cards, searchOptions) {
       if (bathrooms > result[j].bathrooms) { result[j].active = false;}
     }
   }
-
   
   for (let i = 0; i < result.length; i++) {
     if (result[i].active == true) {
       sortResult.push(result[i]);
-      console.log("bathrooms: " + result[i].bathrooms)
     }
   }
   
   if (sortResult.length > 0) {
-    console.log(sortResult.length)
-    console.log(sortResult);
-    console.log(searchOptions);
     return sortResult;  
   }
-
-  console.log(result)
-  console.log(searchOptions);
   return result;
 }
 
@@ -116,13 +108,16 @@ for (let i = 0; i < drpdwn.length; i++) {
     if (drpdwn[i].classList.contains("dropdown-guests")) {
       searchOptions['drpdwnGuests']['guests'] = parseInt(counterAmount[0].innerHTML) + parseInt(counterAmount[1].innerHTML);
       searchOptions['drpdwnGuests']['childs'] = parseInt(counterAmount[2].innerHTML);
-      createPagination(searchRoom(cards, searchOptions));
     } else if (drpdwn[i].classList.contains("dropdown-comfort")) {
       searchOptions['drpdwnComfort']['beds'] = parseInt(counterAmount[0].innerHTML);
       searchOptions['drpdwnComfort']['bedrooms'] = parseInt(counterAmount[1].innerHTML);
       searchOptions['drpdwnComfort']['bathrooms'] = parseInt(counterAmount[2].innerHTML);
-      createPagination(searchRoom(cards, searchOptions));
     }
+    searchResult = searchRoom(cards, searchOptions);
+    createPagination(searchRoom(searchResult, searchOptions))
+    showCards(12, searchResult);
+    currentPage(0);
+    nextPage(0);
   }
 }
 
@@ -135,25 +130,70 @@ for (let i = 0; i < checkboxInput.length; i++) {
     } else {
       searchOptions[option] = 0;
     }
-    createPagination(searchRoom(cards, searchOptions));
+    searchResult = searchRoom(cards, searchOptions);
+    createPagination(searchRoom(searchResult, searchOptions))
+    showCards(12, searchResult);
+    currentPage(0);
+    nextPage(0);
   }
 }
 
 rangesliderMin[0].addEventListener("input", function () {
-  createPagination(searchRoom(searchResult, searchOptions))
   searchResult = searchRoom(cards, searchOptions);
+  createPagination(searchRoom(searchResult, searchOptions))
+  showCards(12, searchResult);
+  currentPage(0);
+  nextPage(0);
   searchOptions['minRange'] = parseInt(rangeMinValue[0].innerHTML.toString().split(" ").join(""));
 })
 
 rangesliderMax[0].addEventListener("input", function () {
-  createPagination(searchRoom(searchResult, searchOptions))
   searchResult = searchRoom(cards, searchOptions);
+  createPagination(searchRoom(searchResult, searchOptions))
+  showCards(12, searchResult);
+  currentPage(0);
+  nextPage(0)
   searchOptions['maxRange'] = parseInt(rangeMaxValue[0].innerHTML.toString().split(" ").join(""));
 })
 
+function nextPage(i) {
+  var seaparatePages = document.querySelectorAll(".pagination-separatepage")
+  var paginationLink = document.querySelectorAll(".pagination-link");
+
+  currentIndex = i;
+  hidePages(0, paginationLink.length-1);
+  showCards(i*12, searchResult);
+  showPages(0, 0);
+  currentPage(i);
+
+  if (i < 4) {
+    showPages(0, 2);
+    seaparatePages[0].style.display = "none";
+  } else {
+    seaparatePages[0].style.display = "inline-block";
+  }
+
+  if (i < paginationLink.length-1 && i > 1) {
+    showPages(i, i+1);
+    showPages(i-1, i);
+  }
+  if (i > paginationLink.length - 5) {
+    showPages(paginationLink.length-3, paginationLink.length-1)
+    seaparatePages[1].style.display = "none";
+  } else {
+    seaparatePages[1].style.display = "inline-block";
+  }
+
+  alignPagination()
+}
 
 var amountObj;
+
 let currentIndex = 0;
+if (localStorage.getItem("currentPageId") > 0) {
+  currentIndex = localStorage.getItem("currentPageId");
+}
+
 function createPagination(searchResult) {
   if (typeof(pagination) != 'undefiend') {
     while (pagination.firstChild) {
@@ -166,12 +206,24 @@ function createPagination(searchResult) {
   var paginationLink = document.querySelectorAll(".pagination-link");
   var seaparatePages = document.querySelectorAll(".pagination-separatepage")
   
+  
   currentPage(0);
   hidePages(3, paginationLink.length-1)
-  showCards(0, searchResult);
+  showCards(currentIndex*12, searchResult);
   variationsOfRent(0);
   alignPagination();
 
+  if (localStorage.getItem("currentPageId") != null) {
+    currentPage(currentIndex);
+    hidePages(3, paginationLink.length-1)
+    showCards(currentIndex*12, searchResult);
+    variationsOfRent(0);
+    alignPagination();
+
+    nextPage(parseInt(currentIndex)) 
+    localStorage.removeItem("currentPageId");
+  }
+  
   /* Responds on click to pages */
   for (let i = 0; i < paginationLink.length; i++) {
     if (paginationLink.length <= 7) {
@@ -187,7 +239,7 @@ function createPagination(searchResult) {
           howCards((currentIndex+1)*12, searchResult);
           urrentPage(currentIndex + 1);
           ariationsOfRent(currentIndex + 1);
-          urrentIndex += 1;
+          currentIndex += 1;
         }
       }
     } else {
@@ -276,37 +328,6 @@ function variationsOfRent(i) {
   }
 }
 
-function nextPage(i) {
-  var seaparatePages = document.querySelectorAll(".pagination-separatepage")
-  var paginationLink = document.querySelectorAll(".pagination-link");
-
-  currentIndex = i;
-  hidePages(0, paginationLink.length-1);
-  showCards(i*12, searchResult);
-  showPages(0, 0);
-  currentPage(i);
-
-  if (i < 4) {
-    showPages(0, 2);
-    seaparatePages[0].style.display = "none";
-  } else {
-    seaparatePages[0].style.display = "inline-block";
-  }
-
-  if (i < paginationLink.length-1 && i > 1) {
-    showPages(i, i+1);
-    showPages(i-1, i);
-  }
-  if (i > paginationLink.length - 5) {
-    showPages(paginationLink.length-3, paginationLink.length-1)
-    seaparatePages[1].style.display = "none";
-  } else {
-    seaparatePages[1].style.display = "inline-block";
-  }
-
-  alignPagination()
-}
-
 /* Align pagination */
 function alignPagination() {
   var paginationLink = document.querySelectorAll(".pagination-link")
@@ -369,6 +390,7 @@ function showPages(startIndex, endIndex) {
 
 let amountOfCards = amountObj;
 
+/* */
 function showCards(startIndex, searchResult) {
   let cardIndex = startIndex;
   for (let i = 0; i < 12; i++) {
@@ -397,4 +419,31 @@ function showCards(startIndex, searchResult) {
   amountOfCards -= 12;
   if (amountOfCards <= 0) {amountOfCards = amountObj;}
 }
+
+let slideLink = document.querySelectorAll(".slideshow-slide-link")
+
+for (let i = 0; i < slideshow.length; i++) {
+  let slideLink = slideshow[i].getElementsByClassName("slideshow-slide-link")
+  let roomNumber = review[i].getElementsByClassName("review-describe-number-digit");
+  let dayprice = review[i].getElementsByClassName("review-describe-dayprice");
+  for (let j = 0; j < slideLink.length; j++) {
+    slideLink[j].onclick = function () {
+      var variableOne = roomNumber[0].innerHTML; 
+      window.localStorage.setItem("vOneLocalStorage", variableOne);
+      
+      var roomCost = dayprice[0].innerHTML; 
+      window.localStorage.setItem("roomcost", roomCost);
+      var currentCards = searchRoom(cards, searchOptions);
+      localStorage.setItem('currentPageId', currentIndex)
+      localStorage.setItem('currentCards', JSON.stringify(currentCards))
+    }
+  }
+}
+
+var paginationLink = document.querySelectorAll(".pagination-link");
+
+if (currentIndex > paginationLink.length - 5 && paginationLink.length > 7) {
+  document.querySelectorAll(".pagination-separatepage")[1].style.display = "none";
+}
+
 

@@ -14,7 +14,7 @@ mixin search-card
     div(class="search_dropdown search_dropdown-departure") 
       +date-dropdown("", "выезд")
     div(class="search_dropdown search_dropdown-guest")
-        - const dropdown_title2 = ["dropdown", "Сколько гостей", "взрослые", "дети", "младенцы"]
+        - const dropdown_title2 = ["Гости", "Сколько гостей", "взрослые", "дети", "младенцы"]
         +dropdown(dropdown_title2, "option_one")
     // Buttons
     div(class="search_button search_button-find")
