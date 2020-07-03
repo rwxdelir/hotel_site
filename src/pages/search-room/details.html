@@ -2,12 +2,25 @@
 <html>
   <head>
     <link href="./details.scss" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <link href="./../../components/icon-list/icon-list.scss" rel="stylesheet">
     <link href="./../../components/header/header.scss" rel="stylesheet">
     <link href="./../../components/nav/nav.scss" rel="stylesheet">
     <link href="./../../components/button/button.scss" rel="stylesheet">    
+    <link href="./../../components/reservation-card/reservation-card.scss" rel="stylesheet">    
+    <link href="./../../components/dropdown/dropdown.scss" rel="stylesheet">    
+    <link href="./../../components/date-dropdown/date-dropdown.scss" rel="stylesheet">    
+    <link href="./../../components/recall/recall.scss" rel="stylesheet">    
+    <link href="./../../components/like-button/like-button.scss" rel="stylesheet">
+    <link href="./../../components/bullet-list/bullet-list.scss" rel="stylesheet">
+    <link href="./../../components/footer/footer.js" rel="stylesheet">    
   </head>
-   
+  
+  <!-- Header -->
   <header class="header">
+      <!-- Menu start -->
       <div class="menu">
         <!-- show menu list icon for mobiles--><a class="nav__show-icon" href="javascript:void(0);" onclick="showMenu()"></a><!-- show home link for mobiles -->
         <ul>
@@ -49,6 +62,9 @@
               </ul>
             </li>
           </ul>
+          <!-- Menu end -->
+
+          <!-- Header logo start -->
           <div class="header_logo">
             <svg class="logo" width="106" height="40" viewbox="0 0 106 40" fill="none" xmlns="http://www.w3.org/2000/svg"><svg id="logo_text">
             <path class="logo_text-vector" d="M62.335 13.368C62.5567 13.368 62.7375 13.4438 62.8775 13.5955C63.0292 13.7355 63.105 13.9163 63.105 14.138C63.105 14.348 63.0292 14.5288 62.8775 14.6805C62.7375 14.8322 62.5567 14.908 62.335 14.908H58.5725V25.408C58.5725 25.6297 58.4967 25.8163 58.345 25.968C58.205 26.108 58.0242 26.178 57.8025 26.178C57.5925 26.178 57.4117 26.108 57.26 25.968C57.1083 25.8163 57.0325 25.6297 57.0325 25.408V14.908H53.27C53.06 14.908 52.8792 14.8322 52.7275 14.6805C52.5758 14.5288 52.5 14.348 52.5 14.138C52.5 13.9163 52.5758 13.7355 52.7275 13.5955C52.8792 13.4438 53.06 13.368 53.27 13.368H62.335Z" fill="#1F2041"></path>
@@ -73,17 +89,338 @@
                 <stop offset="1" stop-color="#8BA4F9"></stop>
               </lineargradient>
             </defs></svg>
-          </div><button class="button button_type_colored button_size-header-register header_button header_button-register" type="button">Зарегистрироваться</button><button class="button button_type_bordered button_size-header-login header_button header_button-login" type="button">Войти</button>
+          </div>
+          <!-- Header logo end -->
+          <button class="button button_type_colored button_size-header-register header_button header_button-register" type="button">Зарегистрироваться</button><button class="button button_type_bordered button_size-header-login header_button header_button-login" type="button">Войти</button>
         </ul>
       </div>
   </header>   
+  <!-- Header end -->
+
   <body>
+    <!-- Collage start -->
     <div class = "details-collage">
       <img class = "details-collage-firstimg"></img>
       <img class = "details-collage-secondimg"></img>
       <img class = "details-collage-thirdimg"></img
     </div>
+    <!-- Collage end -->
+
+    <!-- Reservation start -->
+    <div class = "details-reservation">
+      <div class="reservation_container">
+        <!-- Dropdowns-->
+        <div class="reservation_dropdown reservation_dropdown-arrival">
+          <div class="date-dropdown_container">
+            <label class="date-dropdown_title">прибытие</label><input class="date-dropdown" placeholder="ДД.ММ.ГГГГ">
+            <div class="date-dropdown_arrow">
+              <svg class="arrow" height="18" viewbox="0 0 18 18" width="18" xmlns="http://www.w3.org/2000/svg">
+              <path class="arrow_path" d="M10.5938 0.578125L12 1.98438L6 7.98438L0 1.98438L1.40625 0.578125L6 5.17188L10.5938 0.578125Z" fill="rgba(31, 32, 65, 0.5)"></path></svg>
+            </div>
+          </div>
+        </div>
+        <div class="reservation_dropdown reservation_dropdown-departure">
+          <div class="date-dropdown_container">
+            <label class="date-dropdown_title">выезд</label><input class="date-dropdown" placeholder="ДД.ММ.ГГГГ">
+            <div class="date-dropdown_arrow">
+              <svg class="arrow" height="18" viewbox="0 0 18 18" width="18" xmlns="http://www.w3.org/2000/svg">
+              <path class="arrow_path" d="M10.5938 0.578125L12 1.98438L6 7.98438L0 1.98438L1.40625 0.578125L6 5.17188L10.5938 0.578125Z" fill="rgba(31, 32, 65, 0.5)"></path></svg>
+            </div>
+          </div>
+        </div>
+        <div class="reservation_dropdown reservation_dropdown-guest">
+          <span class="reservation_dropdown-title">гости</span>
+          <div class="dropdown dropdown-size-big dropdown-guests">
+            <div class="dropdown-button">
+              <span class="dropdown-button--title">Сколько гостей</span>
+              <span class="dropdown-button--icon material-icons">keyboard_arrow_down</span>
+            </div>
+            <div class="dropdown-content">
+              <li class="dropdown-content--item">
+                <span class="dropdown-content--itemname">взрослые</span>
+                <div class="dropdown-counter">
+                  <button class="dropdown-counter--btnminus">-</button><span class="dropdown-counter--amount">0</span><button class="dropdown-counter--btnplus">+</button>
+                </div>
+              </li>
+              <li class="dropdown-content--item">
+                <span class="dropdown-content--itemname">дети</span>
+                <div class="dropdown-counter">
+                  <button class="dropdown-counter--btnminus">-</button><span class="dropdown-counter--amount">0</span><button class="dropdown-counter--btnplus">+</button>
+                </div>
+              </li>
+              <li class="dropdown-content--item">
+                <span class="dropdown-content--itemname">младенцы</span>
+                <div class="dropdown-counter">
+                  <button class="dropdown-counter--btnminus">-</button><span class="dropdown-counter--amount">0</span><button class="dropdown-counter--btnplus">+</button>
+              </li>
+            </div>
+            <div class="dropdown-textbtn">                 
+              <button class="button button_type_text button_size-small dropdown-textbtn-erase" type="button"> очистить</button>
+              <button class="button button_type_text button_size-small dropdown-textbtn-apply" type="button"> применить</button>
+            </div>
+          </div>
+        </div>
+        <!-- Buttons-->
+        <div class="reservation_button reservation_button-reserve">
+          <button class="button button_type_colored button_size-big" type="button">Забранировать<svg class="arrow" height="18" viewbox="0 0 18 18" width="18" xmlns="http://www.w3.org/2000/svg">
+          <path class="arrow_path" d="M9 0.984375L17.0156 9L9 17.0156L7.59375 15.6094L13.1719 9.98438H0.984375V8.01562H13.1719L7.59375 2.39062L9 0.984375Z" fill="white"></path></svg></button>
+        </div>
+        <div class="reservation_button reservation_button-lux">
+          <button class="button button_type_text button_size-small" type="button">люкс</button>
+        </div><!-- Text -->
+        <div class="reservation_text-number">
+          <span><b>№</b> <span class="reservation_text-number-digit">888</span></span>
+        </div>
+        <div class="reservation_text reservation_text-cost">
+          <p class="reservation_text-cost"><b>9 990Р</b> в сутки</p>
+        </div><!-- Price list-->
+        <div class="reservation_price-container">
+          <ul class="reservation_price">
+            <li class="reservation_price-item"><span class="reservation_price-item reservation_price-title">9 990Р x 4 суток</span> <span class="reservation_price-cost">39 960Р</span></li>
+            <li class="reservation_price-item"><span class="reservation_price-item reservation_price-title">Сбор за услуги скидка:</span> <span class="reservation_price-cost">0Р</span></li>
+            <li class="reservation_price-item"><span class="reservation_price-item reservation_price-title">Сбор за дополнительные услуги</span> <span class="reservation_price-cost">300Р</span></li>
+            <li class="reservation_price-item reservation_price-amount"><span class="reservation_price-item reservation_price-title">Итого</span> <span class="reservation_price-cost">38 081Р</span></li>
+          </ul>
+        </div><!-- Script implement count for dropdown buttons   --><!--script(src="./../../count-button/count-button.js")-->
+      </div>
+    </div>
+    <!-- Reservation end -->
+    <!-- Icon-list start -->
+    <div class = "details-iconlist"> 
+      <span class = "details-iconlist-title">Сведения о номере</span>
+      <ul class="icon-list">
+        <li class="icon-list-item"><span class="icon-list-sign material-icons">insert_emoticon</span><span class="icon-list-title icon-list-text">Комфорт</span><span class="icon-list-text">Шумополглощающие стены</span></li>
+        <li class="icon-list-item"><span class="icon-list-sign material-icons">location_city</span><span class="icon-list-title icon-list-text">Удобство,</span><span class="icon-list-text">Окно в каждой из спален</span></li>
+        <li class="icon-list-item"><span class="icon-list-sign material-icons">whatshot</span><span class="icon-list-title icon-list-text">Уют</span><span class="icon-list-text">Номер оснащён камином</span></li>
+        <!-- Adds separate line between icons -->
+        <li style="list-style: none; display: inline">
+        <div>
+        <div class="icon-list-line"></div>
+        </div>
+        <div></div>
+        <div>
+        <div class="icon-list-line"></div>
+        </div>
+        </li>
+      </ul>
+    </div>
+    <!-- Icon list end -->
+
+    <!-- Recalls start -->
+    <div class = "details-recall">
+    <span class = "details-recall-title">Отзывы посетителей номера</span>
+    <div class = "details-recall-first">
+      <div class="recall"><!-- Like button-->
+        <div class="recall-like"><!-- Icon label--><label class="like-icon material-icons" for="like1">favorite_border</label><!-- Counter label--><label class="like-counter" for="like1">12</label> <!-- Like input--><input class="like" id="like1" type="checkbox"></div>
+        <!-- User information-->
+        <div class="recall-user">
+        <div class="recal-user-name"><span>Мурад Сарафанов</span></div>
+        <div class="recall-user-photo"><img src="" style="position: absolute; left: -21.5px; top: -11px;" width="85px"></div>
+        </div>
+        <!-- Recall text-->
+        <div class="recall-text"><span>Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей.</span></div>
+        <!-- Recall date-->
+        <div class="recall-date recall-text"><span>5 дней назад</span></div>
+      </div>        
+    </div>
+    <div class = "details-recall-second">
+      <div class="recall"><!-- Like button-->
+        <div class="recall-like"><!-- Icon label--><label class="like-icon material-icons" for="like2">favorite_border</label><!-- Counter label--><label class="like-counter" for="like2">2</label> <!-- Like input--><input class="like" id="like2" type="checkbox"></div>
+        <!-- User information-->
+        <div class="recall-user">
+        <div class="recal-user-name"><span>Патрисия Стёклышкова</span></div>
+        <div class="recall-user-photo"><img src="" style="position: absolute; left: -21.5px; top: -11px;" width="85px"></div>
+        </div>
+        <!-- Recall text-->
+        <div class="recall-text"><span> Обслуживание на высоте! Всё аккуратно, чисто. Завтраки в номер советую заказать, каждый день новое блюдо и десерт как комплимент</span></div>
+        <!-- Recall date-->
+        <div class="recall-date recall-text"><span>Неделю назад</span></div>
+      </div>        
+    </div>
+    </div>
+    <!-- Recalls end -->
+
+    <!-- Bullet list start -->
+    <div class = "details-bulletlist">
+      <span class = "details-bulletlist-title"> Правила </span>
+      <ul class="bullet-list">
+        <li class="bullet-list-item"><span class="bullet-list-marker"></span> Нельзя с питомцами</li>
+        <li class="bullet-list-item"><span class="bullet-list-marker"></span> Без вечеринок и мероприятий</li>
+        <li class="bullet-list-item"><span class="bullet-list-marker"></span> Время прибытия — после 13:00, а выезд до 12:00.</li>
+      </ul>
+    </div>
+    <!-- Bullet list end -->
+  
+    <!-- Rules start  -->
+    <div class = "details-cancel">
+      <span class = "details-cancel-title"> Отмена </span>
+      <p>Бесплатная отмена в течение 48 ч. После этого при отмене не позднее чем за 5 дн.
+         до прибытия вы получите полный возврат за вычетом сбора за услуги.</p>
+    </div>
+    <!-- Rules end -->
+    
+    <div class = "details-bulletlist-rating">
+      <ul class="bullet-list">
+        <li class="bullet-list-item"><span class="bullet-list-marker mfirst"></span> Великолепно</li>
+        <li class="bullet-list-item"><span class="bullet-list-marker msecond"></span> Хорошо</li>
+        <li class="bullet-list-item"><span class="bullet-list-marker mthird"></span> Удовлетворительно</li>
+        <li class="bullet-list-item"><span class="bullet-list-marker mfour"></span> Разочарован</li>
+      </ul>
+    </div>
+
+    <script src="./../../../node_modules/chart.js/dist/Chart.js"></script>
+    <div class = "details-rating">
+      <p class = "details-rating-title">Впечатления от номера</p>
+      <span class = "details-rating-amountvotes">260</span>
+      <span class = "details-rating-amountdescribe">голосов</span>
+
+      <canvas id="myChart" width="400" height="37px"></canvas>
+      <script>
+        var ctx = document.getElementById('myChart');
+        var myChart = new Chart(ctx, {
+          type: 'doughnut',
+          data: {
+              datasets: [{
+                  data: [0, 25, 25, 50],
+          
+                  backgroundColor: [
+                    'rgba(78, 89, 121, 1)',
+                    'rgba(54, 162, 235, 1)',
+                    'rgba(112, 211, 164, 1)',
+                    'rgba(254, 225, 149, 1)',
+                  ]
+              }],
+
+              // These labels appear in the legend and in the tooltips when hovering different arcs
+              labels: [
+                'Разочарован',
+                'Удовлетворительно ',
+                'Хорошо ',
+                'Великолепно '
+              ]
+            },
+          options: {
+            cutoutPercentage: 90,
+            legend: {
+              display: false,
+            }
+          }
+        });
+      </script>    
+    </div>
   </body>
+
+  <!-- Footer start -->
+  <div class = "details-footer">
+  <div class="footer"><!-- Menu navigation, aboutus, support-->
+    <div class="footer-menu">
+    <div class="footer-menu footer-menu-navigation">
+    <ul>
+    <li class="nav__home-show nav__item_selected"><a class="nav__link" href="#">Home</a></li>
+    <li style="list-style: none; display: inline">
+    <ul class="nav nav_vertical">
+    <li class="nav__item nav__item_selected"><a class="nav__link" href="#">Навигация</a></li>
+    <li class="nav__item"><a class="nav__link" href="#" title="О нас">О нас</a></li>
+    <li class="nav__item"><a class="nav__link" href="#" title="Новости">Новости</a></li>
+    <li class="nav__item"><a class="nav__link" href="#" title="Служба поддержки">Служба поддержки</a></li>
+    <li class="nav__item"><a class="nav__link" href="#" title="Услуги">Услуги</a></li>
+    </ul>
+    </li>
+    </ul>
+    </div>
+    <div class="footer-menu footer-menu-about">
+    <ul>
+    <li class="nav__home-show nav__item_selected"><a class="nav__link" href="#">Home</a></li>
+    <li style="list-style: none; display: inline">
+    <ul class="nav nav_vertical">
+    <li class="nav__item nav__item_selected"><a class="nav__link" href="#">О нас</a></li>
+    <li class="nav__item"><a class="nav__link" href="#" title="О сервисе">О сервисе</a></li>
+    <li class="nav__item"><a class="nav__link" href="#" title="Наша команда">Наша команда</a></li>
+    <li class="nav__item"><a class="nav__link" href="#" title="Вакансии">Вакансии</a></li>
+    <li class="nav__item"><a class="nav__link" href="#" title="Инвесторы">Инвесторы</a></li>
+    </ul>
+    </li>
+    </ul>
+    </div>
+    <div class="footer-menu footer-menu-support">
+    <ul>
+    <li class="nav__home-show nav__item_selected"><a class="nav__link" href="#">Home</a></li>
+    <li style="list-style: none; display: inline">
+    <ul class="nav nav_vertical">
+    <li class="nav__item nav__item_selected"><a class="nav__link" href="#">Служба поддержки</a></li>
+    <li class="nav__item"><a class="nav__link" href="#" title="Соглашения">Соглашения</a></li>
+    <li class="nav__item"><a class="nav__link" href="#" title="Сообщества">Сообщества</a></li>
+    <li class="nav__item"><a class="nav__link" href="#" title="Связь с нами">Связь с нами</a></li>
+    </ul>
+    </li>
+    </ul>
+    </div>
+    </div>
+    <!-- Logo -->
+    <div class="footer-logo"><svg class="logo" height="40" viewbox="0 0 106 40" width="106" xmlns="http://www.w3.org/2000/svg"><svg>
+    <path class="logo_text-vector" d="M62.335 13.368C62.5567 13.368 62.7375 13.4438 62.8775 13.5955C63.0292 13.7355 63.105 13.9163 63.105 14.138C63.105 14.348 63.0292 14.5288 62.8775 14.6805C62.7375 14.8322 62.5567 14.908 62.335 14.908H58.5725V25.408C58.5725 25.6297 58.4967 25.8163 58.345 25.968C58.205 26.108 58.0242 26.178 57.8025 26.178C57.5925 26.178 57.4117 26.108 57.26 25.968C57.1083 25.8163 57.0325 25.6297 57.0325 25.408V14.908H53.27C53.06 14.908 52.8792 14.8322 52.7275 14.6805C52.5758 14.5288 52.5 14.348 52.5 14.138C52.5 13.9163 52.5758 13.7355 52.7275 13.5955C52.8792 13.4438 53.06 13.368 53.27 13.368H62.335Z" fill="#1F2041"></path>
+    <path class="logo_text-vector" d="M68.9076 13.368C69.7943 13.368 70.6285 13.5372 71.4101 13.8755C72.2035 14.2138 72.8918 14.6747 73.4751 15.258C74.0701 15.8413 74.5368 16.5297 74.8751 17.323C75.2134 18.1047 75.3826 18.9388 75.3826 19.8255C75.3826 20.8638 75.1609 21.8205 74.7176 22.6955C74.2743 23.5705 73.6735 24.3055 72.9151 24.9005C72.9151 24.9005 72.9035 24.9122 72.8801 24.9355C72.3201 25.3555 71.7076 25.688 71.0426 25.933C70.3776 26.1663 69.666 26.283 68.9076 26.283C68.0209 26.283 67.1868 26.1138 66.4051 25.7755C65.6234 25.4372 64.9351 24.9763 64.3401 24.393C63.7568 23.8097 63.296 23.1272 62.9576 22.3455C62.6193 21.5638 62.4501 20.7238 62.4501 19.8255C62.4501 18.8455 62.6484 17.9413 63.0451 17.113C63.4418 16.273 63.9843 15.5555 64.6726 14.9605L64.7426 14.8905C64.7543 14.8905 64.7718 14.8788 64.7951 14.8555C65.3551 14.3888 65.9851 14.0272 66.6851 13.7705C67.3851 13.5022 68.1259 13.368 68.9076 13.368ZM68.9076 24.743C69.351 24.743 69.771 24.6905 70.1676 24.5855C70.576 24.4688 70.961 24.3113 71.3226 24.113L65.1801 16.6405C64.8068 17.0722 64.5151 17.5622 64.3051 18.1105C64.0951 18.6472 63.9901 19.2188 63.9901 19.8255C63.9901 20.5022 64.1185 21.138 64.3751 21.733C64.6318 22.328 64.9818 22.853 65.4251 23.308C65.8801 23.7513 66.4051 24.1013 67.0001 24.358C67.5951 24.6147 68.231 24.743 68.9076 24.743ZM72.5301 23.1505C72.9384 22.7072 73.2535 22.2055 73.4751 21.6455C73.7085 21.0738 73.8251 20.4672 73.8251 19.8255C73.8251 19.1488 73.6968 18.513 73.4401 17.918C73.1834 17.323 72.8276 16.8038 72.3726 16.3605C71.9293 15.9055 71.4101 15.5497 70.8151 15.293C70.2201 15.0363 69.5843 14.908 68.9076 14.908C68.4409 14.908 67.9918 14.9722 67.5601 15.1005C67.1284 15.2172 66.7259 15.3922 66.3526 15.6255L72.5301 23.1505Z" fill="#1F2041"></path>
+    <path class="logo_text-vector" d="M82.351 20.6305C82.1177 20.6305 81.9194 20.5372 81.756 20.3505L77.2585 14.5755C77.1302 14.4122 77.0777 14.2313 77.101 14.033C77.1244 13.823 77.2177 13.6538 77.381 13.5255C77.5444 13.3972 77.7252 13.3505 77.9235 13.3855C78.1335 13.4088 78.3027 13.5022 78.431 13.6655L82.351 18.6705L86.1835 13.753C86.3119 13.5897 86.4752 13.4963 86.6735 13.473C86.8835 13.4497 87.0702 13.5022 87.2335 13.6305C87.3969 13.7588 87.4902 13.928 87.5135 14.138C87.5369 14.3363 87.4844 14.5172 87.356 14.6805L82.946 20.3505C82.7944 20.5372 82.596 20.6305 82.351 20.6305ZM87.2685 26.2655C87.2219 26.2655 87.146 26.2597 87.041 26.248C86.9477 26.2363 86.8369 26.2072 86.7085 26.1605C86.5802 26.1022 86.4402 26.0263 86.2885 25.933C86.1485 25.828 86.0085 25.688 85.8685 25.513L82.351 20.9805L78.5185 25.9155C78.3902 26.0788 78.221 26.1722 78.011 26.1955C77.8127 26.2188 77.6319 26.1663 77.4685 26.038C77.3052 25.9097 77.2119 25.7463 77.1885 25.548C77.1652 25.338 77.2177 25.1513 77.346 24.988L81.756 19.318C81.896 19.1313 82.0885 19.038 82.3335 19.038C82.5902 19.038 82.7944 19.1313 82.946 19.318L87.041 24.568C87.0994 24.6497 87.1519 24.7022 87.1985 24.7255C87.2452 24.7488 87.2802 24.7663 87.3035 24.778C87.5019 24.778 87.6652 24.848 87.7935 24.988C87.9335 25.1163 88.0094 25.2797 88.021 25.478C88.0444 25.688 87.986 25.8688 87.846 26.0205C87.706 26.1722 87.531 26.2538 87.321 26.2655H87.2685Z" fill="#1F2041"></path>
+    <path class="logo_text-vector" d="M91.7343 26.2655C91.5126 26.2655 91.326 26.1897 91.1743 26.038C91.0226 25.8863 90.9468 25.6997 90.9468 25.478V14.103C90.9468 13.893 91.0226 13.7122 91.1743 13.5605C91.326 13.4088 91.5126 13.333 91.7343 13.333C91.9443 13.333 92.1251 13.4088 92.2768 13.5605C92.4285 13.7122 92.5043 13.893 92.5043 14.103V25.478C92.5043 25.6997 92.4285 25.8863 92.2768 26.038C92.1251 26.1897 91.9443 26.2655 91.7343 26.2655Z" fill="#1F2041"></path>
+    <path class="logo_text-vector" d="M104.938 26.2305C104.681 26.2305 104.483 26.1313 104.343 25.933L97.0452 16.343V25.478C97.0452 25.688 96.9693 25.8688 96.8177 26.0205C96.6777 26.1605 96.5027 26.2305 96.2927 26.2305C96.0943 26.2305 95.9193 26.1605 95.7677 26.0205C95.616 25.8688 95.5402 25.688 95.5402 25.478V14.1205C95.5402 13.9572 95.5868 13.8113 95.6802 13.683C95.7735 13.5547 95.9018 13.4672 96.0652 13.4205C96.2168 13.3622 96.3685 13.3563 96.5202 13.403C96.6718 13.4497 96.8002 13.5372 96.9052 13.6655L104.185 23.273V14.1205C104.185 13.9222 104.255 13.7472 104.395 13.5955C104.547 13.4438 104.728 13.368 104.938 13.368C105.148 13.368 105.323 13.4438 105.463 13.5955C105.614 13.7472 105.69 13.9222 105.69 14.1205V25.478C105.69 25.6413 105.643 25.7872 105.55 25.9155C105.457 26.0438 105.334 26.1372 105.183 26.1955C105.066 26.2188 104.984 26.2305 104.938 26.2305Z" fill="#1F2041"></path>
+    </svg>
+    <path class="logo_left-vector" d="M20.0003 27.0587C19.3533 27.0587 18.8239 26.5292 18.8239 25.8822C18.8239 21.3528 15.118 17.6469 10.5886 17.6469C9.94152 17.6469 9.41211 17.1175 9.41211 16.4704C9.41211 15.8234 9.94152 15.2939 10.5886 15.2939C16.4415 15.2939 21.1768 20.0292 21.1768 25.8822C21.1768 26.5292 20.6474 27.0587 20.0003 27.0587Z" fill="url(#paint0_linear)"></path>
+    <path class="logo_right-vector" d="M30.5884 16.4704C30.5884 17.1175 30.0589 17.6469 29.4119 17.6469C26.6178 17.6469 24.1178 19.0587 22.6472 21.2057C22.3236 20.3822 21.9413 19.6175 21.4707 18.9116C23.4119 16.6763 26.2648 15.2939 29.4119 15.2939C30.0589 15.2939 30.5884 15.8234 30.5884 16.4704Z" fill="url(#paint1_linear)"></path>
+    <path class="logo_circle-vector" d="M20 40C8.97059 40 0 31.0294 0 20C0 8.97059 8.97059 0 20 0C31.0294 0 40 8.97059 40 20C40 31.0294 31.0294 40 20 40ZM20 2.35294C10.2647 2.35294 2.35294 10.2647 2.35294 20C2.35294 29.7353 10.2647 37.6471 20 37.6471C29.7353 37.6471 37.6471 29.7353 37.6471 20C37.6471 10.2647 29.7353 2.35294 20 2.35294Z" fill="url(#paint2_linear)"></path>
+    <defs>
+    <lineargradient gradientunits="userSpaceOnUse" id="paint0_linear" x1="15.2945" x2="15.2945" y1="15.2939" y2="27.0587">
+    <stop stop-color="#BC9CFF"></stop>
+    <stop offset="1" stop-color="#8BA4F9"></stop>
+    </lineargradient>
+    <lineargradient gradientunits="userSpaceOnUse" id="paint1_linear" x1="26.0295" x2="26.0295" y1="15.2939" y2="21.2057">
+    <stop stop-color="#6FCF97"></stop>
+    <stop offset="1" stop-color="#66D2EA"></stop>
+    </lineargradient>
+    <lineargradient gradientunits="userSpaceOnUse" id="paint2_linear" x1="20" x2="20" y1="0" y2="40">
+    <stop stop-color="#BC9CFF"></stop>
+    <stop offset="1" stop-color="#8BA4F9"></stop>
+    </lineargradient>
+    </defs>
+    </svg>
+    <p class="footer-text footer-logo-describe">Бронирование номеров в лучшем отеле 2019 года по версии ассоциации «Отельные взгляды»</p>
+    </div>
+    <!-- Subscribe textfield-->
+    <div class="footer-subscribe">
+    <div class="footer-subscribe-textfield"><label class="textfield_title" for="email" id="textfield_label"></label><br>
+    <div class="textfield"><input class="textfield_input" id="email" placeholder="Email" type="email" value=""></div>
+    <div class="textfield_arrow"><svg class="arrow" height="18" viewbox="0 0 18 18" width="18" xmlns="http://www.w3.org/2000/svg">
+    <path class="arrow_path" d="M9 0.984375L17.0156 9L9 17.0156L7.59375 15.6094L13.1719 9.98438H0.984375V8.01562H13.1719L7.59375 2.39062L9 0.984375Z" fill="#BC9CFF"></path>
+    </svg></div>
+    </div>
+    <div class="footer-subscribe-text">
+    <p class="footer-title footer-subscribe-title">Подписка</p>
+    <p class="footer-text footer-subscribe-describe">Получайте специальные предложения и новости сервиса</p>
+    </div>
+    </div>
+    <!-- Copyright bar -->
+    <div class="footer-copyright"><!-- Font awesome-->
+    <script src="https://kit.fontawesome.com/8ec038fa62.js">
+    </script>
+    <div class="copyright">
+    <div class="copyright-text">
+    <p>Copyright © 2018 Toxin отель. Все права зачищены.</p>
+    </div>
+    <div class="copyright-brand">
+    <div class="copyright-brand-twitter"><a class="copyright-brand-link" href="#"><i aria-hidden="true" class="fab fa-twitter"></i></a></div>
+    <div class="copyright-brand-facebook"><a class="copyright-brand-link" href="#"><i aria-hidden="true" class="fab fa-facebook"></i></a></div>
+    <div class="copyright-brand-instagram"><a class="copyright-brand-link" href="#"><i aria-hidden="true" class="fab fa-instagram"></i></a></div>
+    </div>
+    </div>
+    </div>
+    </div>
+  </div>    
+  <!-- Footer end -->
+  
+
+    
 </html>
 <script src="./data.js"></script>
 <script src = "details.js"></script>
+<script src = "./../../components/dropdown/dropdown.js"></script>
+<script src = "./../../components/like-button/like-button.js"></script>
+

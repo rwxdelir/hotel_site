@@ -1,37 +1,215 @@
-.header_nav {
-  margin-top: 13px;
+body {
+  position: absolute;
+  width: 1440px;
+  height: 900px;
+  left: 0px;
+  top: 0px;
+  margin: auto;
 }
 
+/* Header */
 .header {
   top: 0px;
-  
-  //background-color: blue !important;
+  /* Navigation */
+  &_nav {
+    margin-top: 14px;
+  }
 }
 
+/* Details */
 .details {
+  /* Collage */
   &-collage-firstimg {
     position: absolute;
     width: 981px;
     height: 485px;
     left: 0px;
     top: 70px;
-    //background: gold;
   }
   &-collage-secondimg {
     position: absolute;
     width: 461px;
     height: 243px;
-    left: 981px;
+    left: 978.5px;
     top: 70px;
-    background: hotpink; 
     transform: matrix(-1, 0, 0, 1, 0, 0);
   }
   &-collage-thirdimg {
     position: absolute;
     width: 461px;
     height: 243px;
-    left: 981px;
+    left: 978.5px;
     top: 312px;
-    background: orange;
   }
+  /* Reservation */
+  &-reservation {
+    position: absolute;
+    width: 380px;
+    height: 511px;
+    left: 920px;
+    top: 625px;
+  }
+  &-footer {
+    position: absolute;
+    left: 0px;
+    top: 1494px;
+    .footer {
+      border-top: 1px solid rgba(31, 32, 65, 0.25);
+    }
+    .nav {
+      top: 15px;
+      left: 15px;
+    }
+  }
+  /* Font style for titles */
+  &-formtitle {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: bold;
+    font-size: 19px;
+    line-height: 24px;
+    color: #1F2041;
+  }
+
+  /* Icon list */
+  &-iconlist {
+    position: absolute;
+    left: 140px;
+    top: 669px;
+    /* Icon list title */
+    &-title {
+      @extend .details-formtitle;
+      position: absolute;
+      width: 250px;
+      height: 24px;
+      top: -44px;
+    }
+  }
+  /* Recall first */
+  &-recall-first {
+    position: absolute;
+    left: 139px;
+    top: 972px;
+  }
+  /* Recall second */
+  &-recall-second {
+    position: absolute;
+    left: 141px;
+    top: 1127px;
+  }
+  /* Recalls title */
+  &-recall-title {
+    @extend .details-formtitle;
+    position: absolute;
+    width: 320px;
+    height: 24px;
+    left: 139px;
+    top: 937px;    
+  }
+  /* Bullet list */
+  &-bulletlist {
+    position: absolute;
+    width: 242.56px;
+    height: 24px;
+    left: 159.86px;
+    top: 1308px;
+    .bullet-list-item {
+      font-size: 14px;
+    }
+    /* Bullet list title */
+    &-title {
+      @extend .details-formtitle;
+      position: absolute;
+      width: 91.77px;
+      height: 24px;
+      left: 20px;
+      top: -40px;
+    }
+    /* Bullet list for rating description */
+    &-rating {
+      position: absolute;
+      left: 666px;
+      top: 701px;
+      .bullet-list-item {
+        padding-bottom: 0px;
+        font-size: 14px;
+      }
+      .mfirst { background:rgba(254, 225, 149, 1);}
+      .msecond { background:rgba(112, 211, 164, 1) ;}
+      .mthird { background:rgba(54, 162, 235, 1);}
+      .mfour { background:rgba(78, 89, 121, 1);}
+    }
+  }
+  /* Cancel */
+  &-cancel {
+    position: absolute;
+    width: 341px;
+    height: 96px;
+    left: 501px;
+    top: 1295px;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 24px;
+    color: rgba(31, 32, 65, 0.75);
+    /* Cancel title */
+    &-title {
+      @extend .details-formtitle;
+      position: absolute;
+      top: -26px;
+    }
+  }
+  /* Rating */
+  &-rating {
+    /* Amount votes */
+    &-amountvotes {
+      position: absolute;
+      width: 41px;
+      height: 30px;
+      left: 541px;
+      top: 710px;
+      font-family: 'Montserrat';
+      font-style: normal;
+      font-weight: bold;
+      font-size: 24px;
+      line-height: 30px;
+      display: flex;
+      align-items: center;
+      text-align: center;
+      color: #BC9CFF;
+    }
+    /* Amount votes describe */
+    &-amountdescribe {
+      position: absolute;
+      width: 64px;
+      height: 15px;
+      left: 532px;
+      top: 741px;
+      font-family: Montserrat;
+      font-style: normal;
+      font-weight: bold;
+      font-size: 12px;
+      line-height: 15px;
+      text-align: center;
+      text-transform: uppercase;
+      color: #BC9CFF;
+    }
+    /* Rating title */
+    &-title {
+      @extend .details-formtitle;
+      position: absolute;
+      width: 250px;
+      margin: 0px;
+      height: 24px;
+      left: 494px;
+      top: 625px;
+    }
+  }
+}
+#myChart {
+  position: absolute;
+  left: -159px;
+  top: 670px;  
+  opacity: 100;
 }
