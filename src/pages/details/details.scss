@@ -1,3 +1,6 @@
+@import "./../../assets/fonts/fonts.css";
+@import "./../../abstracts/variables.scss";
+
 body {
   position: absolute;
   width: 1440px;
@@ -55,6 +58,9 @@ body {
     top: 1494px;
     .footer {
       border-top: 1px solid rgba(31, 32, 65, 0.25);
+      &-menu {
+        top: 37px;
+      }
     }
     .nav {
       top: 15px;
@@ -106,12 +112,12 @@ body {
     left: 139px;
     top: 937px;    
   }
-  /* Bullet list */
+  /* Bullet list rules */
   &-bulletlist {
     position: absolute;
     width: 242.56px;
     height: 24px;
-    left: 159.86px;
+    left: 138.86px;
     top: 1308px;
     .bullet-list-item {
       font-size: 14px;
@@ -134,10 +140,14 @@ body {
         padding-bottom: 0px;
         font-size: 14px;
       }
-      .mfirst { background:rgba(254, 225, 149, 1);}
-      .msecond { background:rgba(112, 211, 164, 1) ;}
-      .mthird { background:rgba(54, 162, 235, 1);}
-      .mfour { background:rgba(78, 89, 121, 1);}
+      .bullet-list-item:nth-child(1) 
+      .bullet-list-marker { background:rgba(254, 225, 149, 1);}
+      .bullet-list-item:nth-child(2) 
+      .bullet-list-marker { background:rgba(112, 211, 164, 1);}
+      .bullet-list-item:nth-child(3) 
+      .bullet-list-marker { background:rgba(54, 162, 235, 1);}
+      .bullet-list-item:nth-child(4) 
+      .bullet-list-marker { background:rgba(78, 89, 121, 1);}
     }
   }
   /* Cancel */
@@ -167,7 +177,7 @@ body {
       position: absolute;
       width: 41px;
       height: 30px;
-      left: 541px;
+      left: 546px;
       top: 710px;
       font-family: 'Montserrat';
       font-style: normal;

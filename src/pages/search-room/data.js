@@ -1,6 +1,3 @@
-//import cards from './cards.js'
-//import "./../../components/pagination/pagination.js";
-
 let slideshow = document.querySelectorAll(".slideshow")
 let slideLink = document.querySelectorAll(".slideshow-slide-link")
 let review = document.querySelectorAll(".review")

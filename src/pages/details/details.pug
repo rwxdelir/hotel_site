@@ -1,0 +1,107 @@
+include ./../../components/header/header.pug
+include ./../../components/reservation-card/reservation-card.pug
+include ./../../components/dropdown/dropdown.pug
+include ./../../components/icon-list/icon-list.pug
+include ./../../components/recall/recall.pug
+include ./../../components/like-button/like-button.pug
+include ./../../components/bullet-list/bullet-list.pug
+include ./../../components/footer/footer.pug
+include ./../../components/copyright-bar/copyright-bar.pug
+include ./../../components/slideshow/slideshow.pug
+
+doctype html
+html
+head
+  meta(name="viewport" content="width=device-width, initial-scale=1.0")
+body(class = "details")  
+  // Header
+  div(class = "details-header")
+    +header
+
+  // Collage
+  div( class = "details-collage")
+    img( class = "details-collage-firstimg")
+    img( class = "details-collage-secondimg")
+    img( class = "details-collage-thirdimg")
+  // Reservation card
+  div(class = "details-reservation") 
+    +reservation-card
+
+  // Icon list
+  div(class = "details-iconlist")
+    span(class = "details-iconlist-title") Сведения о номере
+    - 
+      var list1 = [{
+        title: "Комфорт", 
+        text: "Шумополглощающие стены",
+        icon: "insert_emoticon"
+      },
+      {
+        title: "Удобство,", 
+        text: "Окно в каждой из спален",
+        icon: "location_city"
+      },
+      {
+        title: "Уют",
+        text: "Номер оснащён камином",
+        icon: "whatshot"
+      }];
+    +icon-list(list1)
+
+  // Recalls 
+  div(class = "details-recall")
+    div(class = "details-recall-first")
+      - 
+        var recall1 = {
+          like : {id: "like1", amount: "12"},
+          user : {name: "Мурад Сарафанов", img: "./../../assets/images/user-photo.png"},
+          date : "5 дней назад",
+          text : "Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей."
+        }
+      +recall(recall1)
+    div(class = "details-recall-second")
+      - 
+        var recall2 = {
+          like : {id: "like2", amount: "2"},
+          user : {name: "Патрисия Стёклышкова", img: "./../../assets/images/user-photo2.png"},
+          date : "Неделю назад",
+          text : "Обслуживание на высоте! Всё аккуратно, чисто. Завтраки в номер советую заказать, каждый день новое блюдо и десерт как комплимент"
+        }
+      +recall(recall2)
+  // Bullet list rules 
+  div(class = "details-bulletlist")
+    span(class = "details-bulletlist-title") Правила
+    - 
+      var rule1 = [
+       'Нельзя с питомцами',
+       'Без вечеринок и мероприятий',
+       'Время прибытия — после 13:00, а выезд до 12:00'];
+    +bullet-list(rule1)
+  
+  // Cancel rules
+  div(class = "details-cancel")
+    span(class = "details-cancel-title") Отмена
+    p. 
+      Бесплатная отмена в течение 48 ч. После этого при отмене не позднее чем за 5 дн.
+      до прибытия вы получите полный возврат за вычетом сбора за услуги.
+  
+  div(class = "details-bulletlist-rating") 
+    +bullet-list(['Великолепно','Хорошо','Удовлетворительно','Разочарован'])
+
+  // Rating
+  div(class = "details-rating")
+    p(class = "details-rating-title") Впечатления от номера
+    span(class = "details-rating-amountvotes") 260
+    span(class = "details-rating-amountdescribe") голосов
+
+    canvas(id="myChart" width="400" height="37px")
+
+  div(class = "details-footer")    
+    +footer
+
+script(src = "./index.js")
+script(src="./../../../node_modules/chart.js/dist/Chart.js")
+script(src="./../../components/like-button/like-button.js")
+script(src="./../../components/dropdown/dropdown.js")
+script(src = "./details.js")
+script(src="./../search-room/data.js")
