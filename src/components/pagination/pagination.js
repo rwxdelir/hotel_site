@@ -22,14 +22,55 @@ let searchOptions = {
   'widehall': 0, "disabledAssistant": 0, 'widehall': 0, 
   'breakfast': 0, 'writingDesk': 0,'feedingСhair': 0,
   'crib': 0, 'television': 0, 'shampoo': 0, 'minRange': 5000, 
-  'maxRange': 10000, 'drpdwnGuests': {'guests': 0, 'childs': 0},
-  'drpdwnComfort': {'beds': 0, 'bedrooms': 0, 'bathrooms': 0}
+  'maxRange': 10000, 
+  'drpdwnGuests': {'adults': 0, 'teenagers': 0, 'childs': 0, 'guests': 0, 'plchdrText': 'Сколько гостей'},
+  'drpdwnComfort': {'beds': 0, 'bedrooms': 0, 'bathrooms': 0, 'plchdrText': 'Выберите удобства'}
 };
+
+if (JSON.parse(localStorage.getItem('currentSearchOpt')) != null) {
+  searchOptions = JSON.parse(localStorage.getItem('currentSearchOpt'));
+  let checkboxIcon = document.querySelectorAll(".checkbox-icon")
+  // Make active checkboxes checked if page was refreshed
+  for (let i = 0; i < 11; i++) {
+    let objKey = Object.keys(searchOptions)[i]
+    if (searchOptions[objKey] == 1) {
+      checkboxIcon[i].style.display = "block";
+    }
+  }
+  // Set options for dropdown-comfort
+  if (searchOptions['drpdwnComfort']['beds'] != 0 
+  || searchOptions['drpdwnComfort']['bedrooms'] != 0
+  || searchOptions['drpdwnComfort']['bathrooms'] != 0) {
+    // Change dropdown comfort title
+    let drpdwnTitle = drpdwn[2].getElementsByClassName("dropdown-button--title")[0];
+    drpdwnTitle.innerHTML = searchOptions['drpdwnComfort']['plchdrText']; 
+    
+    let cntrComfort = drpdwn[2].getElementsByClassName("dropdown-counter--amount");
+    for (let w = 0; w < cntrComfort.length; w++) {
+      let cntrKey = Object.keys(searchOptions["drpdwnComfort"])[w];
+      cntrComfort[w].innerHTML = searchOptions['drpdwnComfort'][cntrKey];
+    }
+  }
+  // Set options for dropdown-guests
+  if (searchOptions['drpdwnGuests']['guests'] != 0 
+  || searchOptions['drpdwnGuests']['childs'] != 0) {
+    let drpdwnTitle = drpdwn[1].getElementsByClassName("dropdown-button--title")[0];
+    drpdwnTitle.innerHTML = searchOptions['drpdwnGuests']['plchdrText']; 
+    
+    let cntrGuests = document.querySelectorAll(".dropdown-guests")[1].getElementsByClassName("dropdown-counter--amount");
+    for (let w = 0; w < cntrGuests.length; w++) {
+      let cntrKey = Object.keys(searchOptions["drpdwnGuests"])[w];
+      cntrGuests[w].innerHTML = searchOptions['drpdwnGuests'][cntrKey];
+    }
+  }
+  localStorage.removeItem('currentSearchOpt');
+}
 
 let searchResult = searchRoom(cards, searchOptions);
 
 function searchRoom(cards, searchOptions) {
   let sortResult = [];
+
   for(let i = 0; i < cards.length; i++) {
     cards[i].active = true;
   }
@@ -106,8 +147,11 @@ for (let i = 0; i < drpdwn.length; i++) {
   let counterAmount = drpdwn[i].getElementsByClassName("dropdown-counter--amount"); 
   btnApply[0].onclick = function () {
     if (drpdwn[i].classList.contains("dropdown-guests")) {
-      searchOptions['drpdwnGuests']['guests'] = parseInt(counterAmount[0].innerHTML) + parseInt(counterAmount[1].innerHTML);
+      searchOptions['drpdwnGuests']['adults'] = parseInt(counterAmount[0].innerHTML);
+      searchOptions['drpdwnGuests']['teenagers'] = parseInt(counterAmount[1].innerHTML);
       searchOptions['drpdwnGuests']['childs'] = parseInt(counterAmount[2].innerHTML);
+
+      searchOptions['drpdwnGuests']['guests'] = parseInt(counterAmount[0].innerHTML) + parseInt(counterAmount[1].innerHTML);
     } else if (drpdwn[i].classList.contains("dropdown-comfort")) {
       searchOptions['drpdwnComfort']['beds'] = parseInt(counterAmount[0].innerHTML);
       searchOptions['drpdwnComfort']['bedrooms'] = parseInt(counterAmount[1].innerHTML);
@@ -390,7 +434,6 @@ function showPages(startIndex, endIndex) {
 
 let amountOfCards = amountObj;
 
-/* */
 function showCards(startIndex, searchResult) {
   let cardIndex = startIndex;
   for (let i = 0; i < 12; i++) {
@@ -428,14 +471,21 @@ for (let i = 0; i < slideshow.length; i++) {
   let dayprice = review[i].getElementsByClassName("review-describe-dayprice");
   for (let j = 0; j < slideLink.length; j++) {
     slideLink[j].onclick = function () {
+      // Save dropdown-comfort title
+      searchOptions['drpdwnComfort']['plchdrText'] = document.querySelectorAll(".dropdown-button--title")[2].innerHTML;
+      // Save dropdown-guests title 
+      searchOptions['drpdwnGuests']['plchdrText'] = drpdwn[1].getElementsByClassName("dropdown-button--title")[0].innerHTML;
+      
+
       var variableOne = roomNumber[0].innerHTML; 
       window.localStorage.setItem("vOneLocalStorage", variableOne);
-      
+    
       var roomCost = dayprice[0].innerHTML; 
       window.localStorage.setItem("roomcost", roomCost);
       var currentCards = searchRoom(cards, searchOptions);
       localStorage.setItem('currentPageId', currentIndex)
       localStorage.setItem('currentCards', JSON.stringify(currentCards))
+      localStorage.setItem('currentSearchOpt', JSON.stringify(searchOptions))
     }
   }
 }
@@ -445,5 +495,3 @@ var paginationLink = document.querySelectorAll(".pagination-link");
 if (currentIndex > paginationLink.length - 5 && paginationLink.length > 7) {
   document.querySelectorAll(".pagination-separatepage")[1].style.display = "none";
 }
-
-
