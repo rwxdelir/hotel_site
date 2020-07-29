@@ -1,0 +1,45 @@
+// Material icons
+link(href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet")
+
+// Default items for options field
+- 
+  var defaultItems = [
+    {title: "О нас", href: "#", isSelected: true},
+    {title: "Услуги", isExpanded: 
+    [
+          {title: "Service 1"},
+          {title: "Service 2"},
+          {title: "Service 3"}
+    ]},
+    {title: "Вакансии", href: "#"},
+    {title: "Новости", href: "#"},
+    {title: "Соглашения", isExpanded: 
+    [
+          {title: "Service 1"},
+          {title: "Service 2"},
+          {title: "Service 3"}
+    ]}]
+    
+// {Additional classes, options (items)}
+mixin menu({adtnlClass, options})
+  - var items = (options != 'undefiend') ? options : defaultItems;
+  - var itmExpEl = " menu__drpdwnlist__element"; //Expanded element
+
+  each item in items
+    -
+      item.classList = "menu__item";
+      item.classList +=(item.isSelected)? " menu__item_selected" :"";
+      item.classList +=(item.isExpanded)? " menu__drpdwnlist" :"";
+
+  ul(class ="menu " + (adtnlClass ? adtnlClass :""))
+    each item in items 
+      li(class =item.classList)
+        a(class ="menu__link" href=item.href) #{item.title}
+
+        // Append dropdown-list 
+        if item.isExpanded 
+          span(class = "menu__drpdwnlist__icon material-icons") keyboard_arrow_down
+          ul(class ="menu__drpdwnlist__content")
+            each drpdwnEl in item.isExpanded
+              li(class ="menu__drpdwnlist__element")
+                a(class ="menu__drpdwnlist__link" href ="2") #{drpdwnEl.title}

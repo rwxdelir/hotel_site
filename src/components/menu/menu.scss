@@ -1,0 +1,84 @@
+@import "./../../assets/fonts/fonts.css";
+@import "./../../abstracts/variables.scss";
+
+.menu {
+  position: relative;
+  display: inline-flex;
+  padding: 0px;
+  margin: 0px;
+  /* Menu item */
+  &__item {
+    list-style-type: none;
+    padding: 0px;
+    margin: 10.5px;
+    font-family: Montserrat;
+    word-break: keep-all;
+    white-space: nowrap;
+    font-style: normal;
+    font-weight: normal;
+    cursor: pointer;
+    font-size: 14px;
+    line-height: 17px;
+  }
+  /* Menu link */
+  &__link {
+    text-decoration: none;
+    color:rgba(31, 32, 65, 0.5);
+  }
+  /* Selected item */
+  &__item_selected {
+    word-break: keep-all;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 17px;
+    color: rgba(31, 32, 65, 0.75);
+    .menu__link { color: rgba(31, 32, 65, 0.75);}
+  }
+  /* Dropdown list (menu item) */
+  &__drpdwnlist {
+    &__content {
+      position: relative;
+      display: none;
+      margin-left: -45px;
+    }
+    &__element {
+      @extend .menu__item;
+      margin: 0px;
+      margin-top: 4px;
+      margin-left: 10px;
+    }
+    /* Arrow icon for dropdown */
+    &__icon {      
+      position: relative;
+      line-height: 0px;
+      top: 7.2px;
+      font-family: Material Icons;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 24px;
+      color: rgba(31, 32, 65, 0.5);
+    }
+    &__link { @extend .menu__link;}
+  }
+}
+
+/* Vertical menu mixin */
+@mixin verticalMenu() { 
+  position: relative;
+  display: block;
+  padding: 0px;
+  margin: 0px;
+  .menu__item { height: 27px;}
+}
+
+/* Vertical menu (Modificator) */
+.menu_vertical { @include verticalMenu();}
+
+/* Responsive design for mobiles */
+@media only screen and (max-device-width : 425px) {
+  .menu { @include verticalMenu();}
+}
+
+
+
