@@ -22,7 +22,7 @@ link(href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesh
     
 // {Additional classes, options (items)}
 mixin menu({adtnlClass, options})
-  - var items = (options != 'undefiend') ? options : defaultItems;
+  - var items = (options != false) ? options : defaultItems;
   - var itmExpEl = " menu__drpdwnlist__element"; //Expanded element
 
   each item in items
@@ -42,4 +42,5 @@ mixin menu({adtnlClass, options})
           ul(class ="menu__drpdwnlist__content")
             each drpdwnEl in item.isExpanded
               li(class ="menu__drpdwnlist__element")
-                a(class ="menu__drpdwnlist__link" href ="2") #{drpdwnEl.title}
+                a(class ="menu__drpdwnlist__link" href ="#") #{drpdwnEl.title}
+                

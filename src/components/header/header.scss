@@ -2,57 +2,52 @@
 @import "./../../abstracts/variables.scss";
 
 .header {
-  -webkit-user-select: none;     
-  -moz-user-select: none; 
-  -ms-user-select: none;
-  position: absolute;
-  left: 0px;
-  padding: 0px;
-  margin: 0px;
-  right: 0px;
   position: absolute;
   width: 1440px;
   height: 70px;
-
-  background: #FFFFFF;
+  left: 0px;
+  top: 0px;
   box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05);
-  &_logo {
+  /* Header menu */
+  &__menu {
     position: absolute;
-    top: 15px;
-    left: 140px;
-  }
-  &_button {
-    left: 1143px;
-    &-login {
-      position: absolute;
-      top: 16px;
-      margin-left: -90px;
-    } 
-    &-register {
-      position: absolute;
-      top: 15px;
-      margin-left: 20px;
-    } 
-  }
-  &_nav {
-    position: absolute;
-    width: 527px;
+    width: 447px;
     height: 21px;
-    left: 531px;
-    top: -5px;
+    left: 530px;
+    top: 26px;
   }
-  &_card {
-    &-login {
-      display: none;
-      left: 530px;
-      top: 233px;
-      &-show {
-        display: block;
-      }
-    }
+  /* Header logo */
+  &__logo {
+    position: absolute;
+    left: 140px;
+    top: 15px;
+  }
+  /* Header button */
+  &__button {
+    position: absolute;
+    top: 18px;
+    &_register {left: 1104px;}
+    &_login {left: 997px;}
+  }
+  /* Header separateline */
+  &__separateline {
+    position: absolute;
+    margin: 0px; 
+    padding: 0px;
+    width: 1px;
+    height: 30px;
+    left: 1179px;
+    top: 20px;
+    background: rgba(31, 32, 65, 0.1);
+  }
+  /* Header namefield */
+  &__namefield {
+    @include usual-text;
+    left: 1200px;
+    top: 26px;
+    line-height: 17px;
+    color: rgba(31, 32, 65, 0.5);
   }
 }
-
-
-
-
+/* Header logged */
+.header_logged { .header__menu {left: 712px;}}

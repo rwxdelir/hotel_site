@@ -1,39 +1,21 @@
-include ../nav/nav.pug
-include ../button/button.pug
-include ../logo/logo.pug
-include ../card/card.pug
+include ./../menu/menu.pug 
+include ./../logo/logo.pug 
+include ./../button/button.pug
 
-- 
-  var navItems = [
-    {title: "О нас", href: "#"},
-    {title: "Услуги", href: "#", isExpanded:
-    [
-      {title: "Service 1"},
-      {title: "Service 2"},
-      {title: "service 3"}
-    ]},
-    {title: "Вакансии", href: "#"},
-    {title: "Новости", href: "#"},
-    {title: "Соглашения", href: "#", isExpanded: 
-      [{title: "Sevice1"}]}
-  ]
+mixin header({logged})
+  - adtnlClass = (logged != false) ? " header_logged" : "";
+  header(class ="header" + adtnlClass)
+    div(class ="header__menu")
+      +menu({adtnlClass: false, options: false})
+    div(class ="header__logo")
+      +logo 
 
-mixin header(uikit)
-  header(class = "header")
-    div(class="menu")
-      if uikit != undefiend
-        +nav("header_nav")
-        div(class = "header_logo")
-          +logo
-        +button({title:"register", isColored:true, className:"header_button header_button-register"})
-        +button({title:"login", isBordered:1, className:"header_button header_button-login"})
- 
-      else 
-        +nav("header_nav", navItems)
-        div(class = "header_logo")
-          +logo
-        +button({title:"Зарегистрироваться", isColored:true, size: "header-register", className:"header_button header_button-register"})
-        +button({title:"Войти", isBordered:1, size: "header-login", className:"header_button header_button-login"})
+    if logged != true
+      div(class ="header__button header__button_register")
+        +button({title:"Зарегистрироваться", isColored:true, size: "header-register"})
+      div(class ="header__button header__button_login")
+        +button({title:"Войти", isBordered:1, size: "header-login"})
+    else
+      div(class ="header__separateline")
+      span(class ="header__namefield") Юлий Цезарь
       
-
-        

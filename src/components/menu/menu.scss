@@ -6,11 +6,13 @@
   display: inline-flex;
   padding: 0px;
   margin: 0px;
+  left: 0px;
   /* Menu item */
   &__item {
     list-style-type: none;
     padding: 0px;
-    margin: 10.5px;
+    margin: 0px;
+    margin-right: 21px;
     font-family: Montserrat;
     word-break: keep-all;
     white-space: nowrap;
