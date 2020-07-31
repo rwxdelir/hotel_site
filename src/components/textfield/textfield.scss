@@ -1,41 +1,46 @@
-.textfield {
-  width: 0;
-}
+@import "./../../assets/fonts/fonts.css";
+@import "./../../abstracts/variables.scss";
 
-.textfield_input {
-  &[type] {
-    padding: 15px 12px;
-    box-sizing: border-box;
-    background: #FFFFFF;
-    border: 1px solid rgba(31, 32, 65, 0.25);
-    box-sizing: border-box;
-    border-radius: 4px;
-    &:hover {
-      border: 1px solid rgba(31, 32, 65, 0.5);
+.textfield {
+  @extend .textfield_size_big;
+  position: relative;
+  padding: 8px 0px 12px 15px;
+  outline: none;
+  border: 1px solid rgba(31, 32, 65, 0.25);
+  box-sizing: border-box;
+  border-radius: 4px;
+  color: rgba(31, 32, 65, 0.75);
+  z-index: 1;
+  &::placeholder {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 18px;
+  }
+  /* Texftield subscription modificator */ 
+  &_subscription {
+    @extend .textfield_size_medium;
+    &_arrow {
+      position: absolute;
+      left: 235px;
+      top: 17px;
+      z-index: 2;
+      color: #8BA4F9;
+      cursor: pointer;
     }
   }
-  width: 320px;
-  height: 44px;
-  font-family: 'Montserrat';
-  font-style: normal;
-  font-weight: normal;
-  font-size: 14px;
-  line-height: 18px;
+  &_size_big {width: 320px; height: 44px;}
+  &_size_medium {width: 267px; height: 44px;}
 }
 
-.textfield_title {
-  top: -2px;
-  position: absolute;
-  width: 118px;
-  height: 15px;
-  font-family: 'Montserrat';
-  font-style: normal;
-  font-weight: bold;
-  font-size: 12px;
-  line-height: 15px;
-  text-transform: uppercase;
+.textfield:focus, .textfield:hover {
+  border: 1px solid rgba(31, 32, 65, 0.5);
   color: rgba(31, 32, 65, 0.75);
-  white-space: nowrap;
+  &:placeholder-shown {color: rgba(31, 32, 65, 0.75);}
+  &::placeholder {color: rgba(31, 32, 65, 0.75);}
 }
 
-
+.textfield__arrow:hover + .textfield {
+  border: 1px solid rgba(31, 32, 65, 0.5);
+}
